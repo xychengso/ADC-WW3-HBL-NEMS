@@ -5958,7 +5958,7 @@
                ', REFICEBERG =',F5.2,', REFCOSP_STRAIGHT =',F4.1,' /')
 !
  2987 FORMAT ( '  &FLD TAIL_ID =',I1,' TAIL_LEV =',F5.4,' TAILT1 =',F5.3,&
-               ' TAILT2 =',F5.3,' /')
+               ' TAILT2 =',F5.3, ' WIND_FAC=', F5.3, '/')
 !/RTD
 !/RTD 4991 FORMAT ( '  &ROTD PLAT =', F6.2,', PLON =', F7.2,', UNROT =',L3,' /')
 !/RTD 4992 FORMAT ( '  &ROTB BPLAT =',9(F6.1,",")/                        &
