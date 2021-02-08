@@ -1,11 +1,17 @@
-## ADC-WW3-NWM-NEMS
+## ADC-WW3-HBL-NEMS
 
-ADC-WW3-NWM-NEMS is an ESMF application developed as part of the Coastal Act
+ADC-WW3-HBL-NEMS is based on NOAA ADC-WW3-NWM-NEMS, which is an ESMF application developed as part of the Coastal Act
 coupling project to determine wind versus water percentage loss caused by a 
 Named Storm Event. 
 
+In this repo, HBL is used to replace the dummy ATMESH in the NOAA official release of ADC-WW3-NWM-NEMS system.
+Also, an exchanged parameter _sea state dependent wind stress/roughness length_ is exported to ADCIRC and HBL from the WW3 model.
+Group members in the Hurricane Modeling Group/Air-Sea Interaction Lab are responsible for developing these features.
+
+See `HOWTO_from_CodeHere` if you want to install this version of code and work on it from the RENCI/Hatteras machine. 
+
 ## Cloning
-    git clone --recursive https://github.com/moghimis/ADC-WW3-NWM-NEMS
+    git clone --recursive https://github.com/xychengso/ADC-WW3-HBL-NEMS.git
 
 ## Requirements
 
