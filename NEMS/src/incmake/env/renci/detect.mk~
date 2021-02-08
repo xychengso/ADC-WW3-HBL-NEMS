@@ -1,0 +1,10 @@
+########################################################################
+#
+# Main driver for NOAA R&D computing environment support
+#
+########################################################################
+
+ifneq (,$(and $(wildcard /scratch1),$(wildcard /scratch2)))
+  NEMS_COMPILER?=intel
+  $(call add_build_env,hatteras.$(NEMS_COMPILER),env/renci/hatteras.$(NEMS_COMPILER).mk)
+endif

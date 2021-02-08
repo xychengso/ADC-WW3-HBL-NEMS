@@ -1,0 +1,256 @@
+\contentsline {section}{\numberline {1}\nobreakspace {}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}\nobreakspace {}The WAVEWATCH\nobreakspace {}III\ Modeling Framework}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}\nobreakspace {}About this manual}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}\nobreakspace {}Licensing terms}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}\nobreakspace {}Copyrights and trademarks}{6}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}\nobreakspace {}The WAVEWATCH III\textsuperscript {\textregistered } Development Group (WW3DG) }{6}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}\nobreakspace {}Acknowledgments}{11}{subsection.1.6}
+\contentsline {section}{\numberline {2}\nobreakspace {}Governing equations}{14}{section.2}
+\contentsline {subsection}{\numberline {2.1}\nobreakspace {}Introduction}{14}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}\nobreakspace {}Propagation}{16}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}\nobreakspace {}Source terms}{18}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}\nobreakspace {}General concepts}{18}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}\nobreakspace {}$S_{nl}$: Discrete Interaction Approximation (DIA)}{20}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}\nobreakspace {}$S_{nl}$: Full Boltzmann Integral (WRT)}{22}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}\nobreakspace {}$S_{nl}$: Generalized Multiple DIA\ (GMD)}{25}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}\nobreakspace {}$S_{nl}$: Two-Scale Approximation (TSA)}{28}{subsubsection.2.3.5}
+\contentsline {paragraph}{TSA and FBI}{29}{section*.3}
+\contentsline {subsubsection}{\numberline {2.3.6}\nobreakspace {}$S_{nl}$: Nonlinear Filter}{32}{subsubsection.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.7}\nobreakspace {}$S_{in} + S_{ds}$: WAM\ cycle 3}{34}{subsubsection.2.3.7}
+\contentsline {subsubsection}{\numberline {2.3.8}\nobreakspace {}$S_{in} + S_{ds}$: Tolman and Chalikov 1996}{36}{subsubsection.2.3.8}
+\contentsline {subsubsection}{\numberline {2.3.9}\nobreakspace {}$S_{in} + S_{ds}$: WAM\ cycle 4 (ECWAM)}{42}{subsubsection.2.3.9}
+\contentsline {subsubsection}{\numberline {2.3.10}\nobreakspace {}$S_{\mathrm {in}} + S_{\mathrm {ds}}$: Ardhuin et al. 2010 ...}{47}{subsubsection.2.3.10}
+\contentsline {subsubsection}{\numberline {2.3.11}\nobreakspace {}$S_{in} + S_{ds}$: Rogers et al. 2012 \& Zieger et al. 2015}{55}{subsubsection.2.3.11}
+\contentsline {paragraph}{Wind input.}{55}{section*.9}
+\contentsline {paragraph}{Wind input constraint.}{56}{section*.10}
+\contentsline {paragraph}{Negative Input.}{57}{section*.11}
+\contentsline {paragraph}{Whitecapping Dissipation.}{58}{section*.12}
+\contentsline {paragraph}{Swell Dissipation.}{59}{section*.15}
+\contentsline {paragraph}{Updates since vers.\tmspace +\thinmuskip {.1667em}6.07}{61}{section*.16}
+\contentsline {paragraph}{Dominant Wave Breaking Probability}{63}{section*.18}
+\contentsline {paragraph}{Bulk Adjustments.}{63}{section*.19}
+\contentsline {subsubsection}{\numberline {2.3.12}\nobreakspace {}$S_{ln}$: Cavaleri and Malanotte-Rizzoli 1981}{64}{subsubsection.2.3.12}
+\contentsline {subsubsection}{\numberline {2.3.13}\nobreakspace {}$S_{bot}$: JONSWAP\ bottom friction}{65}{subsubsection.2.3.13}
+\contentsline {subsubsection}{\numberline {2.3.14}\nobreakspace {}$S_{bot}$: SHOWEX\ bottom friction}{65}{subsubsection.2.3.14}
+\contentsline {subsubsection}{\numberline {2.3.15}\nobreakspace {}$S_{mud}$: Dissipation by viscous mud (D\&L)}{67}{subsubsection.2.3.15}
+\contentsline {subsubsection}{\numberline {2.3.16}\nobreakspace {}$S_{mud}$: Dissipation by viscous mud (Ng)}{69}{subsubsection.2.3.16}
+\contentsline {subsubsection}{\numberline {2.3.17}\nobreakspace {}$S_{db}$: Battjes and Janssen 1978}{69}{subsubsection.2.3.17}
+\contentsline {subsubsection}{\numberline {2.3.18}\nobreakspace {}$S_{tr}$: Triad nonlinear interactions (LTA)}{71}{subsubsection.2.3.18}
+\contentsline {subsubsection}{\numberline {2.3.19}\nobreakspace {}$S_{bs}$: Bottom scattering}{73}{subsubsection.2.3.19}
+\contentsline {subsubsection}{\numberline {2.3.20}\nobreakspace {}$S_{uo}$: Unresolved Obstacles Source Term}{75}{subsubsection.2.3.20}
+\contentsline {subsubsection}{\numberline {2.3.21}\nobreakspace {}$S_{xx}$: User defined}{78}{subsubsection.2.3.21}
+\contentsline {subsection}{\numberline {2.4}\nobreakspace {}Source terms for wave-ice interactions}{78}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}\nobreakspace {}$S_{ice}$: Damping by sea ice (simple)}{81}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}\nobreakspace {}$S_{ice}$: Damping by sea ice (Liu et al.)}{81}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}\nobreakspace {}$S_{ice}$: Damping by sea ice (Shen et al.)}{83}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}\nobreakspace {}$S_{ice}$: Empirical/parametric damping by sea ice}{87}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}\nobreakspace {}$S_{ice}$: Damping by sea ice (Mosig et al.)}{89}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}\nobreakspace {}$S_{is}$: Diffusive scattering by sea ice (simple)}{91}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}\nobreakspace {}$S_{is}$: Floe-size dependent scattering and dissipation}{92}{subsubsection.2.4.7}
+\contentsline {subsubsection}{\numberline {2.4.8}\nobreakspace {}$S_{ref}$: Energy reflection at shorelines and icebergs}{97}{subsubsection.2.4.8}
+\contentsline {subsubsection}{\numberline {2.4.9}\nobreakspace {}Second-order spectrum and free infragravity waves}{101}{subsubsection.2.4.9}
+\contentsline {subsection}{\numberline {2.5}\nobreakspace {}Air-sea processes}{103}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}\nobreakspace {}General concepts}{103}{subsubsection.2.5.1}
+\contentsline {paragraph}{Sea-state dependent air-sea fluxes}{103}{section*.24}
+\contentsline {subsubsection}{\numberline {2.5.2}\nobreakspace {}Sea-state dependent $\tau $: Reichl et al. 2014}{105}{subsubsection.2.5.2}
+\contentsline {paragraph}{Wind stress according to Reichl et al., 2014}{105}{section*.25}
+\contentsline {subsubsection}{\numberline {2.5.3}\nobreakspace {}Sea-state dependent $\tau $: Donelan et al. 2012}{107}{subsubsection.2.5.3}
+\contentsline {paragraph}{Wind stress according to Donelan et al., 2012}{107}{section*.26}
+\contentsline {subsection}{\numberline {2.6}\nobreakspace {}Output parameters}{108}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}\nobreakspace {}Derived parameters}{117}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Directional slopes and near-nadir backscatter}{117}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}Stokes drift profile}{117}{subsubsection.2.7.2}
+\contentsline {section}{\numberline {3}\nobreakspace {}Numerical approaches}{120}{section.3}
+\contentsline {subsection}{\numberline {3.1}\nobreakspace {}Spectral discretization}{120}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}\nobreakspace {}Splitting of the wave action equation}{121}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}\nobreakspace {}Depth variations in time}{123}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}\nobreakspace {}Spatial propagation}{124}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}\nobreakspace {}General concepts}{124}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}\nobreakspace {}Traditional regular grids}{126}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} First-order scheme}{126}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} Second-order scheme (UNO)}{127}{equation.3.9}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} Third-order scheme (UQ)}{128}{equation.3.11}
+\contentsline {subsubsection}{\numberline {3.4.3}\nobreakspace {}Curvilinear grids}{130}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}\nobreakspace {}Triangular unstructured grids}{131}{subsubsection.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.5}\nobreakspace {}Spherical Multiple-Cell (SMC) grid}{134}{subsubsection.3.4.5}
+\contentsline {subsubsection}{\numberline {3.4.6}\nobreakspace {}The Garden Sprinkler Effect}{142}{subsubsection.3.4.6}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} No GSE alleviation}{142}{subsubsection.3.4.6}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} Booij and Holthuijsen 1987}{143}{subsubsection.3.4.6}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} Spatial averaging}{146}{equation.3.41}
+\contentsline {subsubsection}{\numberline {3.4.7}\nobreakspace {}Unresolved obstacles}{148}{subsubsection.3.4.7}
+\contentsline {subsubsection}{\numberline {3.4.8}\nobreakspace {}Continuously moving grids}{150}{subsubsection.3.4.8}
+\contentsline {subsubsection}{\relax \unhcopy \strutbox \hspace {24mm} General concepts}{150}{subsubsection.3.4.8}
+\contentsline {subsubsection}{\numberline {3.4.9}\nobreakspace {}Rotated grids}{152}{subsubsection.3.4.9}
+\contentsline {subsection}{\numberline {3.5}\nobreakspace {}Intra-spectral propagation}{153}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}\nobreakspace {}General concepts}{153}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}\nobreakspace {}First-order scheme}{155}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}\nobreakspace {}Second-order scheme (UNO)}{155}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}\nobreakspace {}Third-order scheme (UQ)}{156}{subsubsection.3.5.4}
+\contentsline {subsection}{\numberline {3.6}\nobreakspace {}Non-ice source term integration}{157}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}\nobreakspace {}Ice source terms integration}{161}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}\nobreakspace {}Simple ice blocking ({\tt IC0})}{162}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}\nobreakspace {}Winds and currents}{163}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}\nobreakspace {}Use of tidal analysis}{164}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}\nobreakspace {}Wave crest and height space-time extremes}{164}{subsection.3.11}
+\contentsline {subsection}{\numberline {3.12}\nobreakspace {}Spectral partitioning}{167}{subsection.3.12}
+\contentsline {subsubsection}{\numberline {3.12.1}Topographic partitioning method}{169}{subsubsection.3.12.1}
+\contentsline {subsubsection}{\numberline {3.12.2}Sea/swell assignment and partitioning method}{169}{subsubsection.3.12.2}
+\contentsline {subsection}{\numberline {3.13}\nobreakspace {}Spatial and temporal tracking of wave systems}{173}{subsection.3.13}
+\contentsline {subsection}{\numberline {3.14}\nobreakspace {}Nesting}{175}{subsection.3.14}
+\contentsline {subsubsection}{\numberline {3.14.1}\nobreakspace {}Traditional one-way nesting}{176}{subsubsection.3.14.1}
+\contentsline {subsubsection}{\numberline {3.14.2}\nobreakspace {}Two-way nesting}{177}{subsubsection.3.14.2}
+\contentsline {section}{\numberline {4}\nobreakspace {}Wave Model Structure and Data Flow}{181}{section.4}
+\contentsline {subsection}{\numberline {4.1}\nobreakspace {}Program design}{181}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}\nobreakspace {}The wave model routines}{184}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}\nobreakspace {}The data assimilation interface}{186}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}\nobreakspace {}Auxiliary programs}{187}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}General concepts}{187}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Configuration file}{188}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}The grid preprocessor}{191}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}The initial conditions program}{192}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}The boundary conditions program}{193}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}The NetCDF boundary conditions program}{194}{subsubsection.4.4.6}
+\contentsline {subsubsection}{\numberline {4.4.7}The input field preprocessor }{195}{subsubsection.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}The NetCDF input field preprocessor }{196}{subsubsection.4.4.8}
+\contentsline {subsubsection}{\numberline {4.4.9}The tide prediction program}{197}{subsubsection.4.4.9}
+\contentsline {subsubsection}{\numberline {4.4.10}The generic shell}{198}{subsubsection.4.4.10}
+\contentsline {subsubsection}{\numberline {4.4.11}Automated grid splitting for ww3\_multi (ww3\_gspl)}{199}{subsubsection.4.4.11}
+\contentsline {subsubsection}{\numberline {4.4.12}The multi-grid shell}{201}{subsubsection.4.4.12}
+\contentsline {subsubsection}{\numberline {4.4.13}Grid Integration}{202}{subsubsection.4.4.13}
+\contentsline {subsubsection}{\numberline {4.4.14}Gridded output post-processor}{203}{subsubsection.4.4.14}
+\contentsline {subsubsection}{\numberline {4.4.15}Gridded output NetCDF post-processor}{204}{subsubsection.4.4.15}
+\contentsline {subsubsection}{\numberline {4.4.16}Gridded output post-processor for GrADS}{205}{subsubsection.4.4.16}
+\contentsline {subsubsection}{\numberline {4.4.17}Gridded GRIB output post-processor}{206}{subsubsection.4.4.17}
+\contentsline {subsubsection}{\numberline {4.4.18}Point output post-processor}{208}{subsubsection.4.4.18}
+\contentsline {subsubsection}{\numberline {4.4.19}Point output NetCDF post-processor}{209}{subsubsection.4.4.19}
+\contentsline {subsubsection}{\numberline {4.4.20}Point output post-processor for GrADS}{210}{subsubsection.4.4.20}
+\contentsline {subsubsection}{\numberline {4.4.21}Track output post-processor}{211}{subsubsection.4.4.21}
+\contentsline {subsubsection}{\numberline {4.4.22}Track output NetCDF post-processor}{212}{subsubsection.4.4.22}
+\contentsline {subsubsection}{\numberline {4.4.23}Spatial and temporal tracking of wave systems}{213}{subsubsection.4.4.23}
+\contentsline {subsubsection}{\numberline {4.4.24}The Restart File Processor}{215}{subsubsection.4.4.24}
+\contentsline {paragraph}{Introduction \newline }{215}{section*.43}
+\contentsline {subparagraph}{Purpose of the \textbf {ww3\_uprstr} \newline }{215}{section*.44}
+\contentsline {subparagraph}{Core algorithm \newline }{215}{section*.45}
+\contentsline {paragraph}{How to Use the ww3\_uprstr \newline }{215}{section*.46}
+\contentsline {subparagraph}{Update method \newline }{217}{section*.47}
+\contentsline {subparagraph}{Example \newline }{219}{section*.49}
+\contentsline {section}{\numberline {5}\nobreakspace {}Install, Compile and Run the wave model}{224}{section.5}
+\contentsline {subsection}{\numberline {5.1}\nobreakspace {}Introduction}{224}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}\nobreakspace {}Distribution}{224}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}\nobreakspace {}Installing}{225}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}\nobreakspace {}Setting up}{225}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}\nobreakspace {}Directory Structure}{226}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}\nobreakspace {}Optional environment settings}{230}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}\nobreakspace {}Compiling and linking}{231}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}\nobreakspace {}Detailled compilation}{233}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}\nobreakspace {}Selecting model options}{236}{subsection.5.9}
+\contentsline {subsubsection}{\numberline {5.9.1}\nobreakspace {}Mandatory switches}{236}{subsubsection.5.9.1}
+\contentsline {subsubsection}{\numberline {5.9.2}\nobreakspace {}Optional switches}{240}{subsubsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.3}\nobreakspace {}Default model settings}{243}{subsubsection.5.9.3}
+\contentsline {subsection}{\numberline {5.10}\nobreakspace {}Modifying the source code}{244}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.11}\nobreakspace {}Running test cases}{246}{subsection.5.11}
+\contentsline {section}{\numberline {6}\nobreakspace {}System documentation}{252}{section.6}
+\contentsline {subsection}{\numberline {6.1}\nobreakspace {}Introduction}{252}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}\nobreakspace {}The preprocessor}{252}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}\nobreakspace {}Program files}{254}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}\nobreakspace {}Wave model modules}{254}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}\nobreakspace {}Multi-grid modules}{271}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}\nobreakspace {}Data assimilation module}{273}{subsubsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.4}\nobreakspace {}Auxiliary programs}{273}{subsubsection.6.3.4}
+\contentsline {subsection}{\numberline {6.4}\nobreakspace {}Optimization}{277}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}\nobreakspace {}Internal data storage}{279}{subsection.6.5}
+\contentsline {subsubsection}{\numberline {6.5.1}\nobreakspace {}Grids}{279}{subsubsection.6.5.1}
+\contentsline {subsubsection}{\numberline {6.5.2}\nobreakspace {}Distributed memory concepts.}{284}{subsubsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.3}\nobreakspace {}Multiple grids}{287}{subsubsection.6.5.3}
+\contentsline {subsection}{\numberline {6.6}\nobreakspace {}Variables in modules}{289}{subsection.6.6}
+\contentsline {subsubsection}{\numberline {6.6.1}\nobreakspace {}Parameter settings in modules}{290}{subsubsection.6.6.1}
+\contentsline {subsubsection}{\numberline {6.6.2}\nobreakspace {}Data structures}{294}{subsubsection.6.6.2}
+\vspace {\baselineskip }
+\contentsline {section}{References}{296}{section*.64}
+\vspace {\baselineskip }
+\vspace {\baselineskip }
+ 
+\noindent {\bf APPENDICES}
+ 
+\contentsline {section}{\numberline {A}\nobreakspace {}Setting model time steps}{A.1}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}\nobreakspace {}Individual grids}{A.1}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}\nobreakspace {}Mosaics of grids}{A.3}{subsection.A.2}
+\contentsline {section}{\numberline {B}\nobreakspace {}Setting up nested runs}{B.1}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}\nobreakspace {}Using {\sf ww3\_shel}}{B.1}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}\nobreakspace {}Using {\sf ww3\_bound} and/or unstructured grids}{B.3}{subsection.B.2}
+\contentsline {subsection}{\numberline {B.3}\nobreakspace {}Using {\sf ww3\_multi}}{B.4}{subsection.B.3}
+\contentsline {section}{\numberline {C}\nobreakspace {}Setting up for distributed machines (MPI)}{C.1}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}\nobreakspace {}Model setup}{C.1}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}\nobreakspace {}Common errors}{C.4}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}\nobreakspace {}MPI point-to-point communication errors}{C.5}{subsection.C.3}
+\contentsline {section}{\numberline {D}\nobreakspace {}Mosaic approach with non-regular grids}{D.1}{appendix.D}
+\contentsline {subsection}{\numberline {D.1}\nobreakspace {}Introduction}{D.1}{subsection.D.1}
+\contentsline {subsection}{\numberline {D.2}\nobreakspace {}SCRIP-WW3}{D.1}{subsection.D.2}
+\contentsline {subsection}{\numberline {D.3}\nobreakspace {}SCRIP Operation}{D.2}{subsection.D.3}
+\contentsline {subsection}{\numberline {D.4}\nobreakspace {}Optimization and common problems}{D.3}{subsection.D.4}
+\contentsline {subsection}{\numberline {D.5}\nobreakspace {}Limitations}{D.5}{subsection.D.5}
+\contentsline {section}{\numberline {E}\nobreakspace {}Ocean-Ice-Waves-Atmosphere coupling with OASIS}{E.1}{appendix.E}
+\contentsline {subsection}{\numberline {E.1}\nobreakspace {}Introduction}{E.1}{subsection.E.1}
+\contentsline {subsection}{\numberline {E.2}\nobreakspace {}Interfacing with OASIS3-MCT}{E.2}{subsection.E.2}
+\contentsline {subsection}{\numberline {E.3}\nobreakspace {}Compiling with OASIS3-MCT}{E.2}{subsection.E.3}
+\contentsline {subsection}{\numberline {E.4}\nobreakspace {}Launch a coupling simulation}{E.3}{subsection.E.4}
+\contentsline {subsection}{\numberline {E.5}\nobreakspace {}Limitations}{E.4}{subsection.E.5}
+\contentsline {section}{\numberline {F}\nobreakspace {}Coupling with NUOPC}{F.1}{appendix.F}
+\contentsline {subsection}{\numberline {F.1}\nobreakspace {}Introduction}{F.1}{subsection.F.1}
+\contentsline {subsection}{\numberline {F.2}\nobreakspace {}Building and Installing the NUOPC Cap}{F.1}{subsection.F.2}
+\contentsline {subsection}{\numberline {F.3}\nobreakspace {}Import/Export Fields in the NUOPC Cap}{F.1}{subsection.F.3}
+\contentsline {subsection}{\numberline {F.4}\nobreakspace {}Configuration of Input Files for the NUOPC Cap}{F.3}{subsection.F.4}
+\contentsline {subsection}{\numberline {F.5}\nobreakspace {}Running the NUOPC Cap}{F.3}{subsection.F.5}
+\contentsline {section}{\numberline {G}\nobreakspace {}Configuration of Input Files}{G.1}{appendix.G}
+\contentsline {subsection}{\numberline {G.1}\nobreakspace {}ww3\_grid}{G.1}{subsection.G.1}
+\contentsline {subsubsection}{\numberline {G.1.1}\nobreakspace {}ww3\_grid.inp}{G.1}{subsubsection.G.1.1}
+\contentsline {subsubsection}{\numberline {G.1.2}\nobreakspace {}ww3\_grid.nml}{G.19}{subsubsection.G.1.2}
+\contentsline {subsection}{\numberline {G.2}\nobreakspace {}ww3\_strt}{G.37}{subsection.G.2}
+\contentsline {subsubsection}{\numberline {G.2.1}\nobreakspace {}ww3\_strt.inp}{G.37}{subsubsection.G.2.1}
+\contentsline {subsection}{\numberline {G.3}\nobreakspace {}ww3\_bound}{G.39}{subsection.G.3}
+\contentsline {subsubsection}{\numberline {G.3.1}\nobreakspace {}ww3\_bound.inp}{G.39}{subsubsection.G.3.1}
+\contentsline {subsection}{\numberline {G.4}\nobreakspace {}ww3\_bounc}{G.40}{subsection.G.4}
+\contentsline {subsubsection}{\numberline {G.4.1}\nobreakspace {}ww3\_bounc.inp}{G.40}{subsubsection.G.4.1}
+\contentsline {subsubsection}{\numberline {G.4.2}\nobreakspace {}ww3\_bounc.nml}{G.41}{subsubsection.G.4.2}
+\contentsline {subsection}{\numberline {G.5}\nobreakspace {}ww3\_prep}{G.42}{subsection.G.5}
+\contentsline {subsubsection}{\numberline {G.5.1}\nobreakspace {}ww3\_prep.inp}{G.42}{subsubsection.G.5.1}
+\contentsline {subsection}{\numberline {G.6}\nobreakspace {}ww3\_prnc}{G.44}{subsection.G.6}
+\contentsline {subsubsection}{\numberline {G.6.1}\nobreakspace {}ww3\_prnc.inp}{G.44}{subsubsection.G.6.1}
+\contentsline {subsubsection}{\numberline {G.6.2}\nobreakspace {}ww3\_prnc.nml}{G.46}{subsubsection.G.6.2}
+\contentsline {subsection}{\numberline {G.7}\nobreakspace {}ww3\_prtide}{G.48}{subsection.G.7}
+\contentsline {subsubsection}{\numberline {G.7.1}\nobreakspace {}ww3\_prtide.inp}{G.48}{subsubsection.G.7.1}
+\contentsline {subsection}{\numberline {G.8}\nobreakspace {}ww3\_shel}{G.49}{subsection.G.8}
+\contentsline {subsubsection}{\numberline {G.8.1}\nobreakspace {}ww3\_shel.inp}{G.49}{subsubsection.G.8.1}
+\contentsline {subsubsection}{\numberline {G.8.2}\nobreakspace {}ww3\_shel.nml}{G.58}{subsubsection.G.8.2}
+\contentsline {subsection}{\numberline {G.9}\nobreakspace {}ww3\_gspl}{G.66}{subsection.G.9}
+\contentsline {subsubsection}{\numberline {G.9.1}\nobreakspace {}ww3\_gspl.inp}{G.66}{subsubsection.G.9.1}
+\contentsline {subsection}{\numberline {G.10}\nobreakspace {}ww3\_multi}{G.67}{subsection.G.10}
+\contentsline {subsubsection}{\numberline {G.10.1}\nobreakspace {}ww3\_multi.inp}{G.67}{subsubsection.G.10.1}
+\contentsline {subsubsection}{\numberline {G.10.2}\nobreakspace {}ww3\_multi.nml}{G.72}{subsubsection.G.10.2}
+\contentsline {subsection}{\numberline {G.11}\nobreakspace {}ww3\_gint}{G.80}{subsection.G.11}
+\contentsline {subsubsection}{\numberline {G.11.1}\nobreakspace {}ww3\_gint.inp}{G.80}{subsubsection.G.11.1}
+\contentsline {subsection}{\numberline {G.12}\nobreakspace {}ww3\_outf}{G.81}{subsection.G.12}
+\contentsline {subsubsection}{\numberline {G.12.1}\nobreakspace {}ww3\_outf.inp}{G.81}{subsubsection.G.12.1}
+\contentsline {subsection}{\numberline {G.13}\nobreakspace {}ww3\_ounf}{G.82}{subsection.G.13}
+\contentsline {subsubsection}{\numberline {G.13.1}\nobreakspace {}ww3\_ounf.inp}{G.82}{subsubsection.G.13.1}
+\contentsline {subsubsection}{\numberline {G.13.2}\nobreakspace {}ww3\_ounf.nml}{G.85}{subsubsection.G.13.2}
+\contentsline {subsection}{\numberline {G.14}\nobreakspace {}gx\_outf}{G.87}{subsection.G.14}
+\contentsline {subsubsection}{\numberline {G.14.1}\nobreakspace {}gx\_outf.inp}{G.87}{subsubsection.G.14.1}
+\contentsline {subsection}{\numberline {G.15}\nobreakspace {}ww3\_grib}{G.88}{subsection.G.15}
+\contentsline {subsubsection}{\numberline {G.15.1}\nobreakspace {}ww3\_grib.inp}{G.88}{subsubsection.G.15.1}
+\contentsline {subsection}{\numberline {G.16}\nobreakspace {}ww3\_outp}{G.89}{subsection.G.16}
+\contentsline {subsubsection}{\numberline {G.16.1}\nobreakspace {}ww3\_outp.inp}{G.89}{subsubsection.G.16.1}
+\contentsline {subsection}{\numberline {G.17}\nobreakspace {}ww3\_ounp}{G.93}{subsection.G.17}
+\contentsline {subsubsection}{\numberline {G.17.1}\nobreakspace {}ww3\_ounp.inp}{G.93}{subsubsection.G.17.1}
+\contentsline {subsubsection}{\numberline {G.17.2}\nobreakspace {}ww3\_ounp.nml}{G.96}{subsubsection.G.17.2}
+\contentsline {subsection}{\numberline {G.18}\nobreakspace {}gx\_outp}{G.100}{subsection.G.18}
+\contentsline {subsubsection}{\numberline {G.18.1}\nobreakspace {}gx\_outp.inp}{G.100}{subsubsection.G.18.1}
+\contentsline {subsection}{\numberline {G.19}\nobreakspace {}ww3\_trck}{G.101}{subsection.G.19}
+\contentsline {subsubsection}{\numberline {G.19.1}\nobreakspace {}ww3\_trck.inp}{G.101}{subsubsection.G.19.1}
+\contentsline {subsection}{\numberline {G.20}\nobreakspace {}ww3\_trnc}{G.102}{subsection.G.20}
+\contentsline {subsubsection}{\numberline {G.20.1}\nobreakspace {}ww3\_trnc.inp}{G.102}{subsubsection.G.20.1}
+\contentsline {subsubsection}{\numberline {G.20.2}\nobreakspace {}ww3\_trnc.nml}{G.102}{subsubsection.G.20.2}
+\contentsline {subsection}{\numberline {G.21}\nobreakspace {}ww3\_systrk}{G.104}{subsection.G.21}
+\contentsline {subsubsection}{\numberline {G.21.1}\nobreakspace {}ww3\_systrk.inp}{G.104}{subsubsection.G.21.1}
+\contentsline {subsection}{\numberline {G.22}\nobreakspace {}ww3\_uprstr}{G.105}{subsection.G.22}
+\contentsline {subsubsection}{\numberline {G.22.1}\nobreakspace {}ww3\_uprstr.inp}{G.105}{subsubsection.G.22.1}

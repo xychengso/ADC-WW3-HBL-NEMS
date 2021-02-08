@@ -1,0 +1,1652 @@
+\begin{thebibliography}{308}
+\itemsep 0mm 
+
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Abdalla and Bidlot(2002)}]{rep:AB02}
+Abdalla, S., and J.~R. Bidlot (2002), Wind gustiness and air density effects
+  and other key changes to wave model in {CY25R1}, \textit{Tech. Rep.
+  Memomrandum R60.9/SA/0273}, Research Department, ECMWF, Reading, U. K.
+
+\bibitem[{Abdolali et~al.(2018)Abdolali, Roland, {van der Westhuysen}, Ma, and
+  Chawla}]{rep:Abdolalli2018}
+Abdolali, A., A.~Roland, A.~{van der Westhuysen}, Z.~Ma, and A.~Chawla (2018),
+  Wind wave modeling of storm-induced hurricanes using implicit scheme in
+  {WAVEWATCH III} model over large scale resolved bathymetries, modeling of
+  storm-induced hurricanes inundation through a comprehensive flexible coupling
+  framework, \textit{98th AMS Annual Meeting - American Meteorological
+  Society}, {A}ustin, TX, USA.
+
+\bibitem[{Abdolali et~al.(2019)Abdolali, Roland, {van der Westhuysen}, Chawla,
+  Moghimi, and Vinogradov}]{rep:Abdolalli2019}
+Abdolali, A., A.~Roland, A.~{van der Westhuysen}, A.~Chawla, S.~Moghimi, and
+  S.~Vinogradov (2019), On the comparison of implicit with explicit schemes in
+  {WAVEWATCH III}, \textit{99th AMS Annual Meeting - American Meteorological
+  Society}, {P}hoenix, AZ, USA.
+
+\bibitem[{Aboulali et~al.(2019)Aboulali, Roland, {van der Westhuysen}, Meixner,
+  Chawla, Hesser, and Smith}]{AbdolaliEtAl2019OM}
+Aboulali, A., A.~Roland, A.~{van der Westhuysen}, J.~Meixner, A.~Chawla, T.~J.
+  Hesser, and J.~M. Smith (2019), Large-scale hurricane modeling using domain
+  decomposition parallelization and implicit scheme implemented in {WAVEWATCH
+  III} wave model, \textit{Ocean Modeling}, {\bf under review}.
+
+\bibitem[{Alves and Banner(2003)}]{art:AB03}
+Alves, J.-H.~G., and M.~L. Banner (2003), Performance of a saturation-based
+  dissipation-rate source term in modeling the fetch-limited evolution of wind
+  waves, \textit{J. Phys. Oceanogr.}, {\bf 33}(6), 1274--1298,
+  \doi{10.1175/1520-0485(2003)033<1274:POASDS>2.0.CO;2}.
+
+\bibitem[{Alves et~al.(2003)Alves, Banner, and Young}]{art:AlET03}
+Alves, J. H.~G., M.~L. Banner, and I.~R. Young (2003), Revisiting the
+  pierson--moskowitz asymptotic limits for fully developed wind waves,
+  \textit{Journal of physical oceanography}, {\bf 33}(7), 1301--1323.
+
+\bibitem[{Alves et~al.(2014)Alves, Chawla, Tolman, Schwab, Lang, and
+  Mann}]{art:AET13}
+Alves, J.-H. G.~M., A.~Chawla, H.~L. Tolman, D.~Schwab, G.~Lang, and G.~Mann
+  (2014), The operational implementation of a great lakes wave forecasting
+  system at noaa/ncep, \textit{Weather and Forecasting}, {\bf 29}(6),
+  1473--1497, \doi{10.1175/WAF-D-12-00049.1}.
+
+\bibitem[{Ardhuin and Boyer(2006)}]{art:AL06}
+Ardhuin, F., and A.~Boyer (2006), Numerical modelling of sea states: validation
+  of spectral shapes (in {F}rench), \textit{Navigation}, {\bf 54}, 55--71.
+
+\bibitem[{Ardhuin and Herbers(2002)}]{art:AH02}
+Ardhuin, F., and T.~H.~C. Herbers (2002), Bragg scattering of random surface
+  gravity waves by irregular seabed topography, \textit{J. Fluid Mech.}, {\bf
+  451}, 1--33.
+
+\bibitem[{Ardhuin and Jenkins(2006)}]{art:AJ06}
+Ardhuin, F., and A.~D. Jenkins (2006), On the interaction of surface waves and
+  upper ocean turbulence, \textit{J. Phys. Oceanogr.}, {\bf 36}(3), 551--557.
+
+\bibitem[{Ardhuin and Magne(2007)}]{art:AM07}
+Ardhuin, F., and R.~Magne (2007), Scattering of surface gravity waves by bottom
+  topography with a current, \textit{J. Fluid Mech.}, {\bf 576}, 235--264.
+
+\bibitem[{Ardhuin and Roland(2012)}]{art:AR12}
+Ardhuin, F., and A.~Roland (2012), Coastal wave reflection, directional spread,
+  and seismoacoustic noise sources, \textit{J. Geophys. Res.}, {\bf 117},
+  C00J20.
+
+\bibitem[{Ardhuin et~al.()Ardhuin, Boutin, Stopa, Girard-Ardhuin, Melsheimer,
+  Thomson, Kohout, Doble, and Wadhams}]{Aea18}
+Ardhuin, F., G.~Boutin, J.~Stopa, F.~Girard-Ardhuin, C.~Melsheimer, J.~Thomson,
+  A.~Kohout, M.~Doble, and P.~Wadhams (), Wave attenuation through an arctic
+  marginal ice zone on 12 october 2015: 2. numerical modeling of waves and
+  associated ice breakup, \textit{J. Geophys. Res.}, {\bf 123}(8), 5652--5668,
+  \doi{10.1002/2018JC013784}.
+
+\bibitem[{Ardhuin et~al.(2003)Ardhuin, O'Reilly, Herbers, and
+  Jessen}]{art:Aea03a}
+Ardhuin, F., W.~C. O'Reilly, T.~H.~C. Herbers, and P.~F. Jessen (2003), Swell
+  transformation across the continental shelf. {P}art {I}: {A}ttenuation and
+  directional broadening, \textit{J. Phys. Oceanogr.}, {\bf 33}, 1,921--1,939.
+
+\bibitem[{Ardhuin et~al.(2009{\natexlab{a}})Ardhuin, Chapron, and
+  Collard}]{art:ACC09}
+Ardhuin, F., B.~Chapron, and F.~Collard (2009{\natexlab{a}}), Ocean swell
+  evolution from distant storms, \textit{Geophys. Res. Lett.}, {\bf 36},
+  \doi{10.1029/2008GL037030}.
+
+\bibitem[{Ardhuin et~al.(2009{\natexlab{b}})Ardhuin, Mari{\'e}, Rascle, Forget,
+  and Roland}]{art:Aea09}
+Ardhuin, F., L.~Mari{\'e}, N.~Rascle, P.~Forget, and A.~Roland
+  (2009{\natexlab{b}}), Observation and estimation of {L}agrangian, {S}tokes
+  and {E}ulerian currents induced by wind and waves at the sea surface,
+  \textit{J. Phys. Oceanogr.}, {\bf 39}(11), 2,820--2,838.
+
+\bibitem[{Ardhuin et~al.(2010)Ardhuin, Rogers, Babanin, Filipot, Magne, Roland,
+  {van der Westhuysen}, Queffeulou, Lefevre, Aouf, and Collard}]{art:Aea10}
+Ardhuin, F., W.~E. Rogers, A.~V. Babanin, J.~Filipot, R.~Magne, A.~Roland,
+  A.~{van der Westhuysen}, P.~Queffeulou, J.~Lefevre, L.~Aouf, and F.~Collard
+  (2010), Semiempirical dissipation source functions for ocean waves. {Part I}:
+  {D}efinition, calibration, and validation, \textit{J. Phys. Oceanogr.}, {\bf
+  40}, 1,917--1,941.
+
+\bibitem[{Ardhuin et~al.(2011{\natexlab{a}})Ardhuin, Hanafin, Quilfen, Chapron,
+  Queffeulou, Obrebski, Sienkiewicz, and Vandermark}]{pro:Aea11}
+Ardhuin, F., J.~Hanafin, Y.~Quilfen, B.~Chapron, P.~Queffeulou, M.~Obrebski,
+  J.~Sienkiewicz, and D.~Vandermark (2011{\natexlab{a}}), Calibration of the
+  {IOWAGA} global wave hindcast (1991-2011) using {ECMWF} and {CFSR} winds, in
+  \textit{Proc. 12th Int. Workshop on Wave Forecasting and Hindcasting}, pp.
+  1--13.
+
+\bibitem[{Ardhuin et~al.(2011{\natexlab{b}})Ardhuin, Tournadre, Queffelou, and
+  Girard-Ardhuin}]{art:Aea11}
+Ardhuin, F., J.~Tournadre, P.~Queffelou, and F.~Girard-Ardhuin
+  (2011{\natexlab{b}}), Observation and parameterization of small icebergs:
+  {D}rifting breakwaters in the {S}outhern {O}cean, \textit{Ocean Mod.}, {\bf
+  39}, 405--410.
+
+\bibitem[{Ardhuin et~al.(2014)Ardhuin, Rawat, and Aucan}]{art:Aea14}
+Ardhuin, F., A.~Rawat, and J.~Aucan (2014), A numerical model for free
+  infragravity waves: definition and validation at regional and global scales,
+  \textit{Ocean Mod.}, {\bf 77}, 20--32.
+
+\bibitem[{Ardhuin et~al.(2015)Ardhuin, Collard, Chapron, Girard-Ardhuin,
+  Guitton, Mouche, and Stopa}]{art:Aea15}
+Ardhuin, F., F.~Collard, B.~Chapron, F.~Girard-Ardhuin, G.~Guitton, A.~Mouche,
+  and J.~Stopa (2015), Estimates of ocean wave heights and attenuation in sea
+  ice using the {SAR} wave mode on {S}entinel-1{A}, \textit{Geophys. Res.
+  Lett.}, {\bf 42}, 2,317--2,325, \doi{10.1002/2014GL062940}.
+
+\bibitem[{Ardhuin et~al.(2016)Ardhuin, Sutherland, Doble, and
+  Wadhams}]{art:Aea16}
+Ardhuin, F., P.~Sutherland, M.~Doble, and P.~Wadhams (2016), Ocean waves across
+  the {A}rctic: {A}ttenuation due to dissipation dominates over scattering for
+  periods longer than 19 s, \textit{Geophys. Res. Lett.}, {\bf 43}(11),
+  5775--5783, \doi{10.1002/2016GL068204}.
+
+\bibitem[{Babanin et~al.(2011)Babanin, Hsu, Roland, Ou, Doong, and
+  Kao}]{art:babanin2011}
+Babanin, A., T.-W. Hsu, A.~Roland, S.-H. Ou, D.-J. Doong, and C.~Kao (2011),
+  Spectral wave modelling of typhoon krosa, \textit{Natural Hazards and Earth
+  System Sciences}, {\bf 11}(2), 501--511.
+
+\bibitem[{Babanin(2009)}]{art:Bab09}
+Babanin, A.~V. (2009), Breaking of ocean surface waves, \textit{Acta Phys.
+  Slovaca}, {\bf 59}(4), 305--535.
+
+\bibitem[{Babanin(2011)}]{bk:Bab11}
+Babanin, A.~V. (2011), \textit{Breaking and dissipation of ocean surface
+  waves}, Cambridge University Press, 480 pp.
+
+\bibitem[{Babanin and Soloviev(1987)}]{art:BS87}
+Babanin, A.~V., and Y.~P. Soloviev (1987), Parameterization of width of
+  directional energy distributions of wind-generated waves at limited fetches,
+  \textit{Izvestiya, Atmos. and Oceanic Phys.}, {\bf 23}, 645--651.
+
+\bibitem[{Babanin and Young(2005)}]{pro:BY05}
+Babanin, A.~V., and I.~R. Young (2005), Two-phase behaviour of the spectral
+  dissipation of wind waves, in \textit{Proc. Fifth Int. Symp. Ocean Waves
+  Measurement and Analysis}.
+
+\bibitem[{Babanin et~al.(2001)Babanin, Young, and Banner}]{art:BBY01}
+Babanin, A.~V., I.~R. Young, and M.~L. Banner (2001), Breaking probabilities
+  for dominant surface waves on water of finite constant depth, \textit{J.
+  Geophys. Res.}, {\bf 106}, 11,659--11,676, \doi{10.1029/2000JC000215}.
+
+\bibitem[{Babanin et~al.(2007)Babanin, Banner, Young, and Donelan}]{art:Bea07}
+Babanin, A.~V., M.~L. Banner, I.~R. Young, and M.~A. Donelan (2007),
+  Wave-follower field measurements of the wind-input spectral function. {P}art
+  iii: {P}arameterization of the wind-input enhancement due to wave breaking,
+  \textit{J. Phys. Oceanogr.}, {\bf 37}, 2,764--2,775.
+
+\bibitem[{Babanin et~al.(2010)Babanin, Tsagareli, Young, and
+  Walker}]{art:Bea10}
+Babanin, A.~V., K.~N. Tsagareli, I.~R. Young, and D.~J. Walker (2010),
+  Numerical investigation of spectral evolution of wind waves. {Part II}:
+  {D}issipation term and evolution tests, \textit{J. Phys. Oceanogr.}, {\bf
+  40}, 667--683.
+
+\bibitem[{Banner and Peirson(1998)}]{art:BP98}
+Banner, M.~L., and W.~L. Peirson (1998), Tangential stress beneath wind-driven
+  air--water interfaces, \textit{J. Fluid Mech.}, {\bf 364}, 115--145.
+
+\bibitem[{Banner et~al.(2000)Banner, Babanin, and Young}]{art:BBY00}
+Banner, M.~L., A.~V. Babanin, and I.~R. Young (2000), Breaking probability for
+  dominant waves on the sea surface, \textit{J. Phys. Oceanogr.}, {\bf 30},
+  3,145--3,160.
+
+\bibitem[{Barbariol et~al.(2015)Barbariol, Benetazzo, Carniel, and
+  Sclavo}]{Baet15}
+Barbariol, F., A.~Benetazzo, S.~Carniel, and M.~Sclavo (2015), Space-time wave
+  extremes: {T}he role of metocean forcings, \textit{J. Phys. Oceanogr.}, {\bf
+  45}(7), 1,897--1,916, \doi{10.1175/JPO-D-14-0232.1}.
+
+\bibitem[{Barbariol et~al.(2016)Barbariol, Alves, Benetazzo, Bergamasco,
+  Bertotti, Carniel, Cavaleri, Chao, Chawla, Ricchi, Sclavo, and
+  Tolman}]{Baet16}
+Barbariol, F., J.-H. G.~M. Alves, A.~Benetazzo, F.~Bergamasco, L.~Bertotti,
+  S.~Carniel, L.~Cavaleri, Y.~Y. Chao, A.~Chawla, A.~Ricchi, M.~Sclavo, and
+  H.~L. Tolman (2016), Numerical modeling of space-time wave extremes using
+  {WAVEWATCH III}, \textit{Ocean Dynamics}, {\bf Under rev.}
+
+\bibitem[{Battjes and Janssen(1978)}]{pro:BJ78}
+Battjes, J.~A., and J.~P. F.~M. Janssen (1978), Energy loss and set-up due to
+  breaking of random waves, in \textit{Proc. 16th Int. Conf. Coastal Eng.}, pp.
+  569--587, ASCE.
+
+\bibitem[{Benetazzo et~al.(2015)Benetazzo, Barbariol, Bergamasco, Torsello,
+  Carniel, and Sclavo}]{Beet15}
+Benetazzo, A., F.~Barbariol, F.~Bergamasco, A.~Torsello, S.~Carniel, and
+  M.~Sclavo (2015), Observation of extreme sea waves in a space-time ensemble,
+  \textit{J. Phys. Oceanogr.}, {\bf 45}(9), 2,261--2,275,
+  \doi{10.1175/JPO-D-15-0017.1}.
+
+\bibitem[{Bennetts and Squire(2012)}]{art:Ben12}
+Bennetts, L.~G., and V.~A. Squire (2012), On the calculation of an attenuation
+  coefficient for transects of ice-covered ocean, \textit{Proc. R. Soc. A},
+  {\bf 468}(2137), 136--162.
+
+\bibitem[{Bertin et~al.(2014)Bertin, Li, Roland, Zhang, Breilh, and
+  Chaumillon}]{art:bertin2014}
+Bertin, X., K.~Li, A.~Roland, Y.~J. Zhang, J.~F. Breilh, and E.~Chaumillon
+  (2014), A modeling-based analysis of the flooding associated with xynthia,
+  central bay of biscay, \textit{Coastal Engineering}, {\bf 94}, 80--89.
+
+\bibitem[{Bertin et~al.(2015)Bertin, Li, Roland, and Bidlot}]{art:bertin2015}
+Bertin, X., K.~Li, A.~Roland, and J.-R. Bidlot (2015), The contribution of
+  short-waves in storm surges: Two case studies in the bay of biscay,
+  \textit{Continental Shelf Research}, {\bf 96}, 1--15.
+
+\bibitem[{Bidlot(2001)}]{Bidlot2001}
+Bidlot, J.-R. (2001), Ecmwf wave-model products, \textit{ECMWF Newsletter},
+  (91).
+
+\bibitem[{Bidlot(2012)}]{pro:Bid12}
+Bidlot, J.-R. (2012), Present status of wave forecasting at {E.C.M.W.F.}, in
+  \textit{Proceedings of {ECMWF} workshop on ocean wave forecasting, June}.
+
+\bibitem[{Bidlot et~al.(2005)Bidlot, Abdalla, and Janssen}]{rep:Bea05}
+Bidlot, J.~R., S.~Abdalla, and P.~A. E.~M. Janssen (2005), A revised
+  formulation for ocean wave dissipation in {CY25R1}, \textit{Tech. Rep.
+  Memorandum R60.9/JB/0516}, Research Department, ECMWF, Reading, U. K.
+
+\bibitem[{Bidlot et~al.(2007)Bidlot, Janssen, and Abdalla}]{rep:Bea07}
+Bidlot, J.~R., P.~A. E.~M. Janssen, and S.~Abdalla (2007), A revised
+  formulation of ocean wave dissipation and its model impact, \textit{Tech.
+  Rep. Memorandum 509}, ECMWF, Reading, U. K.
+
+\bibitem[{Booij and Holthuijsen(1987)}]{art:BH87}
+Booij, N., and L.~H. Holthuijsen (1987), Propagation of ocean waves in discrete
+  spectral wave models, \textit{J. Comput. Physics}, {\bf 68}, 307--326.
+
+\bibitem[{Booij et~al.(1999)Booij, Ris, and Holthuijsen}]{art:BRH99}
+Booij, N., R.~C. Ris, and L.~H. Holthuijsen (1999), A third-generation wave
+  model for coastal regions, 1. {M}odel description and validation, \textit{J.
+  Geophys. Res.}, {\bf 104}, 7,649--7,666.
+
+\bibitem[{Boutin et~al.(2018)Boutin, Ardhuin, Dumont, Sévigny, Girard-Ardhuin,
+  and Accensi}]{art:Bea18}
+Boutin, G., F.~Ardhuin, D.~Dumont, C.~Sévigny, F.~Girard-Ardhuin, and
+  M.~Accensi (2018), Floe size effect on wave-ice interactions: Possible
+  effects, implementation in wave model, and evaluation, \textit{Journal of
+  Geophysical Research: Oceans}, {\bf 123}(7), 4779--4805,
+  \doi{10.1029/2017JC013622}.
+
+\bibitem[{Bouws and Komen(1983)}]{art:BK83}
+Bouws, E., and G.~J. Komen (1983), On the balance between growth and
+  dissipation in an extreme depth-limited wind-sea in the southern {N}orth
+  {S}ea, \textit{J. Phys. Oceanogr.}, {\bf 13}, 1,653--1,658.
+
+\bibitem[{Bretherthon and Garrett(1968)}]{art:BG68}
+Bretherthon, F.~P., and C.~J.~R. Garrett (1968), Wave trains in inhomogeneous
+  moving media, \textit{Proc. Roy. Soc. London}, {\bf A 302}, 529--554.
+
+\bibitem[{Bunney et~al.(2013)Bunney, Saulter, and Palmer}]{pro:BSP13}
+Bunney, C.~C., A.~Saulter, and T.~Palmer (2013), Reconstruction of complex 2{D}
+  wave spectra for rapid deployment of nearshore wave models, in \textit{Marine
+  Structures and Breakwaters 2013}, Institute of Civil Engineers.
+
+\bibitem[{Cahyono(1994)}]{PhD:Cah}
+Cahyono (1994), \textit{Three-dimensional numerical modelling of sediment
+  transport processes in non-stratified estuarine and coastal waters}, ph.D.
+  Thesis, University of Bradford, 315~pp.
+
+\bibitem[{Cavaleri and Malanotte-{R}izzoli(1981)}]{art:CMR81}
+Cavaleri, L., and P.~Malanotte-{R}izzoli (1981), Wind-wave prediction in
+  shallow water: {T}heory and applications., \textit{J. Geophys. Res.}, {\bf
+  86}, 10,961--10,973.
+
+\bibitem[{Chalikov(1995)}]{art:Cha95}
+Chalikov, D.~V. (1995), The parameterization of the wave boundary layer,
+  \textit{J. Phys. Oceanogr.}, {\bf 25}, 1,333--1,349.
+
+\bibitem[{Chalikov and Belevich(1993)}]{art:CB93}
+Chalikov, D.~V., and M.~Y. Belevich (1993), One-dimensional theory of the wave
+  boundary layer, \textit{Bound. Layer Meteor.}, {\bf 63}, 65--96.
+
+\bibitem[{Charnock(1955)}]{art:Cha55}
+Charnock, H. (1955), Wind stress on a water surface, \textit{Quart. J. Roy.
+  Meteor. Soc.}, {\bf 81}, 639--640.
+
+\bibitem[{Chawla and Tolman(2007)}]{tol:MMAB07a}
+Chawla, A., and H.~L. Tolman (2007), Automated grid generation for {WAVEWATCH
+  III}, \textit{Tech. Note 254}, {NOAA/NWS/NCEP/MMAB}, 71 pp.
+
+\bibitem[{Chawla and Tolman(2008)}]{tol:OMOD08a}
+Chawla, A., and H.~L. Tolman (2008), Obstruction grids for spectral wave
+  models, \textit{Ocean Mod.}, {\bf 22}, 12--25.
+
+\bibitem[{Chawla et~al.(2013)Chawla, Tolman, Gerald, Spindler, Spindler, Alves,
+  Cao, Hanson, and Devaliere}]{art:CET13a}
+Chawla, A., H.~L. Tolman, V.~Gerald, D.~Spindler, T.~Spindler, J.-H.~G. Alves,
+  D.~Cao, J.~L. Hanson, and E.-M. Devaliere (2013), A multigrid wave
+  forecasting model: A new paradigm in operational wave forecasting,
+  \textit{Weather and Forecasting}, {\bf 28}(4), 1057--1078.
+
+\bibitem[{Cheng et~al.(2017)Cheng, Rogers, Thomson, Smith, Doble, Wadhams,
+  Kohout, Lund, Persson, Collins, Ackley, Montiel, and Shen}]{art:CRT17}
+Cheng, S., W.~E. Rogers, J.~Thomson, M.~Smith, M.~J. Doble, P.~Wadhams, A.~L.
+  Kohout, B.~Lund, O.~P. Persson, C.~O. Collins, S.~F. Ackley, F.~Montiel, and
+  H.~H. Shen (2017), Calibrating a viscoelastic sea ice model for wave
+  propagation in the {A}rctic fall marginal ice zone, \textit{J. Geophys.
+  Res.}, {\bf 122}, 8770--8793, \doi{https://doi.org/10.1002/2017JC013275}.
+
+\bibitem[{Christoffersen(1982)}]{rep:Chr82}
+Christoffersen, J.~B. (1982), Current depth refraction of dissipative water
+  waves, \textit{Series Paper~30}, Institute of Hydrodynamics and Hydraulic
+  Engineering, Techn. Univ. Denmark.
+
+\bibitem[{Cole et~al.(1998)Cole, Johnson, and Durell}]{art:Cea98}
+Cole, D., R.~Johnson, and G.~Durell (1998), Cyclic loading and creep response
+  of aligned first-year sea ice, \textit{J. Geophys. Res.}, {\bf 103}(C10),
+  21,751--21,758.
+
+\bibitem[{Collins and Rogers(2017)}]{rep:CR17}
+Collins, C.~O., and W.~E. Rogers (2017), A source term for wave attenuation by
+  sea ice in {WAVEWATCH III}$^{\textregistered}$ : {IC4}, \textit{NRL
+  Memorandum Report NRL/MR/7320--17-9726}, {N}aval {R}esearch {L}aboratory,
+  {S}tennis {S}pace {C}enter, {MS}, 25 pp., www7320.nrlssc.navy.mil/pubs.php.
+
+\bibitem[{Dalrymple and Liu(1978)}]{art:DL78}
+Dalrymple, R.~A., and P.~L.~F. Liu (1978), Waves over soft muds: {A} two-layer
+  fluid model, \textit{J. Phys. Oceanogr.}, {\bf 986}, 1,121--1,131.
+
+\bibitem[{Davis and More(1982)}]{art:DM82}
+Davis, R.~W., and E.~F. More (1982), A numerical study of vortex shedding from
+  rectangles, \textit{J. Fluid Mech.}, {\bf 116}, 475--506.
+
+\bibitem[{Devaliere et~al.(2009)Devaliere, Hanson, and Luettich}]{pro:DHL09}
+Devaliere, E.~M., J.~L. Hanson, and R.~Luettich (2009), Spatial tracking of
+  numerical wave model output using a spiral search algorithm, in \textit{2009
+  {WRI} World Congress on Computer Science and Information Engineering, Los
+  Angeles, CA}, vol.~2, pp. 404--408, \doi{10.1109/CSIE.2009.1021}.
+
+\bibitem[{Doble and Bidlot(2013)}]{art:DB13}
+Doble, M.~J., and J.-R. Bidlot (2013), Wave buoy measurements at the
+  {A}ntarctic sea ice edge compared with an enhanced {ECMWF WAM}: Progress
+  towards global waves-in-ice modelling, \textit{Ocean Mod.}, {\bf 70},
+  166--173.
+
+\bibitem[{Doble et~al.(2015)Doble, Carolis, Meylan, Bidlot, and
+  Wadhams}]{art:Dob15}
+Doble, M.~J., G.~D. Carolis, M.~H. Meylan, J.-R. Bidlot, and P.~Wadhams (2015),
+  Relating wave attenuation to pancake ice thickness, using field measurements
+  and model results, \textit{Geophys. Res. Lett.}, {\bf 42}, 4473--4481,
+  \doi{10.1002/2015GL063628}.
+
+\bibitem[{Dodet et~al.(2013)Dodet, Bertin, Bruneau, Fortunato, Nahon, and
+  Roland}]{art:dodet2013}
+Dodet, G., X.~Bertin, N.~Bruneau, A.~B. Fortunato, A.~Nahon, and A.~Roland
+  (2013), Wave-current interactions in a wave-dominated tidal inlet,
+  \textit{Journal of Geophysical Research: Oceans}, {\bf 118}(3), 1587--1605.
+
+\bibitem[{Donelan(1999)}]{pro:Don99}
+Donelan, M.~A. (1999), Wind-induced growth and attenuation of laboratory waves,
+  in \textit{Wind-over-wave couplings: {P}erspectives and prospects}, pp.
+  183--194, Clarendon Press.
+
+\bibitem[{Donelan(2001)}]{pro:Don01}
+Donelan, M.~A. (2001), A nonlinear dissipation function due to wave breaking,
+  in \textit{Proc. {ECMWF} Workshop on Ocean Wave Forecasting}, pp. 87--94.
+
+\bibitem[{Donelan et~al.(2006)Donelan, Babanin, Young, and Banner}]{art:Dea06}
+Donelan, M.~A., A.~V. Babanin, I.~R. Young, and M.~L. Banner (2006), Wave
+  follower measurements of the wind-input spectral function. {Part II.}
+  {P}arameterization of the wind input, \textit{J. Phys. Oceanogr.}, {\bf 36},
+  1,672--1,689.
+
+\bibitem[{Donelan et~al.(2012)Donelan, Curcic, Chen, and Magnusson}]{art:Don12}
+Donelan, M.~A., M.~Curcic, S.~S. Chen, and A.~K. Magnusson (2012), Modeling
+  waves and wind stress., \textit{J. Geophys. Res.}, {\bf 117}, 1--26.
+
+\bibitem[{Dore(1978)}]{art:Dore78}
+Dore, B.~D. (1978), Some effects of the air-water interface on gravity waves,
+  \textit{Geophys. Astrophys. Fluid. Dyn.}, {\bf 10}, 215--230.
+
+\bibitem[{Doty(1995)}]{man:GrADS}
+Doty, B. (1995), \textit{The grid analysis and display system {GrADS}}, COLA,
+  http://www.iges.org/grads.
+
+\bibitem[{Dumont et~al.(2011)Dumont, Kohout, and Bertino}]{art:Dea11}
+Dumont, D., A.~Kohout, and L.~Bertino (2011), A wave-based model for the
+  marginal ice zone including a floe breaking parameterization, \textit{J.
+  Geophys. Res.}, {\bf 116}(C4), \doi{10.1029/2010JC006682}, c04001.
+
+\bibitem[{Eldeberky(1995)}]{rep:Eld95}
+Eldeberky, Y. (1995), Personal communication with {R.} {R}is, \textit{Tech.
+  rep.}
+
+\bibitem[{Eldeberky(1996)}]{rep:Eld96}
+Eldeberky, Y. (1996), Nonlinear transformationations of wave spectra in the
+  nearshore zone, Ph.D. thesis, Delft University of Technology, Delft, The
+  Netherlands, 203 pp.
+
+\bibitem[{Eldeberky and Battjes(1996)}]{art:EB96}
+Eldeberky, Y., and J.~A. Battjes (1996), Spectral modelling of wave breaking:
+  {A}pplication to boussinesq equations, \textit{J. Geophys. Res.}, {\bf 101},
+  1,253--1,264.
+
+\bibitem[{Elgar et~al.(1994)Elgar, Herbers, and Guza}]{art:EHG94}
+Elgar, S., T.~H.~C. Herbers, and R.~T. Guza (1994), Reflection of ocean surface
+  gravity waves from a natural beach, \textit{J. Phys. Oceanogr.}, {\bf 24},
+  1,503--1,511.
+
+\bibitem[{Falconer and Cayhono(1993)}]{pro:FC93}
+Falconer, R.~A., and Cayhono (1993), Water quality modelling in well mixed
+  estuaries using higher order accurate differencing schemes, in
+  \textit{Advances in Hydro- Science and Engineering}, edited by S.~S.~Y. Wang,
+  pp. 81--92, CCHE, University of Mississippi.
+
+\bibitem[{Fedele(2012)}]{Fed12sp}
+Fedele, F. (2012), Space--time extremes in short-crested storm seas, \textit{J.
+  Phys. Oceanogr.}, {\bf 42}(9), 1,601--1,615.
+
+\bibitem[{Fedele et~al.(2012)Fedele, Gallego, Yezzi, Benetazzo, Cavaleri,
+  Sclavo, and Bastianini}]{Fed12eu}
+Fedele, F., G.~Gallego, A.~Yezzi, A.~Benetazzo, L.~Cavaleri, M.~Sclavo, and
+  M.~Bastianini (2012), {E}uler characteristics of oceanic sea states,
+  \textit{Mathematics and Computers in Simulation}, {\bf 82}(6), 1,102--1,111.
+
+\bibitem[{Fedele et~al.(2013)Fedele, Benetazzo, Gallego, Shih, Yezzi,
+  Barbariol, and Ardhuin}]{Fed13}
+Fedele, F., A.~Benetazzo, G.~Gallego, P.-C. Shih, A.~Yezzi, F.~Barbariol, and
+  F.~Ardhuin (2013), Space-time measurements of oceanic sea states,
+  \textit{Ocean Mod.}, {\bf 70}, 103--115.
+
+\bibitem[{Ferrarin et~al.(2008)Ferrarin, Umgiesser, Cucco, Hsu, Roland, and
+  Amos}]{art:ferrarin2008}
+Ferrarin, C., G.~Umgiesser, A.~Cucco, T.-W. Hsu, A.~Roland, and C.~L. Amos
+  (2008), Development and validation of a finite element morphological model
+  for shallow water basins, \textit{Coastal Engineering}, {\bf 55}(9),
+  716--731.
+
+\bibitem[{Ferrarin et~al.(2013)Ferrarin, Roland, Bajo, Umgiesser, Cucco,
+  Davolio, Buzzi, Malguzzi, and Drofa}]{art:ferrarin2013}
+Ferrarin, C., A.~Roland, M.~Bajo, G.~Umgiesser, A.~Cucco, S.~Davolio, A.~Buzzi,
+  P.~Malguzzi, and O.~Drofa (2013), Tide-surge-wave modelling and forecasting
+  in the mediterranean sea with focus on the italian coast, \textit{Ocean
+  Mod.}, {\bf 61}, 38--48.
+
+\bibitem[{Filipot and Ardhuin(2012{\natexlab{a}})}]{Filipot&Ardhuin2012}
+Filipot, J.-F., and F.~Ardhuin (2012{\natexlab{a}}), A unified spectral
+  parameterization for wave breaking: from the deep ocean to the surf zone,
+  \textit{J. Geophys. Res.}, {\bf 117}, C00J08, \doi{10.1029/2011JC007784}.
+
+\bibitem[{Filipot and Ardhuin(2012{\natexlab{b}})}]{art:FA12}
+Filipot, J.-F., and F.~Ardhuin (2012{\natexlab{b}}), A unified spectral
+  parameterization for wave breaking: {F}rom the deep ocean to the surf zone,
+  \textit{J. Geophys. Res.}, {\bf 117}(C11).
+
+\bibitem[{Filipot et~al.(2010)Filipot, Ardhuin, and Babanin}]{art:FAB10}
+Filipot, J.-F., F.~Ardhuin, and A.~Babanin (2010), A unified
+  deep-to-shallow-water wave-breaking probability parameterization, \textit{J.
+  Geophys. Res.}, {\bf 115}(C4).
+
+\bibitem[{Fletcher(1988)}]{bk:Fle88}
+Fletcher, C. A.~J. (1988), \textit{Computational techniques for fluid dynamics,
+  part {I} and {II}}, Springer, 484 pp.
+
+\bibitem[{Foreman et~al.(2009)Foreman, Cherniawsky, and Ballantyne}]{art:For09}
+Foreman, M. G.~G., J.~Y. Cherniawsky, and V.~A. Ballantyne (2009), Versatile
+  harmonic tidal analysis: {I}mprovements and applications, \textit{J. Atmos.
+  Oceanic Techn.}, {\bf 26}, 806--817.
+
+\bibitem[{Forristall(1981)}]{Forristall1981}
+Forristall, G.~Z. (1981), {Measurements of a saturated range in ocean wave
+  spectra}, \textit{J. Geophys. Res.}, {\bf 86}(C9), 8075,
+  \doi{10.1029/JC086iC09p08075}.
+
+\bibitem[{Fox and Squire(1994)}]{art:FS1994}
+Fox, C., and V.~A. Squire (1994), {On the oblique reflexion and transmission of
+  ocean waves at shore fast sea ice}, \textit{Philosophical Transactions of the
+  Royal Society A}, {\bf 347}(1682), 185--218, \doi{10.1098/rsta.1994.0044}.
+
+\bibitem[{Goda(1970)}]{art:G70}
+Goda, T. (1970), Numerical experiments on wave statistics with spectral
+  simulation, \textit{Rep. Port Harbour Res. Inst. Jpn.}, {\bf 9}, 3--57.
+
+\bibitem[{Grant and Madsen(1979)}]{art:GM79}
+Grant, W.~D., and O.~S. Madsen (1979), Combined wave and current interaction
+  with a rough bottom, \textit{J. Geophys. Res.}, {\bf 84}, 1,797--1,808.
+
+\bibitem[{Gropp et~al.(1997)Gropp, Lusk, and Skjellum}]{bk:GLS97}
+Gropp, W., E.~Lusk, and A.~Skjellum (1997), \textit{Using {MPI}: {P}ortable
+  parallel programming with the message-passing interface}, MIT Press, 299 pp.
+
+\bibitem[{Hanson and Jensen(2004)}]{pro:HJ04}
+Hanson, J.~L., and R.~E. Jensen (2004), Wave system diagnostics for numerical
+  wave models, in \textit{8$\:^{th}$ international workshop on wave hindcasting
+  and forecasting, {JCOMM} {T}ech. {R}ep. 29, {WMO/TD-No.} 1319}.
+
+\bibitem[{Hanson and Phillips(2001)}]{art:HP01}
+Hanson, J.~L., and O.~M. Phillips (2001), Automated analysis of ocean surface
+  directional wave spectra, \textit{J. Atmos. Oceanic Techn.}, {\bf 18},
+  177--293.
+
+\bibitem[{Hanson et~al.(2006)Hanson, Tracy, Tolman, and Scott}]{tol:Vict06b}
+Hanson, J.~L., B.~A. Tracy, H.~L. Tolman, and D.~Scott (2006), Pacific hindcast
+  performance evaluation of three numerical wave models., in \textit{9$\:^{th}$
+  international workshop on wave hindcasting and forecasting, {JCOMM} {T}ech.
+  {R}ep. 34}, {P}aper {A2}.
+
+\bibitem[{Hanson et~al.(2009)Hanson, Tracy, Tolman, and Scott}]{art:HET09}
+Hanson, J.~L., B.~A. Tracy, H.~L. Tolman, and R.~D. Scott (2009), Pacific
+  hindcast performance of three numerical wave models, \textit{Journal of
+  Atmospheric and Oceanic Technology}, {\bf 26}(8), 1614--1633.
+
+\bibitem[{Hara and Belcher(2004)}]{art:Har04}
+Hara, T., and S.~Belcher (2004), Wind profile and drag coefficient over mature
+  ocean surface wave spectra, \textit{J. Phys. Oceanogr.}, {\bf 34},
+  2345--2358.
+
+\bibitem[{Hardy and Young(1996)}]{art:HY96}
+Hardy, T.~A., and I.~R. Young (1996), Field study of wave attenuation on an
+  offshore coral reef, \textit{J. Geophys. Res.}, {\bf 101}, 14,311--14,326.
+
+\bibitem[{Hardy et~al.(2000)Hardy, Mason, and Mc{C}onochie}]{art:HMM00}
+Hardy, T.~A., L.~B. Mason, and J.~D. Mc{C}onochie (2000), A wave model for the
+  {G}reat {B}arrier {R}eef, \textit{Ocean Eng.}, {\bf 28}, 45--70.
+
+\bibitem[{Hargreaves and Annan(1998)}]{pro:HA98}
+Hargreaves, J.~C., and J.~D. Annan (1998), Integration of source terms in
+  {WAM}, in \textit{Proceedings of the 5th International Workshop on Wave
+  Forecasting and Hindcasting}, pp. 128--133.
+
+\bibitem[{Hargreaves and Annan(2001)}]{art:HA01}
+Hargreaves, J.~C., and J.~D. Annan (2001), Comments on ``{I}mprovement of the
+  short fetch behavior in the ocean wave model ({WAM})'', \textit{J. Atmos.
+  Oceanic Techn.}, {\bf 18}, 711--715.
+
+\bibitem[{Hasselmann(1962)}]{art:Has62}
+Hasselmann, K. (1962), On the non-linear energy transfer in a gravity wave
+  spectrum, {P}art 1. {G}eneral theory, \textit{J. Fluid Mech.}, {\bf 12},
+  481--500.
+
+\bibitem[{Hasselmann(1963{\natexlab{a}})}]{art:Has63a}
+Hasselmann, K. (1963{\natexlab{a}}), On the non-linear transfer in a gravity
+  wave spectrum, {P}art 2, {C}onservation theory, wave-particle correspondence,
+  irreversibility, \textit{J. Fluid Mech.}, {\bf 15}, 273--281.
+
+\bibitem[{Hasselmann(1963{\natexlab{b}})}]{art:Has63b}
+Hasselmann, K. (1963{\natexlab{b}}), On the non-linear transfer in a gravity
+  wave spectrum, {P}art 3. {E}valuation of energy flux and sea-swell
+  interactions for a {N}euman spectrum, \textit{J. Fluid Mech.}, {\bf 15},
+  385--398.
+
+\bibitem[{Hasselmann et~al.(1973)Hasselmann, Barnett, Bouws, Carlson,
+  Cartwright, Enke, Ewing, Gienapp, Hasselmann, Kruseman, Meerburg, M{\"u}ller,
+  Olbers, Richter, Sell, and Walden}]{art:JONSWAP}
+Hasselmann, K., T.~P. Barnett, E.~Bouws, H.~Carlson, D.~E. Cartwright, K.~Enke,
+  J.~A. Ewing, H.~Gienapp, D.~E. Hasselmann, P.~Kruseman, A.~Meerburg,
+  P.~M{\"u}ller, D.~J. Olbers, K.~Richter, W.~Sell, and H.~Walden (1973),
+  Measurements of wind-wave growth and swell decay during the {J}oint {N}orth
+  {S}ea {W}ave {P}roject {(JONSWAP)}, \textit{Erg{\"a}nzungsheft zur Deutschen
+  Hydrographischen Zeitschrift, Reihe A(8)}, {\bf 12}, 95 pp.
+
+\bibitem[{Hasselmann and Hasselmann(1985)}]{art:Hea85a}
+Hasselmann, S., and K.~Hasselmann (1985), Computations and parameterizations of
+  the nonlinear energy transfer in a gravity-wave spectrum, {Part I:} {A} new
+  method for efficient computations of the exact nonlinear transfer integral,
+  \textit{J. Phys. Oceanogr.}, {\bf 15}, 1,369--1,377.
+
+\bibitem[{Hasselmann et~al.(1985)Hasselmann, Hasselmann, Allender, and
+  Barnett}]{art:Hea85b}
+Hasselmann, S., K.~Hasselmann, J.~H. Allender, and T.~P. Barnett (1985),
+  Computations and parameterizations of the nonlinear energy transfer in a
+  gravity-wave spectrum, {Part II:} {P}arameterizations of the nonlinear energy
+  transfer for application in wave models, \textit{J. Phys. Oceanogr.}, {\bf
+  15}, 1,378--1,391.
+
+\bibitem[{Herbers and Burton(1997)}]{art:HB97}
+Herbers, T. H.~C., and M.~C. Burton (1997), Nonlinear shoaling of directionally
+  spread waves on a beach, \textit{J. Geophys. Res.}, {\bf 102}(C9),
+  21,101--21,114.
+
+\bibitem[{Hersbach and Janssen(1999)}]{art:HJ99}
+Hersbach, H., and P.~A. E.~M. Janssen (1999), Improvement of the short fetch
+  behavior in the wave ocean model ({WAM}), \textit{J. Atmos. Oceanic Techn.},
+  {\bf 16}, 884--892.
+
+\bibitem[{Hersbach and Janssen(2001)}]{art:HJ01}
+Hersbach, H., and P.~A. E.~M. Janssen (2001), Reply to comments on
+  ``{I}mprovement of the short fetch behavior in the wave ocean model
+  {(WAM)}'', \textit{J. Atmos. Oceanic Techn.}, {\bf 18}, 716--721.
+
+\bibitem[{Herterich and Hasselmann(1980)}]{art:HH80}
+Herterich, K., and K.~Hasselmann (1980), A similarity relation for the
+  nonlinear energy transfer in a finite-depth gravity-wave spectrum, \textit{J.
+  Fluid Mech.}, {\bf 97}, 215--224.
+
+\bibitem[{Hino(1968)}]{art:Hino68}
+Hino, M. (1968), Equilibrium-range spectra of sand waves formed by flowing
+  water, \textit{J. Fluid Mech.}, {\bf 34}(3), 565--573.
+
+\bibitem[{Holthuijsen et~al.(2001)Holthuijsen, Booij, Ris, Haagsma,
+  Kieftenburg, and Kriezi}]{man:SWAN3}
+Holthuijsen, L.~H., N.~Booij, R.~C. Ris, I.~G. Haagsma, A.~T. M.~M.
+  Kieftenburg, and E.~E. Kriezi (2001), \textit{{SWAN Cycle III} version 40.11
+  user manual}, Delft University of Technology, Department of Civil
+  Engineering, P.O. Box 5048, 2600 GA Delft, The Netherlands, see
+  http://swan.ct.tudelft.nl.
+
+\bibitem[{Horvat and Tziperman(2015)}]{art:HT15}
+Horvat, C., and E.~Tziperman (2015), A prognostic model of sea-ice floe size
+  and thickness distribution, \textit{The Cryosphere}, {\bf 9}, 2,119--2,134.
+
+\bibitem[{Hwang(2011)}]{art:Hwa11}
+Hwang, P.~A. (2011), A note on the ocean surface roughness spectrum, \textit{J.
+  Atmos. Oceanic Techn.}, {\bf 28}, 436--443.
+
+\bibitem[{J.~Larson(2005)}]{art:LJO05}
+J.~Larson, E.~O., R.~Jacob (2005), The model coupling toolkit: A new fortran90
+  toolkit for building multiphysics parallel coupled models, \textit{Int. J.
+  High Perf. Comp. App.}, {\bf 19}(3), 277--292.
+
+\bibitem[{Janekovic et~al.()Janekovic, Hetzel, Pattiaratchi, Wijeratne, and
+  Roland}]{art:janekovic2015}
+Janekovic, I., Y.~Hetzel, C.~Pattiaratchi, E.~Wijeratne, and A.~Roland (),
+  Unstructured high resolution 2-way coupled storm surge--wave model for
+  western australia.
+
+\bibitem[{Janssen et~al.(1989)Janssen, Lionello, Reistad, and
+  Hollingsworth}]{Janssen1989}
+Janssen, P.~A., P.~Lionello, M.~Reistad, and A.~Hollingsworth (1989), Hindcasts
+  and data assimilation studies with the wam model during the seasat period,
+  \textit{Journal of Geophysical Research: Oceans}, {\bf 94}(C1), 973--993.
+
+\bibitem[{Janssen(1982)}]{art:Jan82}
+Janssen, P. A. E.~M. (1982), Quasilinear approximation for the spectrum of
+  wind-generated water waves, \textit{J. Fluid Mech.}, {\bf 117}, 493--506.
+
+\bibitem[{Janssen(1989)}]{art:Jan89}
+Janssen, P. A. E.~M. (1989), Wind-induced stress and the drag of air-flow over
+  sea waves, \textit{J. Phys. Oceanogr.}, {\bf 19}, 745--754.
+
+\bibitem[{Janssen(1991)}]{art:Jan91}
+Janssen, P. A. E.~M. (1991), Quasi-linear theory of of wind wave generation
+  applied to wave forecasting, \textit{J. Phys. Oceanogr.}, {\bf 21},
+  1,631--1,642.
+
+\bibitem[{Janssen(2004)}]{bk:Jan04}
+Janssen, P. A. E.~M. (2004), \textit{The interaction of ocean waves and wind},
+  300 pp., Cambridge University Press.
+
+\bibitem[{Janssen(2009)}]{art:Jan09}
+Janssen, P. A. E.~M. (2009), On some consequences of the canonical
+  transformation in the {H}amiltonian theory of water waves, \textit{J. Fluid
+  Mech.}, {\bf 637}, 1--44.
+
+\bibitem[{Jones(1998)}]{man:Jones98}
+Jones, P.~W. (1998), \textit{{A User's Guide for {SCRIP}: {A} Spherical
+  Coordinate Remapping and Interpolation Package, Version 1.5}}, 29 pp.
+
+\bibitem[{Jones(1999)}]{art:Jones99}
+Jones, P.~W. (1999), First- and second-order conservative remapping schemes for
+  grids in spherical coordinates, \textit{Mon. Wea. Rev.}, {\bf 127},
+  2,204--2,210.
+
+\bibitem[{Kahma and Calkoen(1992)}]{art:KC92}
+Kahma, K.~K., and C.~J. Calkoen (1992), Reconciling discrepancies in the
+  observed growth rates of wind waves, \textit{J. Phys. Oceanogr.}, {\bf 22},
+  1,389--1,405.
+
+\bibitem[{Kahma and Calkoen(1994)}]{ibk:KC94}
+Kahma, K.~K., and C.~J. Calkoen (1994), \textit{Dynamics and modelling of ocean
+  waves}, chap. {II}.8 Growth curve observations, pp. 174--182, Cambridge Univ.
+  Press.
+
+\bibitem[{Karypis(2011)}]{rep:karypis2011metis}
+Karypis, G. (2011), Metis and parmetis, pp. 1117--1124.
+
+\bibitem[{Kerr et~al.(2013)Kerr, Donahue, Westerink, Luettich, Zheng, Weisberg,
+  Huang, Wang, Teng, Forrest et~al.}]{art:kerr2013}
+Kerr, P.~C., A.~S. Donahue, J.~J. Westerink, R.~A. Luettich, L.~Zheng, R.~H.
+  Weisberg, Y.~Huang, H.~Wang, Y.~Teng, D.~Forrest, et~al. (2013), Us ioos
+  coastal and ocean modeling testbed: Inter-model evaluation of tides, waves,
+  and hurricane surge in the gulf of mexico, \textit{Journal of Geophysical
+  Research: Oceans}, {\bf 118}(10), 5129--5172.
+
+\bibitem[{Kohout et~al.(2014)Kohout, Williams, Dean, and Meylan}]{art:Ko14}
+Kohout, A., M.~Williams, S.~Dean, and M.~Meylan (2014), Storm-induced sea-ice
+  breakup and the implications for ice extent, \textit{Nature}, {\bf 509},
+  604--607.
+
+\bibitem[{Kohout and Meylan(2008)}]{art:KM08}
+Kohout, A.~L., and M.~H. Meylan (2008), An elastic plate model for wave
+  attenuation and ice floe breaking in the marginal ice zone, \textit{J.
+  Geophys. Res.}, {\bf 113}(C9), \doi{10.1029/2007JC004434}.
+
+\bibitem[{Komen et~al.(1984)Komen, Hasselmann, and Hasselmann}]{art:KHH84}
+Komen, G.~J., S.~Hasselmann, and K.~Hasselmann (1984), On the existence of a
+  fully developed wind-sea spectrum, \textit{J. Phys. Oceanogr.}, {\bf 14},
+  1,271--1,285.
+
+\bibitem[{Komen et~al.(1994)Komen, Cavaleri, Donelan, Hasselmann, Hasselmann,
+  and Janssen}]{bk:WAM94}
+Komen, G.~J., L.~Cavaleri, M.~Donelan, K.~Hasselmann, S.~Hasselmann, and P.~A.
+  E.~M. Janssen (1994), \textit{Dynamics and modelling of ocean waves},
+  Cambridge University Press, 532 pp.
+
+\bibitem[{Krasitskii(1994)}]{art:Kra94}
+Krasitskii, V.~P. (1994), On reduced equations in the {H}amiltonian theory of
+  weakly nonlinear surface waves, \textit{J. Fluid Mech.}, {\bf 272}, 1--20.
+
+\bibitem[{Kreisel(1949)}]{art:Kre49}
+Kreisel, G. (1949), Surface waves, \textit{Quart. Journ. Appl. Math.}, pp.
+  21--44.
+
+\bibitem[{Kuik et~al.(1988)Kuik, {Van Vledder}, and Holthuijsen}]{art:KVH88}
+Kuik, A.~J., G.~P. {Van Vledder}, and L.~Holthuijsen (1988), A method for the
+  routine analysis of pitch-and-roll buoy wave data, \textit{J. Phys.
+  Oceanogr.}, {\bf 18}, 1,020--1,034.
+
+\bibitem[{Leckler(2013)}]{rep:Lec13}
+Leckler, F. (2013), Observation and modelling of wave breaking, Ph.D. thesis,
+  Universit{\'e} de Bretagne Occidentale, Brest, France, 150 pp.
+
+\bibitem[{Leckler et~al.(2015)Leckler, Ardhuin, Peureux, Benetazzo, Bergamasco,
+  and Dulov}]{Leckler&al.2015}
+Leckler, F., F.~Ardhuin, C.~Peureux, A.~Benetazzo, F.~Bergamasco, and V.~Dulov
+  (2015), Analysis and interpretation of frequency-wavenumber spectra of young
+  wind waves, \textit{J. Phys. Oceanogr.}, {\bf 45}, 2484--2496,
+  \doi{10.1175/JPO-D-14-0237.1}.
+
+\bibitem[{Leonard(1979)}]{art:Leo79}
+Leonard, B.~P. (1979), A stable and accurate convective modelling procedure
+  based on quadratic upstream interpolation, \textit{Comput. Methods Appl.
+  Mech. Engng.}, {\bf 18}, 59--98.
+
+\bibitem[{Leonard(1991)}]{art:Leo91}
+Leonard, B.~P. (1991), The {ULTIMATE} conservative difference scheme applied to
+  unsteady one-dimensional advection, \textit{Comput. Methods Appl. Mech.
+  Engng.}, {\bf 88}, 17--74.
+
+\bibitem[{Leonard et~al.(1996)Leonard, Lock, and MacVean}]{art:LLM96}
+Leonard, B.~P., A.~P. Lock, and M.~K. MacVean (1996), Conservative explicit
+  unrestricted-time-step multidimensional constancy-prexerving advection
+  schemes, \textit{Mon. Wea. Rev.}, {\bf 124}, 2,588--2,606.
+
+\bibitem[{Li et~al.(2015)Li, Kohout, and Shen}]{art:LKS15}
+Li, J., A.~L. Kohout, and H.~H. Shen (2015), Comparison of wave propagation
+  through ice covers in calm and storm conditions, \textit{Geophys. Res.
+  Lett.}, {\bf 42}, 5935--5941, \doi{doi:10.1002/2015GL064715}.
+
+\bibitem[{Li et~al.(2017)Li, Kohout, Doble, Wadhams, Guan, and Shen}]{art:LK17}
+Li, J., A.~L. Kohout, M.~J. Doble, P.~Wadhams, C.~Guan, and H.~H. Shen (2017),
+  Rollover of apparent wave attenuation in ice covered seas, \textit{J.
+  Geophys. Res.}, {\bf 122}, 8557--8566,
+  \doi{https://doi.org/10.1002/2017JC012978}.
+
+\bibitem[{Li(2003)}]{art:Li03}
+Li, J.~G. (2003), A multiple-cell flat-level model for atmospheric tracer
+  dispersion over complex terrain, \textit{Bound. Layer Meteor.}, {\bf 107},
+  289--322.
+
+\bibitem[{Li(2008)}]{art:Li08}
+Li, J.~G. (2008), Upstream nonoscillatory advection schemes, \textit{Mon. Wea.
+  Rev.}, {\bf 136}, 4,709--4,729.
+
+\bibitem[{Li(2011)}]{art:Li11}
+Li, J.~G. (2011), Global transport on a spherical multiple-cell grid,
+  \textit{Mon. Wea. Rev.}, {\bf 139}, 1,536--1,555.
+
+\bibitem[{Li(2012)}]{art:Li12}
+Li, J.~G. (2012), Propagation of ocean surface waves on a spherical
+  multiple-cell grid, \textit{J. Comput. Physics}, {\bf 231}(24), 8,262--8,277.
+
+\bibitem[{Li(2016)}]{art:Li16}
+Li, J.~G. (2016), Ocean surface waves in an ice-free {A}rctic {O}cean,
+  \textit{Ocean Dynamics}, {\bf 66}(8), 989--1,004.
+
+\bibitem[{Li and Saulter(2014)}]{art:LiET14}
+Li, J.-G., and A.~Saulter (2014), Unified global and regional wave model on a
+  multi-resolution grid, \textit{Ocean Dynamics}, {\bf 64}(11), 1657--1670.
+
+\bibitem[{Li and Saulter(2017)}]{tol:LiS17}
+Li, J.~G., and A.~Saulter (2017), Applications of the spherical multiple-cell
+  grid in ocean surface wave models, in \textit{First Int. workshop on waves,
+  storm surges and coastal hazards}, p.~20, {P}aper {I1}.
+
+\bibitem[{Liau et~al.(2011)Liau, Roland, Hsu, Ou, and Li}]{art:liau2011}
+Liau, J.-M., A.~Roland, T.-W. Hsu, S.-H. Ou, and Y.-T. Li (2011), Wave
+  refraction--diffraction effect in the wind wave model wwm, \textit{Coastal
+  Engineering}, {\bf 58}(5), 429--443.
+
+\bibitem[{Liu and Mollo-Christensen(1988)}]{art:LMC88}
+Liu, A.~K., and E.~Mollo-Christensen (1988), Wave propagation in a solid ice
+  pack, \textit{J. Phys. Oceanogr.}, {\bf 18}, 1,702--1,712.
+
+\bibitem[{Liu et~al.(1991)Liu, Holt, and Vachon}]{art:LHV91}
+Liu, A.~K., B.~Holt, and P.~W. Vachon (1991), Wave propagation in the marginal
+  ice zone: model predictions and comparisons with buoy and synthetic aperture
+  radar data, \textit{J. Geophys. Res.}, {\bf 96}(C3), 4,605--4,621.
+
+\bibitem[{Liu et~al.(2017)Liu, Babanin, Fan, Zieger, Guan, and Moon}]{liu2017}
+Liu, Q., A.~V. Babanin, Y.~Fan, S.~Zieger, C.~Guan, and I.-J. Moon (2017),
+  Numerical simulations of ocean surface waves under hurricane conditions:
+  Assessment of existing model performance, \textit{Ocean Mod.}, {\bf 118},
+  73--93.
+
+\bibitem[{Liu et~al.(2019)Liu, Rogers, Babanin, Young, Romero, Zieger, Qiao,
+  and Guan}]{Liu2019}
+Liu, Q., W.~E. Rogers, A.~V. Babanin, I.~R. Young, L.~Romero, S.~Zieger,
+  F.~Qiao, and C.~Guan (2019), {Observation-based source terms in the
+  third-generation wave model WAVEWATCH III: updates and verification},
+  \textit{J. Phys. Oceanogr.}, {\bf 49}(2), 489--517,
+  \doi{10.1175/JPO-D-18-0137.1}.
+
+\bibitem[{Liu et~al.(submitted)Liu, Rogers, Babanin, Li, and Guan}]{Liu2018ic5}
+Liu, Q., W.~E. Rogers, A.~Babanin, J.~Li, and C.~Guan (submitted), Spectral
+  modelling of ice-induced wave decay with viscoelastic sea ice models:
+  comparisons and limitations, \textit{Journal of Geophysical Research:
+  Oceans}.
+
+\bibitem[{Longuet-Higgins(1984)}]{art:LH84}
+Longuet-Higgins, M.~S. (1984), Statistical properties of wave groups in a
+  random sea state, \textit{Phil. Trans. R. Soc. A.}, {\bf 312}(1521),
+  219--250.
+
+\bibitem[{Longuet-Higgins and Stewart(1960)}]{art:LHS60}
+Longuet-Higgins, M.~S., and R.~W. Stewart (1960), Changes in the form of short
+  gravity waves on long waves and tidal currents, \textit{J. Fluid Mech.}, {\bf
+  8}, 565--583.
+
+\bibitem[{{Longuet-Higgins} and Stewart(1961)}]{art:LHS61}
+{Longuet-Higgins}, M.~S., and R.~W. Stewart (1961), The changes in amplitude of
+  short gravity waves on steady non-uniform currents, \textit{J. Fluid Mech.},
+  {\bf 10}, 529--549.
+
+\bibitem[{{Longuet-Higgins} and Stewart(1962)}]{art:LHS62}
+{Longuet-Higgins}, M.~S., and R.~W. Stewart (1962), Radiation stress and mass
+  transport in gravity waves, with application to 'surf-beats', \textit{J.
+  Fluid Mech.}, {\bf 10}, 529--549.
+
+\bibitem[{Madsen and Sorensen(1993)}]{art:MS93}
+Madsen, P., and O.~Sorensen (1993), Bound waves and triad interactions in
+  shallow water, \textit{J. Ocean Engng.}, {\bf 20(4)}, 359--388.
+
+\bibitem[{Magne et~al.(2007)Magne, Belibassakis, Herbers, Ardhuin, O'Reilly,
+  and Rey}]{art:Mea07}
+Magne, R., K.~Belibassakis, T.~H.~C. Herbers, F.~Ardhuin, W.~C. O'Reilly, and
+  V.~Rey (2007), Evolution of surface gravity waves over a submarine canyon,
+  \textit{J. Geophys. Res.}, {\bf 112}(C1), \doi{10.1029/2005JC003035}.
+
+\bibitem[{Magne et~al.(2010)Magne, Ardhuin, and Roland}]{art:Mea10}
+Magne, R., F.~Ardhuin, and A.~Roland (2010), Waves forecast and hincast from
+  global ocean to the beach, \textit{Eur. J. of Environ. and Civil Eng.}, {\bf
+  14}(2), 149--162.
+
+\bibitem[{Mc{C}owan(1894)}]{art:M1894}
+Mc{C}owan, J. (1894), On the highest wave of permanent type,
+  \textit{Philosophical Magazine}, {\bf 38}, 351--358.
+
+\bibitem[{Mei(1983)}]{bk:Mei83}
+Mei, C.~C. (1983), \textit{The applied dynamics of ocean surface waves}, Wiley,
+  New York, 740 pp.
+
+\bibitem[{Mellor(1986)}]{inc:M86}
+Mellor, M. (1986), Mechanical behavior of sea ice, in \textit{The {Geophysics}
+  of {Sea} {Ice}}, edited by N.~Untersteiner, {NATO} {ASI} {Series}, pp.
+  165--281, Springer US, dOI: 10.1007/978-1-4899-5352-0\_3.
+
+\bibitem[{Mentaschi et~al.(2015{\natexlab{a}})Mentaschi, Besio, Cassola, and
+  Mazzino}]{art:Mentaschi2015a}
+Mentaschi, L., G.~Besio, F.~Cassola, and A.~Mazzino (2015{\natexlab{a}}),
+  Performance evaluation of wavewatch iii in the mediterranean sea,
+  \textit{Ocean Modelling}, {\bf 90}, 82--94.
+
+\bibitem[{Mentaschi et~al.(2015{\natexlab{b}})Mentaschi, P{\'e}rez, Besio,
+  Mendez, and Menendez}]{art:Mentaschi2015b}
+Mentaschi, L., J.~P{\'e}rez, G.~Besio, F.~Mendez, and M.~Menendez
+  (2015{\natexlab{b}}), Parameterization of unresolved obstacles in wave
+  modelling: A source term approach, \textit{Ocean Mod.}, {\bf 96}, 93--102,
+  \doi{10.1016/j.ocemod.2015.05.004}.
+
+\bibitem[{Mentaschi et~al.(2018{\natexlab{a}})Mentaschi, Kakoulaki, Vousdoukas,
+  Voukouvalas, Feyen, and Besio}]{art:Mentaschi2018a}
+Mentaschi, L., G.~Kakoulaki, M.~Vousdoukas, E.~Voukouvalas, L.~Feyen, and
+  G.~Besio (2018{\natexlab{a}}), Parameterizing unresolved obstacles with
+  source terms in wave modeling: A real-world application, \textit{Ocean Mod.},
+  {\bf 126}, 77--84, \doi{10.1016/j.ocemod.2018.04.003}.
+
+\bibitem[{Mentaschi et~al.(2018{\natexlab{b}})Mentaschi, Kakoulaki, Vousdoukas,
+  Voukouvalas, Pereira, and Feyen}]{art:Mentaschi2018b}
+Mentaschi, L., G.~Kakoulaki, M.~Vousdoukas, E.~Voukouvalas, P.~Pereira, and
+  L.~Feyen (2018{\natexlab{b}}), On spatial resolution and subscale effects in
+  global wave models, \textit{Ocean Mod.}, p. submitted.
+
+\bibitem[{Mentaschi et~al.(2018{\natexlab{c}})Mentaschi, Vousdoukas, , Feyen,
+  and Besio}]{art:Mentaschi2018c}
+Mentaschi, L., M.~Vousdoukas, , L.~Feyen, and G.~Besio (2018{\natexlab{c}}),
+  alphabetalab: automatic estimation of subscale transparencies for the
+  unresolved obstacles source term in ocean wave modelling, \textit{SoftwareX},
+  p. submitted.
+
+\bibitem[{Metcalf and Reid(1999)}]{bk:MR99}
+Metcalf, M., and J.~Reid (1999), \textit{{FORTRAN} 90/95 explained, second
+  edition}, Oxford University Press, 341 pp.
+
+\bibitem[{Metzger et~al.(2014)Metzger, Smedstad, Thoppil, Hurlburt, Cummings,
+  Wallcraft, Zamudio, Franklin, Posey, Phelps, Hogan, Bub, and
+  Dehaan}]{art:Metz14}
+Metzger, E.~J., O.~M. Smedstad, P.~G. Thoppil, H.~E. Hurlburt, J.~A. Cummings,
+  A.~J. Wallcraft, L.~Zamudio, D.~S. Franklin, P.~G. Posey, M.~W. Phelps, P.~J.
+  Hogan, F.~L. Bub, and C.~J. Dehaan (2014), {US} {N}avy operational global
+  ocean and {A}rctic ice prediction systems, \textit{Oceanogr.}, {\bf 27}(3),
+  32--43.
+
+\bibitem[{Meylan et~al.(2014)Meylan, Bennets, and Kohout}]{art:MBK14}
+Meylan, M., L.~Bennets, and A.~Kohout (2014), In situ measurements and analysis
+  of ocean waves in the {A}ntarctic marginal ice zone, \textit{Geophys. Res.
+  Lett.}, {\bf 41}(C14), 5,046--5,051.
+
+\bibitem[{Meylan and Masson(2006)}]{art:MM06}
+Meylan, M.~H., and D.~Masson (2006), Physics-based parameterization of air-sea
+  momentum flux at high wind speeds and its impact on hurricane intensity
+  predictions, \textit{Ocean Mod.}, {\bf 11}, 417--427.
+
+\bibitem[{Miche(1944)}]{art:Miche44}
+Miche, A. (1944), Mouvements ondulatoire de la mer en profondeur croissante ou
+  d{\'e}croissante. {F}orme limite de la houle lors de son d{\'e}ferlement.
+  {A}pplication aux digues maritimes. {D}euxi{\`e}me partie. {M}ouvements
+  ondulatoires p{\'e}riodiques en profondeur r{\'e}guli{\`e}rement
+  d{\'e}croissante, \textit{Annales des Ponts et Chauss{\'e}es}, {\bf 114},
+  25--78,131--164, 270--292,369--406.
+
+\bibitem[{Miles(1957)}]{art:Miles57}
+Miles, J.~W. (1957), On the generation of surface waves by shear flows,
+  \textit{J. Fluid Mech.}, {\bf 3}.
+
+\bibitem[{Moon et~al.(2006)Moon, Ginnis, Hara, and Thomas}]{art:Mea06}
+Moon, I.~J., I.~Ginnis, T.~Hara, and B.~Thomas (2006), Physics-based
+  parameterization of air-sea momentum flux at high wind speeds and its impact
+  on hurricane intensity predictions, \textit{Mon. Wea. Rev.}, {\bf 135},
+  2,869--2,878.
+
+\bibitem[{Mosig et~al.(2015)Mosig, Montiel, and Squire}]{art:MMS15}
+Mosig, J. E.~M., F.~Montiel, and V.~A. Squire (2015), {Comparison of
+  viscoelastic-type models for ocean wave attenuation in ice-covered seas},
+  \textit{Journal of Geophysical Research: Oceans}, pp. 1--17,
+  \doi{10.1002/2015JC010700.Received}.
+
+\bibitem[{Murray(1996)}]{art:Murr96}
+Murray, R.~J. (1996), Explicit generation of orthogonal grids for ocean models,
+  \textit{J. Comput. Physics}, {\bf 126}(2), 251--273.
+
+\bibitem[{{NCEP}(1998)}]{rep:GRIB1}
+{NCEP} (1998), {GRIB}, \textit{Office Note 388}, {NOAA/NWS/NCEP}, available by
+  anonymous ftp from ftp://nic.fb4.noaa.gov.
+
+\bibitem[{Nelson(1994)}]{art:Nel94}
+Nelson, R.~C. (1994), Depth limited wave heights in very flat regions,
+  \textit{Coastal Eng.}, {\bf 23}, 43--59.
+
+\bibitem[{Nelson(1997)}]{art:Nel97}
+Nelson, R.~C. (1997), Height limits in top down and bottom up wave
+  environments., \textit{Coastal Eng.}, {\bf 32}, 247--254.
+
+\bibitem[{Ng(2000)}]{art:Ng00}
+Ng, C. (2000), Water waves over a muddy bed: a two-layer {S}tokes' boundary
+  layer model, \textit{Coastal Eng.}, {\bf 40}(3), 221--242.
+
+\bibitem[{O'Reilly et~al.(1999)O'Reilly, Guza, and Seymour}]{pro:ORe99}
+O'Reilly, W.~C., R.~T. Guza, and R.~J. Seymour (1999), Wave prediction in the
+  {S}anta {B}arbara {C}hannel, in \textit{5th {C}alifornia {I}slands Symposium,
+  March 29-31}, Mineral Management Service, Santa Barbara CA.
+
+\bibitem[{Perrie and Resio(2009)}]{art:Perrie2009}
+Perrie, W., and D.~T. Resio (2009), A two-scale approximation for efficient
+  representation of nonlinear energy transfers in a wind wave spectrum. {P}art
+  {II}: {A}pplication to observed wave spectra, \textit{J. Phys. Oceanogr.},
+  {\bf 39}(10), 2,451--2,476, \doi{10.1175/2009JPO3947.1}.
+
+\bibitem[{Perrie et~al.(2013{\natexlab{a}})Perrie, Toulany, Resio, Roland, and
+  Auclair}]{art:Perrie2013}
+Perrie, W., B.~Toulany, D.~T. Resio, A.~Roland, and J.-P. Auclair
+  (2013{\natexlab{a}}), A two-scale approximation for wave–-wave interactions
+  in an operational wave model, \textit{Ocean Mod.}, {\bf 70}, 38 -- 51,
+  \doi{http://dx.doi.org/10.1016/j.ocemod.2013.06.008}.
+
+\bibitem[{Perrie et~al.(2013{\natexlab{b}})Perrie, Toulany, Resio, Roland, and
+  Auclair}]{art:perrie2013two}
+Perrie, W., B.~Toulany, D.~T. Resio, A.~Roland, and J.-P. Auclair
+  (2013{\natexlab{b}}), A two-scale approximation for wave--wave interactions
+  in an operational wave model, \textit{Ocean Mod.}, {\bf 70}, 38--51.
+
+\bibitem[{Perrie et~al.(2018)Perrie, Toulany, Roland, Dutour-Sikiric, Chen,
+  Beardsley, Qi, Hu, Casey, and Shen}]{art:perrie2018}
+Perrie, W., B.~Toulany, A.~Roland, M.~Dutour-Sikiric, C.~Chen, R.~C. Beardsley,
+  J.~Qi, Y.~Hu, M.~P. Casey, and H.~Shen (2018), Modeling north atlantic
+  nor'easters with modern wave forecast models, \textit{Journal of Geophysical
+  Research: Oceans}, {\bf 123}(1), 533--557.
+
+\bibitem[{Peureux et~al.(2019)Peureux, Ardhuin, and
+  Guimaraes}]{Peureux&al.2019}
+Peureux, C., F.~Ardhuin, and P.~V. Guimaraes (2019), On the modulation and
+  steepening of short gravity waves by longer waves, \textit{J. Phys.
+  Oceanogr.}, {\bf submitted}.
+
+\bibitem[{Phillips(1977)}]{bk:Phi77}
+Phillips, O.~M. (1977), \textit{The dynamics of the upper ocean, second
+  edition}, Cambridge Univ. Press, 336 pp.
+
+\bibitem[{Phillips(1984)}]{art:Phi84}
+Phillips, O.~M. (1984), On the response of short ocean wave components at a
+  fixed wavenumber to ocean current variations, \textit{J. Phys. Oceanogr.},
+  {\bf 14}, 1,425--1,433.
+
+\bibitem[{Phillips(1985)}]{art:Phi85}
+Phillips, O.~M. (1985), Spectral and statistical properties of the equilibrium
+  range in wind-generated gravity waves, \textit{J. Fluid Mech.}, {\bf 156},
+  505--531.
+
+\bibitem[{Pierson and Moskowitz(1964)}]{art:PM64}
+Pierson, W.~J., and L.~Moskowitz (1964), A proposed spectral form for fully
+  developed wind seas based on the similarity theory of {S. A.
+  K}itaigorodskii., \textit{J. Geophys. Res.}, {\bf 69}, 5,181--5,190.
+
+\bibitem[{Polnikov and Lavrenov(2007)}]{art:PL07}
+Polnikov, V.~G., and I.~V. Lavrenov (2007), Calculation of the nonlinear energy
+  transfer through the wave spectrum at the sea surface covered with broken
+  ice, \textit{Oceanol.}, {\bf 47}, 334--343.
+
+\bibitem[{R.~Jacob(2005)}]{art:JLO05}
+R.~Jacob, E.~O., J.~Larson (2005), {M}$\times${N} communication and parallel
+  interpolation in {CCSM3} using the model coupling toolkit., \textit{Int. J.
+  High Perf. Comp. App.}, {\bf 19}(3), 293--307.
+
+\bibitem[{Rasch(1994)}]{art:RA94}
+Rasch, P.~J. (1994), Conservative shape-preserving two-dimensional transport on
+  a spherical reduced grid, \textit{Mon. Wea. Rev.}, {\bf 122}, 1,337--1,350.
+
+\bibitem[{Rascle and Ardhuin(2013)}]{art:RA13}
+Rascle, N., and F.~Ardhuin (2013), A global wave parameter database for
+  geophysical applications. {P}art {2}: {M}odel validation with improved source
+  term parameterization, \textit{Ocean Mod.}, {\bf 70}, 174--188.
+
+\bibitem[{Reichl et~al.(2014)Reichl, Hara, and Ginis}]{art:Rei14}
+Reichl, B.~G., T.~Hara, and I.~Ginis (2014), Sea state dependence of the wind
+  stress over the ocean under hurricane winds, \textit{J. Geophys. Res.}, {\bf
+  119}(1), 30--51.
+
+\bibitem[{Resio and Perrie(1991)}]{art:RP91}
+Resio, D.~T., and W.~Perrie (1991), A numerical study of nonlinear energy
+  fluxes due to wave--wave interactions. {Part 1}: {M}ethodology and basic
+  results, \textit{J. Fluid Mech.}, {\bf 223}, 603--629.
+
+\bibitem[{Resio and Perrie(2008)}]{art:Resio2008}
+Resio, D.~T., and W.~Perrie (2008), A two-scale approximation for efficient
+  representation of nonlinear energy transfers in a wind wave spectrum. {P}art
+  {I}: {T}heoretical development, \textit{J. Phys. Oceanogr.}, {\bf 38}(12),
+  2,801--2,816, \doi{10.1175/2008JPO3713.1}.
+
+\bibitem[{Resio et~al.(2011)Resio, Long, and Perrie}]{art:Resio2011}
+Resio, D.~T., C.~E. Long, and W.~Perrie (2011), The role of nonlinear momentum
+  fluxes on the evolution of directional wind-wave spectra, \textit{J. Phys.
+  Oceanogr.}, {\bf 41}(4), 781--801, \doi{10.1175/2010JPO4545.1}.
+
+\bibitem[{Ricchiuto et~al.(2005)Ricchiuto, Cs{\'\i}k, and
+  Deconinck}]{art:ricchiuto2005}
+Ricchiuto, M., {\'A}.~Cs{\'\i}k, and H.~Deconinck (2005), Residual distribution
+  for general time-dependent conservation laws, \textit{Journal of
+  Computational Physics}, {\bf 209}(1), 249--289.
+
+\bibitem[{Roe(1986)}]{art:Roe86}
+Roe, P.~L. (1986), Characteristic-based schemes for the {E}uler equations,
+  \textit{Ann. Rev. Fluid Mech}, {\bf 18}, 337--365.
+
+\bibitem[{Rogers(2017)}]{Rogers2017}
+Rogers, W.~E. (2017), {Mean square slope in SWAN and WAVEWATCH
+  III$^{\textregistered}$; buoy response functions; and limitations of ST1
+  physics in SWAN}, in \textit{Waves in Shallow Water Environments Meeting
+  (WISE-24)}, Victoria, Canada.
+
+\bibitem[{Rogers and Campbell(2009)}]{rep:RC09}
+Rogers, W.~E., and T.~J. Campbell (2009), Implementation of curvilinear
+  coordinate system in the {WAVEWATCH III} model, \textit{NRL Memorandum Report
+  NRL/MR/7320--09-9193}, {N}aval {R}esearch {L}aboratory, {S}tennis {S}pace
+  {C}enter, {MS}, 42 pp., www7320.nrlssc.navy.mil/pubs.php.
+
+\bibitem[{Rogers and Holland(2009)}]{art:RH09}
+Rogers, W.~E., and K.~Holland (2009), A study of dissipation of wind-waves by
+  mud at {C}assino {B}each, {B}razil: {P}rediction and inversion, \textit{Cont.
+  Shelf Res.}, {\bf 29}, 676--690.
+
+\bibitem[{Rogers and Orzech(2013)}]{rep:RO13}
+Rogers, W.~E., and M.~D. Orzech (2013), Implementation and testing of ice and
+  mud source functions in {WAVEWATCH III} model, \textit{NRL Memorandum Report
+  NRL/MR/7320--13-9462}, {N}aval {R}esearch {L}aboratory, {S}tennis {S}pace
+  {C}enter, {MS}, 31 pp., www7320.nrlssc.navy.mil/pubs.php.
+
+\bibitem[{Rogers and Zieger(2014)}]{pro:RZ14}
+Rogers, W.~E., and S.~Zieger (2014), New wave-ice interaction physics in
+  {WAVEWATCH III}, in \textit{22nd IAHR International Symposium on Ice,
+  Singapore, August 11 to 15, 2014}, IAHR, 8 pp.,
+  www7320.nrlssc.navy.mil/pubs.php.
+
+\bibitem[{Rogers et~al.(2012)Rogers, Babanin, and Wang}]{art:RBW12}
+Rogers, W.~E., A.~V. Babanin, and D.~W. Wang (2012), Observation-consistent
+  input and whitecapping dissipation in a model for wind-generated surface
+  waves: Description and simple calculations, \textit{J. Atmos. Oceanic
+  Techn.}, {\bf 29}, 1,329--1,346.
+
+\bibitem[{Rogers et~al.(2014)Rogers, Dykes, and Wittmann}]{art:RET14}
+Rogers, W.~E., J.~D. Dykes, and P.~A. Wittmann (2014), Us navy global and
+  regional wave modeling, \textit{Oceanography}, {\bf 27}(3), 56--67.
+
+\bibitem[{Rogers et~al.(2016)Rogers, Thomson, Shen, Doble, Wadhams, and
+  Cheng}]{art:RTS16}
+Rogers, W.~E., J.~Thomson, H.~H. Shen, M.~J. Doble, P.~Wadhams, and S.~Cheng
+  (2016), Dissipation of wind waves by pancake and frazil ice in the autumn
+  {B}eaufort {S}ea, \textit{J. Geophys. Res.}, {\bf 121}, 7991--8007,
+  \doi{doi:10.1002/2016JC012251}.
+
+\bibitem[{Rogers et~al.(2018{\natexlab{a}})Rogers, Posey, Li, and
+  Allard}]{rep:RPLA18}
+Rogers, W.~E., P.~Posey, L.~Li, and R.~A. Allard (2018{\natexlab{a}}),
+  Forecasting and hindcasting waves in and near the marginal ice zone: {Wave
+  modeling and the ONR ``Sea State''} field experiment, \textit{NRL Memorandum
+  Report NRL/MR/7320--18-9786}, {N}aval {R}esearch {L}aboratory, {S}tennis
+  {S}pace {C}enter, {MS}, 179 pp., www7320.nrlssc.navy.mil/pubs.php.
+
+\bibitem[{Rogers et~al.(2018{\natexlab{b}})Rogers, Meylan, and
+  Kohout}]{rep:RMK18}
+Rogers, W.~E., M.~H. Meylan, and A.~L. Kohout (2018{\natexlab{b}}), Frequency
+  distribution of dissipation of energy of ocean waves by sea ice using data
+  from {Wave Array 3 of the ONR ``Sea State'' field experiment}, \textit{NRL
+  Memorandum Report NRL/MR/7320--18-9801}, {N}aval {R}esearch {L}aboratory,
+  {S}tennis {S}pace {C}enter, {MS}, 25 pp., www7320.nrlssc.navy.mil/pubs.php.
+
+\bibitem[{Roland(2009)}]{rep:Roland2008}
+Roland, A. (2009), Development of {WWM II}: Spectral wave modelling on
+  unstructured meshes, Ph.D. thesis, Technische Universit{\"a}t Darmstadt,
+  Institute of Hydraulic and Water Resources Engineering, 212 pp.
+
+\bibitem[{Roland(2012)}]{pro:rol2012}
+Roland, A. (2012), Application of residual distribution {(RD)} schemes to the
+  geographical part of the wave action equation, in \textit{Proceedings of
+  {ECMWF} workshop on ocean wave forecasting, June}.
+
+\bibitem[{Roland and Ardhuin(2014{\natexlab{a}})}]{art:RAR14}
+Roland, A., and F.~Ardhuin (2014{\natexlab{a}}), On the developments of
+  spectral wave models: numerics and parameterizations for the coastal ocean,
+  \textit{Ocean Dynamics}, {\bf 64}(6), 833--846.
+
+\bibitem[{Roland and Ardhuin(2014{\natexlab{b}})}]{art:rol2014}
+Roland, A., and F.~Ardhuin (2014{\natexlab{b}}), On the developments of
+  spectral wave models: numerics and parameterizations for the coastal ocean,
+  \textit{Ocean Dynamics}, {\bf 64}(6), 833--846.
+
+\bibitem[{Roland et~al.(2006{\natexlab{a}})Roland, Zanke, Hsu, Ou, and
+  Liau}]{pro:rol2006a}
+Roland, A., U.~Zanke, T.-W. Hsu, S.-H. Ou, and J.-M. Liau (2006{\natexlab{a}}),
+  Spectral wave modelling on unstructured grids with the wwm (wind wave model)
+  i: The deep water case, in \textit{Third Chinese--German Joint Symposium on
+  Coastal and Ocean Engineering, Tainan, Taiwan}.
+
+\bibitem[{Roland et~al.(2006{\natexlab{b}})Roland, Zanke, Hsu, Ou, Liau, and
+  Wang}]{pro:rol2006b}
+Roland, A., U.~Zanke, T.-W. Hsu, S.-H. Ou, J.-M. Liau, and S.-K. Wang
+  (2006{\natexlab{b}}), Verification of a 3rd generation fem spectral wave
+  model for shallow and deep water applications, in \textit{25th International
+  Conference on Offshore Mechanics and Arctic Engineering}, pp. 487--499,
+  American Society of Mechanical Engineers.
+
+\bibitem[{Roland et~al.(2009)Roland, Cucco, Ferrarin, Hsu, Liau, Ou, Umgiesser,
+  and Zanke}]{art:rol2009}
+Roland, A., A.~Cucco, C.~Ferrarin, T.-W. Hsu, J.-M. Liau, S.-H. Ou,
+  G.~Umgiesser, and U.~Zanke (2009), On the development and verification of a
+  2-d coupled wave-current model on unstructured meshes, \textit{Journal of
+  Marine Systems}, {\bf 78}, S244--S254.
+
+\bibitem[{Roland et~al.(2012)Roland, Zhang, Wang, Meng, Teng, Maderich,
+  Brovchenko, Dutour-Sikiric, and Zanke}]{art:rol2012}
+Roland, A., Y.~J. Zhang, H.~V. Wang, Y.~Meng, Y.-C. Teng, V.~Maderich,
+  I.~Brovchenko, M.~Dutour-Sikiric, and U.~Zanke (2012), A fully coupled 3d
+  wave-current interaction model on unstructured grids, \textit{Journal of
+  Geophysical Research: Oceans}, {\bf 117}(C11).
+
+\bibitem[{Roland et~al.(2019)Roland, Dutour-Sikiric, Aboulali, Smith, Hesser,
+  Alvez, Ardhuin, Chawla, Fillipot, Michaud, and Leckler}]{rolandetal2019t}
+Roland, A., M.~Dutour-Sikiric, A.~Aboulali, J.~M. Smith, T.~Hesser, H.~Alvez,
+  F.~Ardhuin, A.~Chawla, J.-F. Fillipot, H.~Michaud, and F.~Leckler (2019),
+  Improving downscaling efficiency of {WAVEWATCH III} on unstructured grids.,
+  \textit{Geoscientific Model Development}, {\bf submitted}.
+
+\bibitem[{Saha et~al.(2010)Saha, Moorthi, Pan, Wu, Wang, Nadiga, Tripp,
+  Kistler, Woollen, Behringer, Liu, Stokes, Grumbine, Gayno, Wang, Hou, Chuang,
+  Juang, Sela, Iredell, Treadon, Kleist, Delst, Keyser, Derber, Ek, Meng, Wei,
+  Yang, Lord, van~den Dool, Kumar, Wang, Long, Chelliah, Xue, Huang, Schemm,
+  Ebisuzaki, Lin, Xie, Chen, Zhou, Higgins, Zou, Liu, Chen, Han, Cucurull,
+  Reynolds, Rutledge, and Goldberg}]{art:CFSRR10}
+Saha, S., S.~Moorthi, H.~Pan, X.~Wu, J.~Wang, S.~Nadiga, P.~Tripp, R.~Kistler,
+  J.~Woollen, D.~Behringer, H.~Liu, D.~Stokes, R.~Grumbine, G.~Gayno, J.~Wang,
+  Y.~Hou, H.~Chuang, H.~Juang, J.~Sela, M.~Iredell, R.~Treadon, D.~Kleist,
+  P.~V. Delst, D.~Keyser, J.~Derber, M.~Ek, J.~Meng, H.~Wei, R.~Yang, S.~Lord,
+  H.~van~den Dool, A.~Kumar, W.~Wang, C.~Long, M.~Chelliah, Y.~Xue, B.~Huang,
+  J.~Schemm, W.~Ebisuzaki, R.~Lin, P.~Xie, M.~Chen, S.~Zhou, W.~Higgins,
+  C.~Zou, Q.~Liu, Y.~Chen, Y.~Han, L.~Cucurull, R.~Reynolds, G.~Rutledge, and
+  M.~Goldberg (2010), The {NCEP} climate forecast system reanalysis,
+  \textit{Bull. Am. Meteor. Soc.}, {\bf 91}, 1,015--1,057.
+
+\bibitem[{Shemdin et~al.(1978)Shemdin, Hasselmann, Hsiao, and
+  Heterich}]{pro:Sea78}
+Shemdin, O., K.~Hasselmann, S.~V. Hsiao, and K.~Heterich (1978), Nonlinear and
+  linear bottom interaction effects in shallow water, in \textit{Turbulent
+  fluxes through the sea surface, wave dynamics and prediction}, pp. 347--365,
+  {NATO Conf. Ser. V, Vol 1}.
+
+\bibitem[{Sikiri{\'c} et~al.(2012)Sikiri{\'c}, Roland, Tomaz, Janekovi{\'c}
+  et~al.}]{art:sikiric2012}
+Sikiri{\'c}, M.~D., A.~Roland, I.~Tomaz, I.~Janekovi{\'c}, et~al. (2012),
+  Hindcasting the adriatic sea near-surface motions with a coupled wave-current
+  model, \textit{Journal of Geophysical Research: Oceans}, {\bf 117}(C12).
+
+\bibitem[{Sikiri{\'c} et~al.(2013)Sikiri{\'c}, Roland, Janekovi{\'c},
+  Tomaz̆i{\'c}, and Kuzmi{\'c}}]{art:sikiric2013}
+Sikiri{\'c}, M.~D., A.~Roland, I.~Janekovi{\'c}, I.~Tomaz̆i{\'c}, and
+  M.~Kuzmi{\'c} (2013), Coupling of the regional ocean modeling system (roms)
+  and wind wave model, \textit{Ocean Mod.}, {\bf 72}, 59--73.
+
+\bibitem[{Sikiri{\'c} et~al.(2018)Sikiri{\'c}, Ivankovi{\'c}, Roland,
+  Ivatek-{\v{S}}ahdan, and Tudor}]{art:sikiric2018}
+Sikiri{\'c}, M.~D., D.~Ivankovi{\'c}, A.~Roland, S.~Ivatek-{\v{S}}ahdan, and
+  M.~Tudor (2018), Operational wave modelling in the adriatic sea with the wind
+  wave model, \textit{Pure and Applied Geophysics}, pp. 1--15.
+
+\bibitem[{Smith et~al.(2018)Smith, Hesser, Bryant, Roland, Chawla, Abdolali,
+  Alves, and {van der Westhuysen}}]{Smith2018}
+Smith, J.~M., T.~Hesser, M.~A. Bryant, A.~Roland, A.~Chawla, A.~Abdolali,
+  H.~Alves, and A.~{van der Westhuysen} (2018), Validation of unstructured
+  {WAVEWATCH III} for nearshore waves, \textit{Proceeding of 36th International
+  Conference on Coastal Engineering (ICCE2018), ASCE}, {B}altimore, MD, USA.
+
+\bibitem[{Snyder et~al.(1981)Snyder, Dobson, Elliott, and Long}]{art:Sea81}
+Snyder, R.~L., F.~W. Dobson, J.~A. Elliott, and R.~B. Long (1981), Array
+  measurements of atmospheric pressure fluctuations above surface gravity
+  waves, \textit{J. Fluid Mech.}, {\bf 102}, 1--59.
+
+\bibitem[{Soulsby(1997)}]{bk:Soul97}
+Soulsby, R. (1997), \textit{Dynamics of marine sands, a manual for practical
+  applications}, 256 pp., Thomas Telford Publications, London.
+
+\bibitem[{Stopa(2018)}]{Stopa2018}
+Stopa, J.~E. (2018), Wind forcing calibration and wave hindcast comparison
+  using multiple reanalysis and merged satellite wind datasets,
+  \textit{Oceanogr. Meteorol.}, {\bf 127}, 55--69,
+  \doi{10.1016/j.ocemod.2018.04.008}.
+
+\bibitem[{Stopa et~al.(2016)Stopa, Ardhuin, and Girard-Ardhuin}]{art:SAG16}
+Stopa, J.~E., F.~Ardhuin, and F.~Girard-Ardhuin (2016), Wave climate in the
+  {A}rctic 1992–2014: seasonality and trends, \textit{The Cryosphere}, {\bf
+  10}, 1605--1629.
+
+\bibitem[{Teixeira and Belcher(2002)}]{art:TB02}
+Teixeira, M. A.~C., and S.~E. Belcher (2002), On the distortion of turbulence
+  by a progressive surface wave, \textit{J. Fluid Mech.}, {\bf 458}, 229--267.
+
+\bibitem[{{The WAVEWATCH III$\:$\textsuperscript{\textregistered} Development
+  Group (WW3DG)}(2019)}]{ww3man2019}
+{The WAVEWATCH III$\:$\textsuperscript{\textregistered} Development Group
+  (WW3DG)} (2019), User manual and system documentation of {WAVEWATCH
+  III}~\textsuperscript{\textregistered} version 6.07, \textit{Tech. Note 333},
+  NOAA/NWS/NCEP/MMAB, College Park, MD, USA, 465 pp. + Appendices.
+
+\bibitem[{Thornton and Guza(1983)}]{art:TG83}
+Thornton, E.~B., and R.~T. Guza (1983), Transformation of wave height
+  distribution, \textit{J. Geophys. Res.}, {\bf 88}, 5,925--5,938.
+
+\bibitem[{Tolman(1990)}]{tol:JPO90}
+Tolman, H.~L. (1990), The influence of unsteady depths and currents of tides on
+  wind wave propagation in shelf seas, \textit{J. Phys. Oceanogr.}, {\bf 20},
+  1,166--1,174.
+
+\bibitem[{Tolman(1991)}]{tol:JPO91b}
+Tolman, H.~L. (1991), A third-generation model for wind waves on slowly
+  varying, unsteady and inhomogeneous depths and currents, \textit{J. Phys.
+  Oceanogr.}, {\bf 21}, 782--797.
+
+\bibitem[{Tolman(1992)}]{tol:JPO92}
+Tolman, H.~L. (1992), Effects of numerics on the physics in a third-generation
+  wind-wave model, \textit{J. Phys. Oceanogr.}, {\bf 22}, 1,095--1,111.
+
+\bibitem[{Tolman(1994)}]{tol:JPO94}
+Tolman, H.~L. (1994), Wind-waves and moveable-bed bottom-friction, \textit{J.
+  Phys. Oceanogr.}, {\bf 24}, 994--1,009.
+
+\bibitem[{Tolman(1995{\natexlab{a}})}]{tol:CE95}
+Tolman, H.~L. (1995{\natexlab{a}}), Sub-grid modeling of moveable-bed
+  bottom-friction in wind-wave models, \textit{Coastal Eng.}, {\bf 26}, 57--75.
+
+\bibitem[{Tolman(1995{\natexlab{b}})}]{tol:OMB95}
+Tolman, H.~L. (1995{\natexlab{b}}), On the selection of propagation schemes for
+  a spectral wind wave model, \textit{Office Note 411}, NWS/NCEP, 30 pp +
+  figures.
+
+\bibitem[{Tolman(2001)}]{tol:Waves01a}
+Tolman, H.~L. (2001), Improving propagation in ocean wave models, in
+  \textit{4th International Symposium on Ocean Wave Measurement and Analysis},
+  edited by B.~L. Edge and J.~M. Hemsley, pp. 507--516, ASCE.
+
+\bibitem[{Tolman(2002{\natexlab{a}})}]{tol:OMOD02b}
+Tolman, H.~L. (2002{\natexlab{a}}), Alleviating the garden sprinkler effect in
+  wind wave models, \textit{Ocean Mod.}, {\bf 4}, 269--289.
+
+\bibitem[{Tolman(2002{\natexlab{b}})}]{tol:PACO02}
+Tolman, H.~L. (2002{\natexlab{b}}), Distributed memory concepts in the wave
+  model {WAVEWATCH III}, \textit{Parallel Computing}, {\bf 28}, 35--52.
+
+\bibitem[{Tolman(2002{\natexlab{c}})}]{tol:GAOS02}
+Tolman, H.~L. (2002{\natexlab{c}}), Limiters in third-generation wind wave
+  models, \textit{The Global Atmosphere and Ocean System}, {\bf 8}, 67--83.
+
+\bibitem[{Tolman(2002{\natexlab{d}})}]{tol:OMB02b}
+Tolman, H.~L. (2002{\natexlab{d}}), Testing of {WAVEWATCH III} version 2.22 in
+  {NCEP's} {NWW3} ocean wave model suite, \textit{Tech. Note 214},
+  {NOAA/NWS/NCEP/OMB}, 99 pp.
+
+\bibitem[{Tolman(2002{\natexlab{e}})}]{tol:OMB02c}
+Tolman, H.~L. (2002{\natexlab{e}}), User manual and system documentation of
+  {WAVEWATCH III} version 2.22, \textit{Tech. Note 222}, {NOAA/NWS/NCEP/MMAB},
+  133 pp.
+
+\bibitem[{Tolman(2002{\natexlab{f}})}]{tol:OMB02a}
+Tolman, H.~L. (2002{\natexlab{f}}), Validation of {WAVEWATCH III} version 1.15
+  for a global domain, \textit{Tech. Note 213}, {NOAA/NWS/NCEP/OMB}, 33 pp.
+
+\bibitem[{Tolman(2003{\natexlab{a}})}]{tol:MMAB03a}
+Tolman, H.~L. (2003{\natexlab{a}}), Optimum {D}iscrete {I}nteraction
+  {A}pproximations for wind waves. {Part 1:} {M}apping using inverse modeling,
+  \textit{Tech. Note 227}, {NOAA/NWS/NCEP/MMAB}, 57 pp. + Appendices.
+
+\bibitem[{Tolman(2003{\natexlab{b}})}]{tol:OMOD03a}
+Tolman, H.~L. (2003{\natexlab{b}}), Treatment of unresolved islands and ice in
+  wind wave models, \textit{Ocean Mod.}, {\bf 5}, 219--231.
+
+\bibitem[{Tolman(2004)}]{tol:OMOD04}
+Tolman, H.~L. (2004), Inverse modeling of {D}iscrete {I}nteraction
+  {A}pproximations for nonlinear interactions in wind waves, \textit{Ocean
+  Mod.}, {\bf 6}, 405--422.
+
+\bibitem[{Tolman(2005)}]{tol:MMAB05a}
+Tolman, H.~L. (2005), Optimum {D}iscrete {I}nteraction {A}pproximations for
+  wind waves. {Part 2:} {C}onvergence of model integration, \textit{Tech. Note
+  247}, {NOAA/NWS/NCEP/MMAB}, 74 pp. + Appendices.
+
+\bibitem[{Tolman(2006)}]{tol:Vict06a}
+Tolman, H.~L. (2006), Toward a third release of {WAVEWATCH III}; a multi-grid
+  model version, in \textit{9$\:^{th}$ international workshop on wave
+  hindcasting and forecasting, {JCOMM} {T}ech. {R}ep. 34}, {P}aper {L1}.
+
+\bibitem[{Tolman(2007)}]{tol:MMAB07b}
+Tolman, H.~L. (2007), Development of a multi-grid version of {WAVEWATCH III},
+  \textit{Tech. Note 256}, {NOAA/NWS/NCEP/MMAB}, 194 pp. + Appendices.
+
+\bibitem[{Tolman(2008{\natexlab{a}})}]{tol:MMAB08b}
+Tolman, H.~L. (2008{\natexlab{a}}), Optimum {D}iscrete {I}nteraction
+  {A}pproximations for wind waves. {Part 3:} {G}eneralized multiple {DIA}s,
+  \textit{Tech. Note 269}, {NOAA/NWS/NCEP/MMAB}, 117 pp.
+
+\bibitem[{Tolman(2008{\natexlab{b}})}]{tol:OMOD08b}
+Tolman, H.~L. (2008{\natexlab{b}}), A mosaic approach to wind wave modeling,
+  \textit{Ocean Mod.}, {\bf 25}, 35--47.
+
+\bibitem[{Tolman(2009{\natexlab{a}})}]{tol:Hal09a}
+Tolman, H.~L. (2009{\natexlab{a}}), Practical nonlinear interaction algorithms,
+  in \textit{11$^{th}$ international workshop on wave hindcasting and
+  forecasting \& coastal hazards symposium, {JCOMM} {T}ech. {R}ep. 52,
+  {WMO/TD-No.} 1533}, {P}aper {J2}.
+
+\bibitem[{Tolman(2009{\natexlab{b}})}]{tol:MMAB09a}
+Tolman, H.~L. (2009{\natexlab{b}}), User manual and system documentation of
+  {WAVEWATCH III}~\texttrademark\ version 3.14, \textit{Tech. Note 276},
+  {NOAA/NWS/NCEP/MMAB}, 194 pp. + Appendices.
+
+\bibitem[{Tolman(2010{\natexlab{a}})}]{tol:MMAB10a}
+Tolman, H.~L. (2010{\natexlab{a}}), {WAVEWATCH
+  III}$\:$\textsuperscript\textregistered\ development best practices,
+  \textit{Tech. Note 286, Ver. 0.1}, {NOAA/NWS/NCEP/MMAB}, 19 pp.
+
+\bibitem[{Tolman(2010{\natexlab{b}})}]{tol:MMAB10d}
+Tolman, H.~L. (2010{\natexlab{b}}), Optimum {D}iscrete {I}nteraction
+  {A}pproximations for wind waves. {Part 4:} {P}arameter optimization,
+  \textit{Tech. Note 288}, {NOAA/NWS/NCEP/MMAB}, 175 pp.
+
+\bibitem[{Tolman(2010{\natexlab{c}})}]{tol:MMAB10e}
+Tolman, H.~L. (2010{\natexlab{c}}), A genetic optimization package for the
+  {G}eneralized {M}ultiple {DIA} in {WAVEWATCH
+  III}~\textsuperscript\textregistered, \textit{Tech. Note 289, Ver. 1.0},
+  {NOAA/NWS/NCEP/MMAB}, 21 pp.
+
+\bibitem[{Tolman(2011{\natexlab{a}})}]{tol:Kona11b}
+Tolman, H.~L. (2011{\natexlab{a}}), On the impact of nonlinear interaction
+  parameterizations in practical wave models, in \textit{12$^{th}$
+  international workshop on wave hindcasting and forecasting \& 3$^{rd}$
+  coastal hazards symposium}, paper {I15}, 10 pp.
+
+\bibitem[{Tolman(2011{\natexlab{b}})}]{tol:OMOD11}
+Tolman, H.~L. (2011{\natexlab{b}}), A conservative nonlinear filter for the
+  high-frequency range of wind wave spectra, \textit{Ocean Mod.}, {\bf 39},
+  291--300.
+
+\bibitem[{Tolman(2013{\natexlab{a}})}]{tol:OMOD13d}
+Tolman, H.~L. (2013{\natexlab{a}}), A {G}eneralized {M}ultiple {D}iscrete
+  {I}nteraction {A}pproximation for resonant four-wave nonlinear interactions
+  in wind wave models with arbitrary depth, \textit{Ocean Mod.}, {\bf 70},
+  11--24.
+
+\bibitem[{Tolman(2013{\natexlab{b}})}]{tol:MMAB13b}
+Tolman, H.~L. (2013{\natexlab{b}}), Scaling of {WAVEWATCH
+  III}~\textsuperscript{\textregistered} on massively-parallel computer
+  architectures. {Part I:} hybrid parallelization., \textit{Tech. note},
+  {NOAA/NWS/NCEP/MMAB}, in Preparation.
+
+\bibitem[{Tolman(2014{\natexlab{a}})}]{tol:MMAB14b}
+Tolman, H.~L. (2014{\natexlab{a}}), {WAVEWATCH
+  III}$\:$\textsuperscript\textregistered\ development best practices,
+  \textit{Tech. Note 286, Ver. 1.1}, {NOAA/NWS/NCEP/MMAB}, 23 pp.
+
+\bibitem[{Tolman(2014{\natexlab{b}})}]{tol:MMAB14c}
+Tolman, H.~L. (2014{\natexlab{b}}), A genetic optimization package for the
+  {G}eneralized {M}ultiple {DIA} in {WAVEWATCH
+  III}~\textsuperscript\textregistered, \textit{Tech. Note 289, Ver. 1.4},
+  {NOAA/NWS/NCEP/MMAB}, 21 pp. + Appendix.
+
+\bibitem[{Tolman(2014{\natexlab{c}})}]{tol:MMABguide}
+Tolman, H.~L. (2014{\natexlab{c}}), {WAVEWATCH
+  III}$\:$\textsuperscript\textregistered\ development best practices,
+  \textit{Tech. Note 286, Ver. 1.1}, {NOAA/NWS/NCEP/MMAB}, 23 pp.
+
+\bibitem[{Tolman and Alves(2005)}]{tol:OMOD05b}
+Tolman, H.~L., and J.~H. G.~M. Alves (2005), Numerical modeling of wind waves
+  generated by tropical cyclones using moving grids, \textit{Ocean Mod.}, {\bf
+  9}, 305--323.
+
+\bibitem[{Tolman and Booij(1998)}]{tol:GAOS98b}
+Tolman, H.~L., and N.~Booij (1998), Modeling wind waves using
+  wavenumber-direction spectra and a variable wavenumber grid, \textit{The
+  Global Atmosphere and Ocean System}, {\bf 6}, 295--309.
+
+\bibitem[{Tolman and Chalikov(1996)}]{tol:JPO96}
+Tolman, H.~L., and D.~V. Chalikov (1996), Source terms in a third-generation
+  wind-wave model, \textit{J. Phys. Oceanogr.}, {\bf 26}, 2,497--2,518.
+
+\bibitem[{Tolman and Grumbine(2013)}]{tol:OMOD13e}
+Tolman, H.~L., and R.~W. Grumbine (2013), Holistic genetic optimization of a
+  {G}eneralized {M}ultiple {D}iscrete {I}nteraction {A}pproximation for wind
+  waves, \textit{Ocean Mod.}, {\bf 70}, 25--37.
+
+\bibitem[{Tolman and Krasnopolsky(2004)}]{tol:Oahu04a}
+Tolman, H.~L., and V.~M. Krasnopolsky (2004), Nonlinear interactions in
+  practical wind wave models, in \textit{8$\:^{th}$ international workshop on
+  wave hindcasting and forecasting, {JCOMM} {T}ech. {R}ep. 29, {WMO/TD-No.}
+  1319}, {P}aper {E1}.
+
+\bibitem[{Tolman et~al.(2002)Tolman, Balasubramaniyan, Burroughs, Chalikov,
+  Chao, Chen, and Gerald}]{tol:WaF02}
+Tolman, H.~L., B.~Balasubramaniyan, L.~D. Burroughs, D.~V. Chalikov, Y.~Y.
+  Chao, H.~S. Chen, and V.~M. Gerald (2002), Development and implementation of
+  wind generated ocean surface wave models at {NCEP}, \textit{Wea.
+  Forecasting}, {\bf 17}, 311--333.
+
+\bibitem[{Tracy and Resio(1982)}]{rep:TR82}
+Tracy, B., and D.~T. Resio (1982), Theory and calculation of the nonlinear
+  energy transfer between sea waves in deep water, \textit{WES Report~11}, US
+  Army Corps of Engineers.
+
+\bibitem[{Tracy et~al.(2007)Tracy, Devaliere, Nicolini, Tolman, and
+  Hanson}]{tol:Oahu07a}
+Tracy, B., E.-M. Devaliere, T.~Nicolini, H.~L. Tolman, and J.~L. Hanson (2007),
+  Wind sea and swell delineation for numerical wave modeling, in
+  \textit{10$^{th}$ international workshop on wave hindcasting and forecasting
+  \& coastal hazards symposium, {JCOMM} {T}ech. {R}ep. 41, {WMO/TD-No.} 1442},
+  {P}aper {P}12.
+
+\bibitem[{Tracy et~al.(2006)Tracy, Tracy, and Resio}]{rep:TTH06}
+Tracy, F.~T., B.~Tracy, and D.~T. Resio (2006), {ERDC} {MSRC} {R}esource,
+  \textit{Tech. Rep. Fall 2006}, US Army Corps of Engineers.
+
+\bibitem[{Tsagareli et~al.(2010)Tsagareli, Babanin, Walker, and
+  Young}]{art:Tea10}
+Tsagareli, K.~N., A.~V. Babanin, D.~J. Walker, and I.~R. Young (2010),
+  Numerical investigation of spectral evolution of wind waves. {Part I}:
+  {W}ind-input source function, \textit{J. Phys. Oceanogr.}, {\bf 40},
+  656--666.
+
+\bibitem[{Tuomi et~al.(2014)Tuomi, Pettersson, Fortelius, Tikka,
+  Bj{\"o}rkqvist, and Kahma}]{art:Tuomi2014}
+Tuomi, L., H.~Pettersson, C.~Fortelius, K.~Tikka, J.-V. Bj{\"o}rkqvist, and
+  K.~K. Kahma (2014), Wave modelling in archipelagos, \textit{Coastal
+  Engineering}, {\bf 83}, 205--220.
+
+\bibitem[{Valcke(2013)}]{art:VAL13}
+Valcke, S. (2013), The {OASIS3} coupler: a {E}uropean climate modelling
+  community software, \textit{Geosci. Model Dev.}, {\bf 6}, 373--388.
+
+\bibitem[{{Van der Westhuysen} et~al.(2016){Van der Westhuysen}, Hanson, and
+  Devaliere}]{art:WHD13}
+{Van der Westhuysen}, A.~J., J.~L. Hanson, and E.~M. Devaliere (2016), Spatial
+  and temporal tracking of wave systems, \textit{J. Atmos. Oceanic Techn.}, `In
+  prep.
+
+\bibitem[{{Van Vledder}(2000)}]{pro:vVl00}
+{Van Vledder}, G.~P. (2000), Improved method for obtaining the integration
+  space for the computation of nonlinear quadruplet wave-wave interaction, in
+  \textit{Proceedings of the 6th International Workshop on Wave Forecasting and
+  Hindcasting}, pp. 418--431.
+
+\bibitem[{{Van Vledder}(2002{\natexlab{a}})}]{rep:vVl02a}
+{Van Vledder}, G.~P. (2002{\natexlab{a}}), Improved parameterizations of
+  nonlinear four wave interactions for application in operational wave
+  prediction models, \textit{Report 151a}, Alkyon, The Netherlands.
+
+\bibitem[{{Van Vledder}(2002{\natexlab{b}})}]{rep:vVl02b}
+{Van Vledder}, G.~P. (2002{\natexlab{b}}), A subroutine version of the
+  {W}ebb/{R}esio/{T}racy method for the computation of nonlinear quadruplet
+  interactions in a wind-wave spectrum, \textit{Report 151b}, Alkyon, The
+  Netherlands.
+
+\bibitem[{Veras~Guimar{\~a}es et~al.(2018)Veras~Guimar{\~a}es, Ardhuin,
+  Sutherland, Accensi, Hamon, P{\'e}rignon, Thomson, Benetazzo, and
+  Ferrant}]{Guimaraes2018}
+Veras~Guimar{\~a}es, P., F.~Ardhuin, P.~Sutherland, M.~Accensi, M.~Hamon,
+  Y.~P{\'e}rignon, J.~Thomson, A.~Benetazzo, and P.~Ferrant (2018), A surface
+  kinematics buoy (skib) for wave--current interaction studies, \textit{Ocean
+  Science}, {\bf 14}(6), 1449--1460.
+
+\bibitem[{Vincent and Soille(1991)}]{art:VS91}
+Vincent, L., and P.~Soille (1991), Watersheds in digital spaces: {A}n efficient
+  algorithm based on immersion simulations, \textit{IEEE Transactions of
+  Pattern Analysis and Machine Intelligence}, {\bf 13}, 583--598.
+
+\bibitem[{Voorrips et~al.(1997)Voorrips, Makin, and Hasselmann}]{art:VMH97}
+Voorrips, A.~C., V.~K. Makin, and S.~Hasselmann (1997), Assimilation of wave
+  spectra from pitch-and-roll buoys in a {N}orth {S}ea wave model, \textit{J.
+  Geophys. Res.}, {\bf 102}, 5,829--5,849.
+
+\bibitem[{Wadhams(1973)}]{art:Wad73}
+Wadhams, P. (1973), Attenuation of swell by sea ice, \textit{J. Geophys. Res.},
+  {\bf 78}(18), 3,552--3,563.
+
+\bibitem[{Wadhams(1975)}]{art:Wad75}
+Wadhams, P. (1975), Airborne laser profiling of swell in an open ice field,
+  \textit{J. Geophys. Res.}, {\bf 80}(33), 4,520--4,528.
+
+\bibitem[{Wadhams et~al.(1988)Wadhams, Squire, Goodman, Cowan, and
+  Moore}]{art:WAD88}
+Wadhams, P., V.~Squire, D.~Goodman, A.~Cowan, and S.~Moore (1988), The
+  attenuation rates of ocean waves in the marginal ice zone, \textit{J.
+  Geophys. Res.}, {\bf 93}, 6,799--6,818.
+
+\bibitem[{{WAMDIG}(1988)}]{art:WAM88}
+{WAMDIG} (1988), The {WAM} model -- {A} third generation ocean wave prediction
+  model, \textit{J. Phys. Oceanogr.}, {\bf 18}, 1,775--1,810.
+
+\bibitem[{Wang and Shen(2010)}]{art:WS10}
+Wang, R., and H.~H. Shen (2010), Gravity waves propagating into an ice-covered
+  ocean: {A} viscoelastic model, \textit{J. Geophys. Res.}, {\bf 115}(C6).
+
+\bibitem[{Wang et~al.(2016)Wang, Holt, Rogers, Thomson, and Shen}]{art:WHR16}
+Wang, Y., B.~Holt, W.~E. Rogers, J.~Thomson, and H.~H. Shen (2016), Wind and
+  wave influences on sea ice floe size and leads in the {Beaufort and Chukchi
+  Seas} during the summer-fall transition, \textit{J. Geophys. Res.}, {\bf
+  121}, 1502--1525, \doi{doi:10.1002/2015JC011349}.
+
+\bibitem[{Webb(1978)}]{art:Web78}
+Webb, D.~J. (1978), Non-linear transfers between sea waves, \textit{Deep-Sea
+  Res.}, {\bf 25}, 279--298.
+
+\bibitem[{Wessel and Smith(1996)}]{art:WS96}
+Wessel, P., and W.~Smith (1996), A global self-consistent hierarchical high
+  resolution shoreline database, \textit{J. Geophys. Res.}, {\bf 101},
+  8,741--8,743.
+
+\bibitem[{Whitham(1965)}]{art:Whi65}
+Whitham, G.~B. (1965), A general approach to linear and non-linear dispersive
+  waves using a {L}agrangian, \textit{J. Fluid Mech.}, {\bf 22}, 273--283.
+
+\bibitem[{Williams et~al.(2013)Williams, Bennetts, Squire, Dumont, and
+  Bertino}]{art:Wea13}
+Williams, T.~D., L.~G. Bennetts, V.~A. Squire, D.~Dumont, and L.~Bertino
+  (2013), Wave-ice interactions in the marginal ice zone. {P}art 1:
+  {T}heoretical foundations, \textit{Ocean Mod.}, {\bf 70}(1), 81--91,
+  \doi{10.1016/j.ocemod.2013.05.010}.
+
+\bibitem[{{WISE Group}(2007)}]{tol:WISE07}
+{WISE Group} (2007), Wave modelling - the state of the art, \textit{Progress in
+  Oceanography}, {\bf 75}, 603--674.
+
+\bibitem[{{WMO}(2001)}]{rep:GRIB2}
+{WMO} (2001), {WMO MANUAL ON CODES VOLUME I - I}nternational codes; part {B} -
+  binary codes, \textit{Publication Number 306}, {WMO}.
+
+\bibitem[{Wu(1982)}]{art:Wu82}
+Wu, J. (1982), Wind-stress coefficients over sea surface from breeze to
+  hurricane, \textit{J. Geophys. Res.}, {\bf 87}, 9,704--9,706.
+
+\bibitem[{Young and Babanin(2006)}]{art:YB06}
+Young, I.~R., and A.~V. Babanin (2006), Spectral distribution of energy
+  dissipation of wind-generated waves due to dominant wave breaking, \textit{J.
+  Phys. Oceanogr.}, {\bf 36}, 376--394.
+
+\bibitem[{Zanke et~al.(2006)Zanke, Roland, Hsu, Ou, and Liau}]{pro:zanke2006}
+Zanke, U., A.~Roland, T.-W. Hsu, S.-H. Ou, and J.-M. Liau (2006), Spectral wave
+  modelling on unstructured grids with the wwm (wind wave model)—ii: The
+  shallow water cases, in \textit{Third Chinese--German Joint Symposium on
+  Coastal and Ocean Engineering (JOINT2006), Tainan, Taiwan}.
+
+\bibitem[{Zieger et~al.(2015)Zieger, Babanin, Rogers, and Young}]{art:ZBRY15}
+Zieger, S., A.~V. Babanin, W.~E. Rogers, and I.~R. Young (2015),
+  Observation-based source terms in the third-generation wave model
+  {WAVEWATCH}, \textit{Ocean Mod.}, {\bf 96}, 2--25.
+
+\bibitem[{Zieger et~al.(2018)Zieger, Greenslade, and Kepert}]{art:ZET18}
+Zieger, S., D.~Greenslade, and J.~D. Kepert (2018), Wave ensemble forecast
+  system for tropical cyclones in the australian region, \textit{Ocean
+  Dynamics}, pp. 1--23.
+
+\bibitem[{Zijlema(2010)}]{art:Zij10}
+Zijlema, M. (2010), Computation of wind-wave spectra in coastal waters with
+  {SWAN} on unstructured grids, \textit{Coastal Eng.}, {\bf 57}(3), 267 -- 277.
+
+\end{thebibliography}

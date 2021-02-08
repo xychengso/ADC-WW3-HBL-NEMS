@@ -1,0 +1,7 @@
+[submodule "NWM"]
+	path = NWM
+	url = https://github.com/trimbleava/nwm_public_nuopc.git
+	branch = master
+[submodule "nwm_public_nuopc"]
+	path = nwm_public_nuopc
+	url = https://github.com/trimbleava/nwm_public_nuopc.git

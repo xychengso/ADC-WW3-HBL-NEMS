@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: manual.aux
+A level-1 auxiliary file: start.aux
+A level-1 auxiliary file: intro.aux
+A level-1 auxiliary file: eqs.aux
+A level-1 auxiliary file: num.aux
+A level-1 auxiliary file: run.aux
+A level-1 auxiliary file: impl.aux
+A level-1 auxiliary file: sys.aux
+The style file: agufull08.bst
+A level-1 auxiliary file: app/more.aux
+A level-1 auxiliary file: app/tstep.aux
+A level-1 auxiliary file: app/nest.aux
+A level-1 auxiliary file: app/mpi.aux
+A level-1 auxiliary file: app/scrip.aux
+A level-1 auxiliary file: app/oasis.aux
+A level-1 auxiliary file: app/nuopc.aux
+A level-1 auxiliary file: app/config.aux
+Reallocated field_info (elt_size=4) to 12700 items from 5000.
+Database file #1: manual.bib
+Warning--string name "c3" is undefined
+--line 1972 of file manual.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--there's a number but no volume in Bidlot2001
+Warning--missing institution in rep:Eld95
+Warning--empty booktitle in art:janekovic2015
+Warning--empty journal in rep:karypis2011metis
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+You've used 308 entries,
+            3092 wiz_defined-function locations,
+            2957 strings with 64014 characters,
+and the built_in function-call counts, 284896 in all, are:
+= -- 33025
+> -- 8616
+< -- 243
++ -- 4095
+- -- 2376
+* -- 15673
+:= -- 26962
+add.period$ -- 308
+call.type$ -- 308
+change.case$ -- 1340
+chr.to.int$ -- 309
+cite$ -- 312
+duplicate$ -- 31670
+empty$ -- 15871
+format.name$ -- 3232
+if$ -- 57309
+int.to.chr$ -- 28
+int.to.str$ -- 1
+missing$ -- 3012
+newline$ -- 931
+num.names$ -- 1235
+pop$ -- 11087
+preamble$ -- 1
+purify$ -- 1001
+quote$ -- 0
+skip$ -- 18352
+stack$ -- 0
+substring$ -- 12966
+swap$ -- 26793
+text.length$ -- 55
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2742
+warning$ -- 4
+while$ -- 1582
+width$ -- 0
+write$ -- 3457
+(There were 5 warnings)

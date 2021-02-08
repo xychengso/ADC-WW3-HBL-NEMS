@@ -1,0 +1,79 @@
+ WAVEWATCH III log file                                 version 6.07      
+ =====================================================================
+                                                  date : 2021/01/25
+                                                  time :  20:17:43
+
+ Model definition file read.
+ Restart file read; cold start (idealized).
+
+ Grid name : NONLINEAR SHOALING X          
+
+ No water levels.
+ No curents.
+ No winds.
+ No ice fields.
+ No mud density.
+ No mud thickness.
+ No mud viscosity.
+ No ice parameter 1
+ No ice parameter 2
+ No ice parameter 3
+ No ice parameter 4
+ No ice parameter 5
+
+ Gridded output fields : 
+--------------------------------------------------
+     Water depth         
+     Wave height         
+     Mean wave period(-1)
+
+ Point output requested for     8 points : 
+------------------------------------------
+
+      point  |      X      |      Y      |  name  
+     --------|-------------|-------------|----------------
+         1   |     0.0E3   |     0.0E3   |  Boundary  
+         2   |     0.0E3   |     0.0E3   |  Station1  
+         3   |     0.0E3   |     0.0E3   |  Station2  
+         4   |     0.0E3   |     0.0E3   |  Station3  
+         5   |     0.0E3   |     0.0E3   |  Station4  
+         6   |     0.0E3   |     0.0E3   |  Station5  
+         7   |     0.0E3   |     0.0E3   |  Station6  
+         8   |     0.0E3   |     0.0E3   |  Station7  
+
+ Initial time     : 1968/06/06 00:00:00 UTC
+
+
+                                       |       input       |     output    |
+                                       |-------------------|---------------|
+     step | pass |    date      time   | b w l c i i1 i5 d | g p t r b f c |
+  --------|------|---------------------|-------------------|---------------|
+         0|     1| 1968/06/06 00:00:00 |                   | X X           |
+         5|     1|            00:00:05 |                   | X X           |
+        10|     1|            00:00:10 |                   | X X           |
+        15|     1|            00:00:15 |                   | X X           |
+        20|     1|            00:00:20 |                   | X X           |
+        25|     1|            00:00:25 |                   | X X           |
+        30|     1|            00:00:30 |                   | X X           |
+        35|     1|            00:00:35 |                   | X X           |
+        40|     1|            00:00:40 |                   | X X           |
+        45|     1|            00:00:45 |                   | X X           |
+        50|     1|            00:00:50 |                   | X X           |
+        55|     1|            00:00:55 |                   | X X           |
+        60|     1|            00:01:00 |                   | X X           |
+        65|     1|            00:01:05 |                   | X X           |
+        70|     1|            00:01:10 |                   | X X           |
+        75|     1|            00:01:15 |                   | X X           |
+        80|     1|            00:01:20 |                   | X X           |
+        85|     1|            00:01:25 |                   | X X           |
+        90|     1|            00:01:30 |                   | X X           |
+        95|     1|            00:01:35 |                   | X X           |
+       100|     1|            00:01:40 |                   | X X           |
+       105|     1|            00:01:45 |                   | X X           |
+       110|     1|            00:01:50 |                   | X X           |
+       115|     1|            00:01:55 |                   | X X           |
+       120|     1|            00:02:00 |                   | L L           |
+  --------+------+---------------------+-------------------+---------------+
+
+  Initialization time :      0.34 s
+  Elapsed time        :     41.38 s

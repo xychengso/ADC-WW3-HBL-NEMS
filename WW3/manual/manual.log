@@ -1,0 +1,2738 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2017.10.27)  5 AUG 2020 09:55
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**manual.tex
+(./manual.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2013/03/13 v2.5 Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\MT@toks=\toks15
+\MT@count=\count87
+LaTeX Info: Redefining \textls on input line 771.
+\MT@outer@kern=\dimen103
+LaTeX Info: Redefining \textmicrotypecontext on input line 1290.
+\MT@listname@count=\count88
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2013/03/13 v2.5 Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 889.
+LaTeX Info: Redefining \lslig on input line 889.
+\MT@outer@space=\skip43
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2013/03/13 v2.5 microtype main configuration file (RS)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip44
+\bibsep=\skip45
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count89
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen108
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen109
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks18
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks19
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks20
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+) (./svn.sty
+Package: svn 2007/09/25 r43 Typeset Subversion keywords.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen117
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count105
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count106
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen118
+\Fld@menulength=\count107
+\Field@Width=\dimen119
+\Fld@charsize=\dimen120
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count108
+\c@Item=\count109
+\c@Hfootnote=\count110
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count111
+\c@bookmark@seq@number=\count112
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/02/03 v3.3-65 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/02/03 v1.5-62 caption3 kernel (AR)
+\captionmargin=\dimen121
+\captionmargin@=\dimen122
+\captionwidth=\dimen123
+\caption@tempdima=\dimen124
+\caption@indent=\dimen125
+\caption@parindent=\dimen126
+\caption@hangindent=\dimen127
+)
+\c@ContinuedFloat=\count113
+Package caption Info: hyperref package is loaded.
+)
+(./threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count114
+\rotFPtop=\skip50
+\rotFPbot=\skip51
+\rot@float@box=\box29
+\rot@mess@toks=\toks22
+) (./tocloft.sty
+Package: tocloft 1999/09/19 v1.0 parameterised ToC, etc., typesetting
+
+(./stdclsdv.sty
+Package: stdclsdv 1999/01/18 v1.0 Sectional divisions
+)
+\cftbeforetoctitleskip=\skip52
+\cftaftertoctitleskip=\skip53
+\cftbeforepartskip=\skip54
+\cftpartnumwidth=\skip55
+\cftbeforechapskip=\skip56
+\cftchapindent=\skip57
+\cftchapnumwidth=\skip58
+\cftbeforesecskip=\skip59
+\cftsecindent=\skip60
+\cftsecnumwidth=\skip61
+\cftbeforesubsecskip=\skip62
+\cftsubsecindent=\skip63
+\cftsubsecnumwidth=\skip64
+\cftbeforesubsubsecskip=\skip65
+\cftsubsubsecindent=\skip66
+\cftsubsubsecnumwidth=\skip67
+\cftbeforeparaskip=\skip68
+\cftparaindent=\skip69
+\cftparanumwidth=\skip70
+\cftbeforesubparaskip=\skip71
+\cftsubparaindent=\skip72
+\cftsubparanumwidth=\skip73
+\cftbeforeloftitleskip=\skip74
+\cftafterloftitleskip=\skip75
+\cftbeforefigskip=\skip76
+\cftfigindent=\skip77
+\cftfignumwidth=\skip78
+\cftbeforelottitleskip=\skip79
+\cftafterlottitleskip=\skip80
+\cftbeforetabskip=\skip81
+\cfttabindent=\skip82
+\cfttabnumwidth=\skip83
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 23.
+ (./defs.tex
+\c@outpars=\count115
+\c@outgrps=\count116
+\hatch=\box30
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 225.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 225.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 225.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 225.
+
+) (./manual.aux (./start.aux) (./intro.aux) (./eqs.aux
+
+LaTeX Warning: Label `eq:ice1' multiply defined.
+
+
+LaTeX Warning: Label `eq:ice2' multiply defined.
+
+
+LaTeX Warning: Label `eq:ice3' multiply defined.
+
+
+LaTeX Warning: Label `eq:sig_th1' multiply defined.
+
+
+LaTeX Warning: Label `sub:outpars' multiply defined.
+
+) (./num.aux
+
+LaTeX Warning: Label `sec:basic_num' multiply defined.
+
+) (./run.aux) (./impl.aux) (./sys.aux) (./app/more.aux) (./app/tstep.aux)
+(./app/nest.aux) (./app/mpi.aux) (./app/scrip.aux) (./app/oasis.aux
+
+LaTeX Warning: Label `sec:couplingB' multiply defined.
+
+) (./app/nuopc.aux) (./app/config.aux))
+\openout1 = `manual.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Info: Redefining \microtypecontext on input line 32.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2011/04/09 v2.1 microtype config. file: Computer Modern Roman 
+(RS)
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count117
+\scratchdimen=\dimen128
+\scratchbox=\box31
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen129
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring ON on input line 32.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count123
+)
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
+
+(./manual.out) (./manual.out)
+\@outlinefile=\write3
+\openout3 = `manual.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: rotating package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\openout2 = `start.aux'.
+
+ (./start.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 20.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 50--54
+[] 
+ []
+
+[1
+
+
+{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+(./manual.toc [1] [2]
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [3] [4]
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [5] [6])
+\tf@toc=\write4
+\openout4 = `manual.toc'.
+
+ [7] [8])
+\openout2 = `intro.aux'.
+
+ (./intro.tex (./intro/ww3.texpdfTeX warning (ext4): destination with the same 
+identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.29 
+      [1
+
+
+]) (./intro/about.texpdfTeX warning (ext4): destination with the same identifie
+r (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 
+      [2] [3]) (./intro/license.tex [4]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+ [5]) (./intro/copyright.tex
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
+)
+(./intro/group.tex
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 2.
+
+[6] [7] [8] [9] [10]) (./intro/ack.tex [11]) [12]) [13]
+\openout2 = `eqs.aux'.
+
+ (./eqs.tex
+(./eqs/intro.tex [14
+
+
+] [15]) (./eqs/prop.tex [16]) (./eqs/source.tex [17]
+[18]) (./eqs/NL1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[19] [20]) (./eqs/NL2.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[21]
+Overfull \hbox (5.9956pt too wide) in alignment at lines 37--46
+ [][][] []
+ []
+
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 58.
+
+[22] [23]) (./eqs/NL3.tex [24]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[25] [26]) (./eqs/NL4.tex [27]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+
+[29] [30] [31]) (./eqs/NLS.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[32] [33]) (./eqs/ST1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[34]) (./eqs/ST2.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[35] [36] [37] [38] [39] [40] [41]) (./eqs/ST3.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[42]
+Underfull \vbox (badness 1436) has occurred while \output is active []
+
+ [43]
+[44] [45] [46]) (./eqs/ST4.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[47] [48]
+Overfull \hbox (2.94044pt too wide) in paragraph at lines 96--116
+ [] 
+ []
+
+[49] [50
+
+
+] [51] [52] [53]
+Overfull \hbox (8.09705pt too wide) in paragraph at lines 298--321
+ [] 
+ []
+
+[54]) (./eqs/ST6.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Overfull \hbox (27.00433pt too wide) in paragraph at lines 5--6
+| [] 
+ []
+
+[55
+
+
+] [56] [57] [58]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 237.
+ [59] [60] [61] [62] [63]) (./eqs/LN1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[64]) (./eqs/BT1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+) (./eqs/BT4.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[65] [66]) (./eqs/BT8.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[67]) (./eqs/BT9.tex [68]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+) (./eqs/DB1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[69] [70]) (./eqs/TR1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[71] [72]) (./eqs/BS1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[73]) (./eqs/UOST.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[74]
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+ [75]
+Package epstopdf Info: Source file: <./eqs/UOST.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 3670537 bytes
+(epstopdf)             Output file: <./eqs/UOST-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./eqs/UOST-eps-converted-t
+o.pdf ./eqs/UOST.eps>
+(epstopdf)             \includegraphics on input line 68.
+runsystem(repstopdf --outfile=./eqs/UOST-eps-converted-to.pdf ./eqs/UOST.eps)..
+.executed safely (allowed).
+
+Package epstopdf Info: Result file: <./eqs/UOST-eps-converted-to.pdf>.
+
+
+! Package pdftex.def Error: File `./eqs/UOST-eps-converted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 ...fig{file=./eqs/UOST.eps,angle=0,width=4in}
+                                                  
+? 
+[76] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]\OT1/cmr/m/n/10 (+20) Calibration
+ []
+
+) (./eqs/XXn.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+) (./eqs/sourceice.tex [78] [79] [80]) (./eqs/ICE1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+) (./eqs/ICE2.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[81] [82]) (./eqs/ICE3.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[83] [84]
+Underfull \hbox (badness 10000) in paragraph at lines 45--49
+
+ []
+
+[85]) (./eqs/ICE4.tex [86]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[87]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+ [88]) (./eqs/ICE5.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[89]
+Underfull \hbox (badness 1728) in paragraph at lines 35--36
+[]\OT1/cmr/m/n/12 (+20) the max-i-mum al-lowed # of it-er-a-tion; De-
+ []
+
+[90]) (./eqs/IS1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+) (./eqs/IS2.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Overfull \hbox (10.28645pt too wide) in paragraph at lines 5--6
+| [] 
+ []
+
+
+Underfull \vbox (badness 1859) has occurred while \output is active []
+
+ [91]
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
+
+ []
+
+[92]
+Underfull \hbox (badness 10000) in paragraph at lines 47--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 98--103
+
+ []
+
+[94]
+Underfull \hbox (badness 10000) in paragraph at lines 138--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--166
+
+ []
+
+[95]
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
+
+ []
+
+
+Overfull \hbox (68.24844pt too wide) in paragraph at lines 185--214
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--214
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [96])
+(./eqs/REF1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[97]
+Overfull \hbox (0.66809pt too wide) detected at line 44
+[]\OMS/cmsy/m/n/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k; ^^R\OT1/cmr/m/n/12 )
+ = [] \OML/cmm/m/it/12 R[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k; ^^R; ^^R[]\OT1/c
+mr/m/n/12 )[] [] \OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k; ^^R[]\O
+T1/cmr/m/n/12 )d\OML/cmm/m/it/12 ^^R[] ;
+ []
+
+[98]
+Package epstopdf Info: Source file: <./num/coast_reflection.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 35654 bytes
+(epstopdf)             Output file: <./num/coast_reflection-eps-converted-to.pd
+f>
+(epstopdf)             Command: <repstopdf --outfile=./num/coast_reflection-eps
+-converted-to.pdf ./num/coast_reflection.eps>
+(epstopdf)             \includegraphics on input line 106.
+runsystem(repstopdf --outfile=./num/coast_reflection-eps-converted-to.pdf ./num
+/coast_reflection.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/coast_reflection-eps-converted-to.pd
+f>.
+
+
+! Package pdftex.def Error: File `./num/coast_reflection-eps-converted-to.pdf' 
+not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106 ...m/coast_reflection.eps,angle=0,width=3in}
+                                                  
+? 
+) (./eqs/IG1.tex [99] [100] [101] [102]) (./eqs/airseaprocesses.tex [103]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104])
+(./eqs/FLD1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tau' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[105] [106]) (./eqs/FLD2.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tau' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+[107]) (./eqs/output.tex [108] [109] [110] [111] [112] [113] [114] [115])
+(./eqs/derived.tex [116]
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+\OT1/cmtt/m/n/12 usf(IK)= SUM( E(IK,ITH)*ECOS(ITH)*DTH(ITH)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+[]\OT1/cmtt/m/n/12 vsf(IK)= SUM( E(IK,ITH)*ESIN(ITH)*DTH(ITH)
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 30--32
+[]\OT1/cmr/m/n/12 (+20) Us(z)= SUMIK=I1,I2 ( usf(IK) * FACT2(z,KD)*DF(IK)) Vs(z
+)=
+ []
+
+) [117] [118]) [119]
+\openout2 = `num.aux'.
+
+ (./num.tex (./num/basics.tex [120
+
+
+] [121] [122])
+(./num/depth.tex [123]) (./num/space.tex [124]) (./num/space_trad.tex)
+(./num/space_trad_1.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 1.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [125]
+[126]) (./num/space_trad_2.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 2.
+
+[127]) (./num/space_trad_3.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 1.
+
+[128] [129]) (./num/space_curv.tex [130]) (./num/space_tri.tex
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 31.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 31.
+ [131] [132] [133]
+Package epstopdf Info: Source file: <./num/grid_triangles.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 126673 bytes
+(epstopdf)             Output file: <./num/grid_triangles-eps-converted-to.pdf>
+
+(epstopdf)             Command: <repstopdf --outfile=./num/grid_triangles-eps-c
+onverted-to.pdf ./num/grid_triangles.eps>
+(epstopdf)             \includegraphics on input line 126.
+runsystem(repstopdf --outfile=./num/grid_triangles-eps-converted-to.pdf ./num/g
+rid_triangles.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/grid_triangles-eps-converted-to.pdf>
+.
+
+
+! Package pdftex.def Error: File `./num/grid_triangles-eps-converted-to.pdf' no
+t found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 ...um/grid_triangles.eps,angle=0,width=4.in}
+                                                  
+? 
+Package epstopdf Info: Source file: <./num/DDvsCD.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 2491142 bytes
+(epstopdf)             Output file: <./num/DDvsCD-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/DDvsCD-eps-converted
+-to.pdf ./num/DDvsCD.eps>
+(epstopdf)             \includegraphics on input line 138.
+runsystem(repstopdf --outfile=./num/DDvsCD-eps-converted-to.pdf ./num/DDvsCD.ep
+s)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/DDvsCD-eps-converted-to.pdf>.
+
+! Package pdftex.def Error: File `./num/DDvsCD-eps-converted-to.pdf' not found.
+
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 ...file=./num/DDvsCD.eps,angle=0,width=4.in}
+                                                  
+? 
+) (./num/space_SMC.tex
+Underfull \vbox (badness 3965) has occurred while \output is active []
+
+ [134]
+[135] [136] [137]
+Package epstopdf Info: Source file: <./num/smcelary.eps>
+(epstopdf)                    date: 2020-08-05 09:12:22
+(epstopdf)                    size: 21909 bytes
+(epstopdf)             Output file: <./num/smcelary-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/smcelary-eps-convert
+ed-to.pdf ./num/smcelary.eps>
+(epstopdf)             \includegraphics on input line 69.
+runsystem(repstopdf --outfile=./num/smcelary-eps-converted-to.pdf ./num/smcelar
+y.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/smcelary-eps-converted-to.pdf>.
+
+
+! Package pdftex.def Error: File `./num/smcelary-eps-converted-to.pdf' not foun
+d.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...le=./num/smcelary.eps,angle=0,width=3.in}}
+                                                  
+? 
+[138]
+Package epstopdf Info: Source file: <./num/JCP_Fig2_GArc.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 5043715 bytes
+(epstopdf)             Output file: <./num/JCP_Fig2_GArc-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/JCP_Fig2_GArc-eps-co
+nverted-to.pdf ./num/JCP_Fig2_GArc.eps>
+(epstopdf)             \includegraphics on input line 96.
+runsystem(repstopdf --outfile=./num/JCP_Fig2_GArc-eps-converted-to.pdf ./num/JC
+P_Fig2_GArc.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/JCP_Fig2_GArc-eps-converted-to.pdf>.
+
+
+
+! Package pdftex.def Error: File `./num/JCP_Fig2_GArc-eps-converted-to.pdf' not
+ found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 ...num/JCP_Fig2_GArc.eps,angle=0,width=4.in}}
+                                                  
+? 
+[139] [140]
+Underfull \hbox (badness 1215) in paragraph at lines 164--169
+[]\OT1/cmr/m/n/12 (+20) It is rec-om-mended to read the smc[]docs/SMC[]Grid[]Gu
+ide.pdf or
+ []
+
+[141]) (./num/GSE.tex) (./num/GSE_null.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 1.
+
+) [142] (./num/GSE_BH.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 1.
+
+[143] [144]) [145] (./num/GSE_avg.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 1.
+
+Package epstopdf Info: Source file: <./num/GSE_1.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 25475 bytes
+(epstopdf)             Output file: <./num/GSE_1-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/GSE_1-eps-converted-
+to.pdf ./num/GSE_1.eps>
+(epstopdf)             \includegraphics on input line 48.
+runsystem(repstopdf --outfile=./num/GSE_1-eps-converted-to.pdf ./num/GSE_1.eps)
+...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/GSE_1-eps-converted-to.pdf>.
+
+! Package pdftex.def Error: File `./num/GSE_1-eps-converted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 ...{file=./num/GSE_1.eps,angle=0,width=2.2in}
+                                                  
+? 
+[146]) [147] (./num/obst.tex
+Package epstopdf Info: Source file: <./num/obstr.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 15475 bytes
+(epstopdf)             Output file: <./num/obstr-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/obstr-eps-converted-
+to.pdf ./num/obstr.eps>
+(epstopdf)             \includegraphics on input line 33.
+runsystem(repstopdf --outfile=./num/obstr-eps-converted-to.pdf ./num/obstr.eps)
+...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/obstr-eps-converted-to.pdf>.
+
+
+! Package pdftex.def Error: File `./num/obstr-eps-converted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 ...{file=./num/obstr.eps,angle=0,width=2.2in}
+                                                  
+? 
+[148]) (./num/move.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [149]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unhcopy' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\strutbox' on input line 5.
+
+[150]) (./num/rotagrid.tex [151] [152]) (./num/spec.tex [153] [154])
+(./num/spec_1up.tex) (./num/spec_uno.tex [155]) (./num/spec_uq.tex [156])
+(./num/source.tex [157] [158] [159]
+Underfull \vbox (badness 7030) has occurred while \output is active []
+
+ [160])
+(./num/ice.tex [161] [162]) (./num/w_c.tex) (./num/tide.tex [163])
+(./num/space_time_ext.tex [164] [165] [166]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./num/part.tex [167] [168]
+Package epstopdf Info: Source file: <./num/partition1.eps>
+(epstopdf)                    date: 2020-08-05 09:12:21
+(epstopdf)                    size: 279527 bytes
+(epstopdf)             Output file: <./num/partition1-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/partition1-eps-conve
+rted-to.pdf ./num/partition1.eps>
+(epstopdf)             \includegraphics on input line 73.
+runsystem(repstopdf --outfile=./num/partition1-eps-converted-to.pdf ./num/parti
+tion1.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/partition1-eps-converted-to.pdf>.
+
+
+! Package pdftex.def Error: File `./num/partition1-eps-converted-to.pdf' not fo
+und.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...fig{file=./num/partition1.eps,width=3.8in}
+                                                  
+? 
+[169] [170] [171]) (./num/track.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [172]
+Package epstopdf Info: Source file: <./num/wavetrack.eps>
+(epstopdf)                    date: 2020-08-05 09:12:22
+(epstopdf)                    size: 431801 bytes
+(epstopdf)             Output file: <./num/wavetrack-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./num/wavetrack-eps-conver
+ted-to.pdf ./num/wavetrack.eps>
+(epstopdf)             \includegraphics on input line 30.
+runsystem(repstopdf --outfile=./num/wavetrack-eps-converted-to.pdf ./num/wavetr
+ack.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./num/wavetrack-eps-converted-to.pdf>.
+
+
+! Package pdftex.def Error: File `./num/wavetrack-eps-converted-to.pdf' not fou
+nd.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \epsfig{file=./num/wavetrack.eps,width=3.5in}
+                                                  
+? 
+[173] [174]) (./num/nest.tex [175] (./num/fig_nest1.tex) [176]
+(./num/fig_nest2.tex) [177] (./num/fig_nest3.tex)
+Underfull \vbox (badness 2469) has occurred while \output is active []
+
+ [178])
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [179])
+[180]
+\openout2 = `run.aux'.
+
+ (./run.tex (./run/design.tex
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 40.
+
+[181
+
+
+] (./run/fig_flow.tex)) (./run/core.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [182]
+[183] (./run/fig_log.tex) [184]) (./run/das.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [185])
+(./run/aux.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [186]
+[187]
+Underfull \hbox (badness 1286) in paragraph at lines 87--91
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[188]
+Underfull \hbox (badness 1009) in paragraph at lines 110--112
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 113--117
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 142--144
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+[189]) [190] (./run/ww3_grid.tex
+Underfull \hbox (badness 2027) in paragraph at lines 12--12
+[]\OT1/cmr/m/n/12 (+20) Model def-i-ni-tion file in WAVE-
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--15
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--15
+[] [] [] [] []
+ []
+
+) [191] (./run/ww3_strt.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--10
+[] [] [] [] []
+ []
+
+) [192] (./run/ww3_bound.tex
+Overfull \hbox (0.60329pt too wide) in paragraph at lines 5--5
+[]\OT1/cmss/m/n/12 (-20) ww3[]bound.ftn 
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+) [193] (./run/ww3_bounc.tex
+Underfull \hbox (badness 6204) in paragraph at lines 9--9
+[]\OT1/cmr/m/n/12 (+20) File(s) with wave spec-tra, in
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--12
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--12
+[] [] [] [] []
+ []
+
+) [194] (./run/ww3_prep.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--17
+[] [] [] [] []
+ []
+
+) [195] (./run/ww3_prnc.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--18
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--18
+[] [] [] [] []
+ []
+
+) [196] (./run/ww3_prtide.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]\OT1/cmss/m/n/12 (+2) current.ww3[]tide
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 10--10
+[]\OT1/cmss/m/n/12 (+20) current.ww3 or
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+) [197] (./run/ww3_shel.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--28
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--28
+[] [] [] [] []
+ []
+
+) [198] (./run/ww3_gspl.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--17
+[] [] [] [] []
+ []
+
+[199] (./run/fig_gspl.tex (./ww3_gspl.sh.out)) [200]) (./run/ww3_multi.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+) [201
+
+] (./run/ww3_gint.tex
+Underfull \hbox (badness 8075) in paragraph at lines 7--7
+[]\OT1/cmr/m/n/12 (+20) Gridded field files in WAVE-
+ []
+
+
+Underfull \hbox (badness 8075) in paragraph at lines 9--9
+[]\OT1/cmr/m/n/12 (+20) Gridded field files in WAVE-
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 4--10
+[] [] [] [] []
+ []
+
+) [202] (./run/ww3_outf.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+) [203] (./run/ww3_ounf.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--13
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--13
+[] [] [] [] []
+ []
+
+) [204] (./run/gx_outf.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--12
+[] [] [] [] []
+ []
+
+) [205] (./run/ww3_grib.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+
+Underfull \vbox (badness 1281) has occurred while \output is active []
+
+ [206])
+[207] (./run/ww3_outp.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--14
+[] [] [] [] []
+ []
+
+) [208] (./run/ww3_ounp.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--12
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--12
+[] [] [] [] []
+ []
+
+) [209] (./run/gx_outp.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--13
+[] [] [] [] []
+ []
+
+) [210] (./run/ww3_trck.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--10
+[] [] [] [] []
+ []
+
+) [211] (./run/ww3_trnc.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+) [212] (./run/ww3_systrk.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--19
+[] [] [] [] []
+ []
+
+[213]) [214] (./run/ww3_uprstr.tex
+Underfull \hbox (badness 1354) in paragraph at lines 5--11
+[] [] [] [] []
+ []
+
+[215]
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--78
+
+ []
+
+[216]
+Overfull \hbox (44.00793pt too wide) in paragraph at lines 90--105
+[] 
+ []
+
+Package epstopdf Info: Source file: <./run/uprstr.eps>
+(epstopdf)                    date: 2020-08-05 09:12:22
+(epstopdf)                    size: 115554 bytes
+(epstopdf)             Output file: <./run/uprstr-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./run/uprstr-eps-converted
+-to.pdf ./run/uprstr.eps>
+(epstopdf)             \includegraphics on input line 118.
+runsystem(repstopdf --outfile=./run/uprstr-eps-converted-to.pdf ./run/uprstr.ep
+s)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./run/uprstr-eps-converted-to.pdf>.
+
+! Package pdftex.def Error: File `./run/uprstr-eps-converted-to.pdf' not found.
+
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118 ...cs[width=0.9\textwidth]{./run/uprstr.eps}
+                                                  
+? 
+
+Underfull \hbox (badness 1122) in paragraph at lines 132--134
+[]\OT1/cmr/m/n/12 (+20) UPD1 :: \OT1/cmr/bx/n/12 ELIM-I-NATED from ver-sion x.x
+x \OT1/cmr/m/n/12 (+20) Op-tion 1 The
+ []
+
+[217] [218]
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+Package epstopdf Info: Source file: <./run/waveDA.eps>
+(epstopdf)                    date: 2020-08-05 09:12:22
+(epstopdf)                    size: 8941391 bytes
+(epstopdf)             Output file: <./run/waveDA-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=./run/waveDA-eps-converted
+-to.pdf ./run/waveDA.eps>
+(epstopdf)             \includegraphics on input line 158.
+runsystem(repstopdf --outfile=./run/waveDA-eps-converted-to.pdf ./run/waveDA.ep
+s)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./run/waveDA-eps-converted-to.pdf>.
+
+! Package pdftex.def Error: File `./run/waveDA-eps-converted-to.pdf' not found.
+
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 ...cs[width=0.9\textwidth]{./run/waveDA.eps}
+                                                  
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--176
+
+ []
+
+
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 177--186
+[] 
+ []
+
+) [219] [220] [221]
+
+LaTeX Warning: Float too large for page by 79.33438pt on input line 76.
+
+
+Overfull \hbox (3.95644pt too wide) in paragraph at lines 79--107
+ [] 
+ []
+
+[222] [223])
+\openout2 = `impl.aux'.
+
+ (./impl.tex (./impl/intro.tex) (./impl/install.tex [224
+
+
+
+] [225]
+[226] [227]
+Underfull \hbox (badness 5563) in paragraph at lines 164--166
+[]\OT1/cmr/m/n/12 (+20) Script to setup the en-vi-ron-ment based on
+ []
+
+[228]
+Underfull \hbox (badness 1286) in paragraph at lines 198--200
+\OT1/cmr/m/n/12 (+20) pro-grams. (ob-so-lete in fu-ture re-leases - use
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 223--226
+[]\OT1/cmr/m/n/12 (+20) Script to dis-play pro-fil-ing data gen-er-ated by
+ []
+
+[229]) (./impl/compile.tex [230] [231] [232] (./impl/fig_make.tex) [233]
+[234]) (./impl/switch.tex [235] [236] [237] [238] [239] [240]
+Underfull \hbox (badness 1622) in paragraph at lines 260--261
+[]\OT1/cmr/m/n/12 (+20) Additional log out-put on man-age-ment al-go-rithm in
+ []
+
+[241] [242] [243]) (./impl/modify.tex [244]) (./impl/test_it.tex [245] [246]
+Underfull \vbox (badness 1189) has occurred while \output is active []
+
+ [247]
+[248] [249] (./impl/fig_runtest.tex (./run_test.out)
+
+LaTeX Warning: Float too large for page by 54.49998pt on input line 6.
+
+))) [250] [251]
+\openout2 = `sys.aux'.
+
+ (./sys.tex (./sys/w3adc.tex [252
+
+
+] (./sys/fig_ad3.tex))
+(./sys/files.tex [253]) (./sys/files_w3.tex [254] [255] [256] [257] [258]
+[259] [260]
+Underfull \hbox (badness 2080) in paragraph at lines 375--376
+[]\OT1/cmr/m/n/12 (+20) Irregular grid mid-flux on U-faces by
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 376--377
+[]\OT1/cmr/m/n/12 (+20) Irregular grid mid-flux on V-faces by
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 377--378
+[]\OT1/cmr/m/n/12 (+20) Regular grid mid-flux on U-faces by
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 378--379
+[]\OT1/cmr/m/n/12 (+20) Regular grid mid-flux on V-faces by
+ []
+
+[261] [262] [263] [264] [265] [266] [267] [268] (./sys/fig_w3init.tex)
+(./sys/fig_w3wave.tex)) [269] [270] (./sys/files_wm.tex [271]
+Underfull \hbox (badness 2717) in paragraph at lines 73--74
+[]\OT1/cmr/m/n/12 (+20) Update in-put from na-tive files us-ing
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 100--101
+[]\OT1/cmr/m/n/12 (+20) Data gather and write rou-tine (us-ing
+ []
+
+) (./sys/das.tex [272]) (./sys/aux.tex
+Underfull \hbox (badness 1552) in paragraph at lines 27--28
+[]\OT1/cmr/m/n/12 (+20) Reading and writ-ing of data files for
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 28--29
+[]\OT1/cmr/m/n/12 (+20) Reading and writ-ing of data files for
+ []
+
+[273]
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+[]\OT1/cmr/m/n/12 (+20) The bound-ary con-di-tions pro-gram
+ []
+
+
+Overfull \hbox (13.77655pt too wide) in paragraph at lines 101--101
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+
+ []
+
+[274] [275] [276]) (./sys/optim.tex [277]) [278] (./sys/store.tex)
+(./sys/store_grid.tex (./sys/fig_grd1.tex) [279] (./sys/fig_grd2.tex) [280]
+[281] (./sys/fig_grd3.tex) [282] [283]) (./sys/store_MPI.tex [284]
+(./sys/fig_transpose.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [285]
+[286]) (./sys/store_multi.tex (./sys/fig_struc1.tex) [287]
+(./sys/fig_struc2.tex)) (./sys/vars.tex) (./sys/modules.tex [288]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [289]
+[290] [291] [292]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+[293]) (./sys/structures.tex) [294]) [295] (./manual.bbl
+Underfull \vbox (badness 1622) has occurred while \output is active []
+
+ [296
+
+]
+[297] [298]
+Missing character: There is no √ in font cmr12!
+Missing character: There is no © in font cmr12!
+ [299]
+
+LaTeX Warning: Command \textregistered invalid in math mode on input line 346.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 346.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 346.
+
+[300] [301] [302] [303] [304] [305] [306] [307] [308]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+ [309] [310]
+
+LaTeX Warning: Command \textregistered invalid in math mode on input line 1100.
+
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 1100.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 1100.
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 1122--1126
+[]\OT1/cmr/m/n/12 (+20) Rogers, W. E., and S. Zieger (2014), New wave-ice in-te
+r-ac-tion
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 1122--1126
+\OT1/cmr/m/n/12 (+20) physics in WAVE-WATCH III, in \OT1/cmr/m/it/12 (+20) 22nd
+ IAHR In-ter-na-tional Sym-
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 1122--1126
+\OT1/cmr/m/it/12 (+20) po-sium on Ice, Sin-ga-pore, Au-gust 11 to 15, 2014\OT1/
+cmr/m/n/12 (+20) , IAHR, 8 pp.,
+ []
+
+[311] [312]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no Ü in font cmr12!
+ [313]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+Underfull \hbox (badness 1400) in paragraph at lines 1344--1347
+[]\OT1/cmr/m/n/12 (+20) Tolman, H. L. (2002d), Test-ing of WAVE-WATCH III ver-s
+ion 2.22
+ []
+
+
+Underfull \hbox (badness 4595) in paragraph at lines 1344--1347
+\OT1/cmr/m/n/12 (+20) in NCEP's NWW3 ocean wave model suite, \OT1/cmr/m/it/12 (
++20) Tech. Note 214\OT1/cmr/m/n/12 (+20) ,
+ []
+
+[314] [315] [316] [317]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no î in font cmr12!
+ [318]) [319] [320] [321]
+\openout2 = `app/more.aux'.
+
+
+No file app/more.tex.
+\openout2 = `app/tstep.aux'.
+
+(./app/tstep.tex [1
+
+
+
+] [2] [3]) [4]
+\openout2 = `app/nest.aux'.
+
+ (./app/nest.tex
+\c@nestlist=\count124
+ [1
+
+
+] [2] [3]) [4]
+\openout2 = `app/mpi.aux'.
+
+
+(./app/mpi.tex
+Underfull \hbox (badness 2486) in paragraph at lines 3--3
+[] \OT1/cmr/bx/n/17.28 Set-ting up for dis-tributed ma-chines
+ []
+
+
+Underfull \vbox (badness 1077) has occurred while \output is active []
+
+ [1
+
+
+]
+
+LaTeX Warning: Float too large for page by 8.29991pt on input line 105.
+
+[2] [3] [4] [5]) [6]
+\openout2 = `app/scrip.aux'.
+
+ (./app/scrip.tex [1
+
+
+] [2] [3]
+Underfull \hbox (badness 1584) in paragraph at lines 168--175
+[]\OT1/cmr/m/n/12 (+20) Using \OT1/cmr/m/sc/12 (+20) SCRIP\OT1/cmr/m/n/12 (+20)
+ , \OT1/cmr/m/sc/12 (+20) SCRIPNC\OT1/cmr/m/n/12 (+20) , and \OT1/cmr/m/sc/12 (
++20) MPI\OT1/cmr/m/n/12 (+20) , with-out us-ing the
+ []
+
+[4] [5]) [6]
+\openout2 = `app/oasis.aux'.
+
+ (./app/oasis.tex
+Underfull \hbox (badness 3302) in paragraph at lines 3--3
+[] \OT1/cmr/bx/n/17.28 Ocean-Ice-Waves-Atmosphere cou-pling
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 10--15
+\OT1/cmr/m/n/12 (+20) WAVEWATCH III has been in-ter-faced with OASIS3-MCT to al
+-low
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+
+ []
+
+[1
+
+
+] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+[]\OT1/cmtt/m/n/12 mpirun -np $nbre[]cores[]WW3 exe[]WW3 : -np $nbre[]cores[]OA
+
+ []
+
+[3]) [4]
+\openout2 = `app/nuopc.aux'.
+
+ (./app/nuopc.tex [1
+
+
+]
+Underfull \hbox (badness 1478) in paragraph at lines 64--67
+\OT1/cmr/m/n/12 (+20) The re-quired WAVE-WATCH III in-put file is the ww3[]mult
+i.inp or
+ []
+
+[2]) [3]
+\openout2 = `app/config.aux'.
+
+ (./app/config.tex (./ww3_grid.tex
+Underfull \hbox (badness 1286) in paragraph at lines 14--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[1
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18])
+Underfull \hbox (badness 1009) in paragraph at lines 14--16
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_grid.tel
+Underfull \hbox (badness 3168) in paragraph at lines 19--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36])
+Underfull \hbox (badness 2653) in paragraph at lines 19--22
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./ww3_strt.tex
+Underfull \hbox (badness 1286) in paragraph at lines 27--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38])
+Underfull \hbox (badness 1009) in paragraph at lines 27--30
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_bound.tex
+Underfull \hbox (badness 1286) in paragraph at lines 36--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[39])
+Underfull \hbox (badness 1009) in paragraph at lines 36--39
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_bounc.tex
+Underfull \hbox (badness 1286) in paragraph at lines 45--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[40])
+Underfull \hbox (badness 1009) in paragraph at lines 45--48
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_bounc.tel
+Underfull \hbox (badness 3168) in paragraph at lines 49--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+[41])
+Underfull \hbox (badness 2653) in paragraph at lines 49--52
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./ww3_prep.tex
+Underfull \hbox (badness 1286) in paragraph at lines 58--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43])
+Underfull \hbox (badness 1009) in paragraph at lines 58--61
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_prnc.tex
+Underfull \hbox (badness 1286) in paragraph at lines 67--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[44]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45])
+Underfull \hbox (badness 1009) in paragraph at lines 67--70
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_prnc.tel
+Underfull \hbox (badness 3168) in paragraph at lines 71--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+[46]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47])
+Underfull \hbox (badness 2653) in paragraph at lines 71--74
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./ww3_prtide.tex
+Underfull \hbox (badness 1286) in paragraph at lines 80--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[48])
+Underfull \hbox (badness 1009) in paragraph at lines 80--83
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_shel.tex
+Underfull \hbox (badness 1286) in paragraph at lines 89--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56])
+Underfull \hbox (badness 1009) in paragraph at lines 89--92
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[57] (./ww3_shel.tel
+Underfull \hbox (badness 3168) in paragraph at lines 93--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+[58]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65])
+Underfull \hbox (badness 2653) in paragraph at lines 93--96
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./ww3_gspl.tex
+Underfull \hbox (badness 1286) in paragraph at lines 102--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[66])
+Underfull \hbox (badness 1009) in paragraph at lines 102--105
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_multi.tex
+Underfull \hbox (badness 1286) in paragraph at lines 111--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[67]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [70]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71])
+Underfull \hbox (badness 1009) in paragraph at lines 111--114
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_multi.tel
+Underfull \hbox (badness 3168) in paragraph at lines 115--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+[72]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78])
+Underfull \hbox (badness 2653) in paragraph at lines 115--118
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./ww3_gint.tex
+Underfull \hbox (badness 1286) in paragraph at lines 124--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [79])
+Underfull \hbox (badness 1009) in paragraph at lines 124--127
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[80] (./ww3_outf.tex
+Underfull \hbox (badness 1286) in paragraph at lines 133--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[81])
+Underfull \hbox (badness 1009) in paragraph at lines 133--136
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_ounf.tex
+Underfull \hbox (badness 1286) in paragraph at lines 142--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[82]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83])
+Underfull \hbox (badness 1009) in paragraph at lines 142--145
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_ounf.tel
+Underfull \hbox (badness 3168) in paragraph at lines 146--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84]
+[85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86])
+Underfull \hbox (badness 2653) in paragraph at lines 146--149
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./gx_outf.tex
+Underfull \hbox (badness 1286) in paragraph at lines 155--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[87])
+Underfull \hbox (badness 1009) in paragraph at lines 155--158
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_grib.tex
+Underfull \hbox (badness 1286) in paragraph at lines 164--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[88])
+Underfull \hbox (badness 1009) in paragraph at lines 164--167
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_outp.tex
+Underfull \hbox (badness 1286) in paragraph at lines 174--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[89]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91])
+Underfull \hbox (badness 1009) in paragraph at lines 174--177
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_ounp.tex
+Underfull \hbox (badness 1286) in paragraph at lines 183--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [92]
+[93]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [94])
+Underfull \hbox (badness 1009) in paragraph at lines 183--186
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_ounp.tel
+Underfull \hbox (badness 3168) in paragraph at lines 187--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [95]
+[96]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [97]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [98]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [99])
+Underfull \hbox (badness 2653) in paragraph at lines 187--190
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./gx_outp.tex
+Underfull \hbox (badness 1286) in paragraph at lines 196--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[100])
+Underfull \hbox (badness 1009) in paragraph at lines 196--199
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_trck.tex
+Underfull \hbox (badness 1286) in paragraph at lines 205--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+)
+Underfull \hbox (badness 1009) in paragraph at lines 205--208
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[101] (./ww3_trnc.tex
+Underfull \hbox (badness 1286) in paragraph at lines 214--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+)
+Underfull \hbox (badness 1009) in paragraph at lines 214--217
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_trnc.tel
+Underfull \hbox (badness 3168) in paragraph at lines 218--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (namelist form)
+ []
+
+[102])
+Underfull \hbox (badness 2653) in paragraph at lines 218--221
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (namelist form)
+ []
+
+(./ww3_systrk.tex
+Underfull \hbox (badness 1286) in paragraph at lines 227--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [103]
+[104])
+Underfull \hbox (badness 1009) in paragraph at lines 227--230
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+(./ww3_uprstr.tex
+Underfull \hbox (badness 1286) in paragraph at lines 236--2
+[] \OT1/cmr/m/n/12 (+20) start of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[105])
+Underfull \hbox (badness 1009) in paragraph at lines 236--239
+[] \OT1/cmr/m/n/12 (+20) end of ex-am-ple in-put file (tra-di-tional form)
+ []
+
+[106]) [107]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
+ (./manual.aux (./start.aux) (./intro.aux) (./eqs.aux) (./num.aux)
+(./run.aux) (./impl.aux) (./sys.aux) (./app/more.aux) (./app/tstep.aux)
+(./app/nest.aux) (./app/mpi.aux) (./app/scrip.aux) (./app/oasis.aux)
+(./app/nuopc.aux) (./app/config.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
+Package rerunfilecheck Info: File `manual.out' has not changed.
+(rerunfilecheck)             Checksum: 7A7B7BF26930015330606126B8687A99;18516.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
+ ) 
+Here is how much of TeX's memory you used:
+ 14071 strings out of 495063
+ 203296 string characters out of 3182200
+ 380379 words of memory out of 3000000
+ 14589 multiletter control sequences out of 15000+200000
+ 32979 words of font info for 255 fonts, out of 3000000 for 9000
+ 20 hyphenation exceptions out of 8191
+ 41i,15n,68p,1664b,1038s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on manual.pdf (465 pages, 1538801 bytes).
+PDF statistics:
+ 6062 PDF objects out of 6186 (max. 8388607)
+ 5494 compressed objects within 55 object streams
+ 1571 named destinations out of 1728 (max. 500000)
+ 38209 words of extra memory for PDF output out of 42996 (max. 10000000)
+
