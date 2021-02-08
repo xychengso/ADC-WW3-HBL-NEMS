@@ -4,8 +4,8 @@ ADC-WW3-HBL-NEMS is a branch based on NOAA [ADC-WW3-NWM-NEMS](https://github.com
 coupling project to determine wind versus water percentage loss caused by a 
 Named Storm Event. 
 
-In this repo, HBL is used to replace the dummy ATMESH in the NOAA official release of ADC-WW3-NWM-NEMS system.
-Also, an exchanged parameter _sea state dependent wind stress/roughness length_ is exported to ADCIRC and HBL from the WW3 model.
+In this repo, a hurricane boundary layer model (HBL) is going to replace the dummy ATMESH in the NOAA official release of ADC-WW3-NWM-NEMS system. 
+Also, an exchanged parameter _sea state dependent wind stress/roughness length_ is exported to ADCIRC and HBL from the [WW3](https://github.com/erdc/WW3.git) model (from the ERDC-scalability branch).
 Group members in the Hurricane Modeling Group/Air-Sea Interaction Lab are responsible for developing these features.
 
 See `HOWTO_from_CodeHere` if you want to install this version of code and work on it from the RENCI/Hatteras machine. 
@@ -75,12 +75,24 @@ While in github GUI, https://github.com/moghimis/ADC-WW3-NWM-NEMS:
 Next you should create your local version of your forked repository. 
 Go to your local directoy and clone the the repository:
 
-1) git clone --recursive https://github.com/<your_github_repo_name>/ADC-WW3-NWM-NEMS
+1) git clone --recursive https://github.com/<your_github_repo_name>/ADC-WW3-HBL-NEMS
 2) do your collaboration edition and when finished 
 3) git add .
 4) git commit -m "describe what you changed"
 5) git push origin master - to push your changes into your github
 6) enter your github username/password if asked
+
+#### or open up your local branch and create a new branch from master/main branch. 
+1) git clone --recursive https://github.com/<your_github_repo_name>/ADC-WW3-HBL-NEMS
+2) git branch -v (will show you all the local branches)
+3) git checkout -b `your_branch_name`
+4) Then do work on this branch (such as adding the HBL model into it/building the HBL cap.
+5) git add .
+6) git commit -m "your changes"
+7a) git remote -v (this will show you the remote url associated with origin.You can also add other remote repository url if necessary.)
+7b) git push -u origin `your_branch_name`
+8) enter your github username/password if asked
+
 
 While in your github repository GUI:
 
