@@ -125,8 +125,6 @@
 !/PDLIB  LOGICAL, POINTER  :: SHAVETOT(:)
 !!/PDLIB     REAL, POINTER     :: VAOLD(:,:)
         LOGICAL               :: DINIT, FL_ALL
-!!/FLD1                INTEGER, POINTER              :: QCFLG(:) 
-!!/FLD2                INTEGER, POINTER              :: QCFLG(:) 
       END TYPE WDATA
 !
 !/
@@ -142,8 +140,6 @@
       REAL, POINTER           :: VA(:,:), WLV(:), ICE(:), UST(:),     &
                                  USTDIR(:), ASF(:), FPIS(:), BERG(:), &
                                  ICEH(:), ICEF(:), ICEDMAX(:)
-!!/FLD1                INTEGER, POINTER              :: QCFLG(:) 
-!!/FLD2                INTEGER, POINTER              :: QCFLG(:) 
 !/SETUP        REAL, POINTER :: ZETA_SETUP(:), FX_zs(:), FY_zs(:)
 !/SETUP        REAL, POINTER :: SXX_zs(:), SXY_zs(:), SYY_zs(:)
 !/PDLIB      REAL, POINTER           :: VSTOT(:,:), VDTOT(:,:)
@@ -340,7 +336,7 @@
       USE W3ODATMD, ONLY: NAPROC, IAPROC
       USE W3SERVMD, ONLY: EXTCDE
       USE CONSTANTS, ONLY : LPDLIB
-      USE W3PARALL, ONLY: SET_UP_NSEAL_NSEALM
+      USE W3PARALL, ONLY: SET_UP_NSEAL_NSEALM, LSLOC 
 !/PDLIB      use yowNodepool, only: npa, np
 !/PDLIB      use yowRankModule, only : rank
 !/PDLIB      USE W3GDATMD, ONLY: GTYPE, UNGTYPE
@@ -432,25 +428,25 @@
 !/PDLIB          ALLOCATE ( WDATAS(IMOD)%SHAVETOT(NSEAL), stat=istat )
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.4, stat=', istat
 !/DEBUGINIT    FLUSH(740+IAPROC)
+!/PDLIB        IF (.not. LSLOC) THEN
 !/PDLIB          ALLOCATE ( WDATAS(IMOD)%VSTOT(NSPEC,NSEAL), stat=istat )
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.5, stat=', istat
 !/DEBUGINIT    FLUSH(740+IAPROC)
 !/PDLIB          ALLOCATE ( WDATAS(IMOD)%VDTOT(NSPEC,NSEAL), stat=istat )
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.6, stat=', istat
 !/DEBUGINIT    FLUSH(740+IAPROC)
+!/PDLIB        ENDIF ! LSLOC 
 !/PDLIB          ALLOCATE ( WDATAS(IMOD)%VAOLD(NSPEC,NSEAL), stat=istat )
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.7, stat=', istat
 !/DEBUGINIT    FLUSH(740+IAPROC)
-!/PDLIB          DO ISEA=1,NSEAL
-!/DEBUGINIT        WRITE(740+IAPROC,*) 'Setting to ZERO at ISEA=', ISEA
-!/DEBUGINIT        FLUSH(740+IAPROC)
-!/PDLIB            WDATAS(IMOD)%VSTOT(:,ISEA)=0
-!/PDLIB          END DO
+!/PDLIB        IF (.not. LSLOC) THEN
+!/PDLIB         WDATAS(IMOD)%VSTOT=0
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.8'
 !/DEBUGINIT    FLUSH(740+IAPROC)
 !/PDLIB          WDATAS(IMOD)%VDTOT=0
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.9'
 !/DEBUGINIT    FLUSH(740+IAPROC)
+!/PDLIB        ENDIF ! LSLOC 
 !/PDLIB          WDATAS(IMOD)%SHAVETOT=.FALSE.
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 8.10'
 !/DEBUGINIT    FLUSH(740+IAPROC)
@@ -482,24 +478,23 @@
                  WDATAS(IMOD)%UST(0:NSEATM),                          &
                  WDATAS(IMOD)%USTDIR(0:NSEATM),                       &
                  WDATAS(IMOD)%ASF(NSEATM),                            &
-!!/FLD1           WDATAS(IMOD)%QCFLG(NSEATM),                          &
-!!/FLD2           WDATAS(IMOD)%QCFLG(NSEATM),                          &
                  WDATAS(IMOD)%FPIS(NSEATM), STAT=ISTAT                )
       CHECK_ALLOC_STATUS ( ISTAT )
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 10'
 !/DEBUGINIT    FLUSH(740+IAPROC)
+
+      WDATAS(IMOD)%WLV   (:) = 0.
+      WDATAS(IMOD)%ICE   (0:NSEA) = 0.
 !/SETUP     WDATAS(IMOD)%ZETA_SETUP(:) = 0.
-!
-      WDATAS(IMOD)%UST   (:) = 1.E-5
-      WDATAS(IMOD)%USTDIR(:) = 0.
       WDATAS(IMOD)%BERG  (:) = 0.
-      WDATAS(IMOD)%ICE   (:) = 0.
-      WDATAS(IMOD)%ICEH  (:) = GRIDS(IMOD)%IICEHINIT
-      WDATAS(IMOD)%ICEF  (:) = 1000.
+      WDATAS(IMOD)%ICEH  (0:NSEA) = GRIDS(IMOD)%IICEHINIT
+      WDATAS(IMOD)%ICEF  (0:NSEA) = 1000.
       WDATAS(IMOD)%ICEDMAX(:) = 1000.
+      WDATAS(IMOD)%UST   (0:NSEATM) = 1.E-5
+      WDATAS(IMOD)%USTDIR(0:NSEATM) = 0.
+      WDATAS(IMOD)%ASF   (:) = 0.
+      WDATAS(IMOD)%FPIS  (:) = 0.
       WDATAS(IMOD)%DINIT     = .TRUE.
-!!/FLD1      WDATAS(IMOD)%QCFLG (:) = 999
-!!/FLD2      WDATAS(IMOD)%QCFLG (:) = 999
 !/DEBUGINIT    WRITE(740+IAPROC,*) 'W3DIMW, step 11'
 !/DEBUGINIT    FLUSH(740+IAPROC)
       CALL W3SETW ( IMOD, NDSE, NDST )
@@ -675,8 +670,6 @@
           USTDIR => WDATAS(IMOD)%USTDIR
           ASF    => WDATAS(IMOD)%ASF
           FPIS   => WDATAS(IMOD)%FPIS
-!!/FLD1          QCFLG  => WDATAS(IMOD)%QCFLG
-!!/FLD2          QCFLG  => WDATAS(IMOD)%QCFLG
         END IF
 !
       RETURN

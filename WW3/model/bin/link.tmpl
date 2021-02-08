@@ -104,6 +104,13 @@
     fi
   fi
 
+  # grib library
+  if [ "$ncep_grib_compile" = 'yes' ]
+  then
+    opt="$opt -convert big_endian -assume byterecl -prec-div -prec-sqrt -ip"
+    libs="$libs ${G2_LIB4} ${W3NCO_LIB4} ${BACIO_LIB4} ${JASPER_LIB} ${PNG_LIB} ${Z_LIB}"
+  fi
+
   # netcdf library dir
   if [ "$netcdf_compile" = 'yes' ] ; then
     case $WWATCH3_NETCDF in
@@ -124,6 +131,11 @@
       echo "link with parmetis" 
       libs="$libs $METIS_PATH/lib/libparmetis.a $METIS_PATH/lib/libmetis.a"
     fi
+  fi
+
+  # OMP support
+  if [ "$omp_mod" = 'yes' ] ; then
+    opt="$opt <optomp>"
   fi
 
   opt="$opt $EXTRA_LINK_OPTIONS"
