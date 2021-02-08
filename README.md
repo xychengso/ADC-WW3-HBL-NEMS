@@ -1,6 +1,6 @@
 ## ADC-WW3-HBL-NEMS
 
-ADC-WW3-HBL-NEMS is based on NOAA ADC-WW3-NWM-NEMS, which is an ESMF application developed as part of the Coastal Act
+ADC-WW3-HBL-NEMS is a branch based on NOAA [ADC-WW3-NWM-NEMS](https://github.com/noaa-ocs-modeling/ADC-WW3-NWM-NEMS), which is an ESMF application developed as part of the Coastal Act
 coupling project to determine wind versus water percentage loss caused by a 
 Named Storm Event. 
 
