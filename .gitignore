@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# ww3 stuff:
+*.nc
+*.ww3
