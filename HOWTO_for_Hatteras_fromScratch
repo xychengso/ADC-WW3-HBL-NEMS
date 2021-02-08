@@ -15,8 +15,9 @@ Prerequisites:
 3) Install szip-2.1
 
 
+# if you are doing this from scratch from the noaa official branch:
 cd ROOTDIR
-1) git clone --recursive https://github.com/moghimis/ADC-WW3-NWM-NEMS
+1) git clone --recursive https://github.com/noaa-ocs-modeling/ADC-WW3-NWM-NEMS.git
 2) mkdir -p modulefiles/hatteras
 3) cp modulefiles/hera/ESMF_NUOPC  modulefiles/hatteras/ESMF_NUOPC 
      -- see TABLE 1 for ESMF_NUOPC on hatteras 
@@ -30,6 +31,15 @@ cd ROOTDIR
 7) cp NEMS/src/incmake/env/uname/detect.mk  NEMS/src/incmake/env/renci/detect.mk 
                                          -- see TABLE 3B for modifications in detect.mk;  
 ! suggestion for changes on other system: replace croatan with whatever node/computing name you have in the output of “uname -a”
+7b) revised: modify NEMS/src/incmake/env/uname/detect.mk to make it work for hatteras: (see below)
+#-----------  Modified lines as listed below ------------ #
+ifneq (,$(findstring Linux,$(uname_a)))
+#  NEMS_COMPILER?=gnu
+  NEMS_COMPILER?=intel      #(here I changed gnu to intel)
+#  $(call add_build_env,linux.$(NEMS_COMPILER),env/uname/linux.$(NEMS_COMPILER).mk)
+  $(call add_build_env,hatteras.$(NEMS_COMPILER),env/uname/hatteras.$(NEMS_COMPILER).mk)      
+endif 
+
 
 8) vi NEMS/src/incmake/buildenv.mk  
    include $(call locate_incmake_file,env/renci/detect.mk)    -- add this line above the line below
@@ -47,9 +57,10 @@ export ROOTDIR=/path/to/ADC-WW3-NWM-NEMS
    WW3_CC := cc
    WW3_F90 := ifort
    add "hatteras" at the end of line#38 after "theia" "Intel"
+11) update the cmplrflags.mk in ADCIRC/work directory (if needed)
 
-11) in build.sh, modify line23 according to the computer you use. (hera --> hatteras)
-12) ./build.sh
+12) in build.sh, modify line23 according to the computer you use. (hera --> hatteras)
+13) ./build.sh
   
 
 ======================= TABLE 0 ======================
