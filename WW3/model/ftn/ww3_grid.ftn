@@ -721,9 +721,9 @@
       REAL                    :: AIRCMIN, AIRGB
       CHARACTER               :: PMNAME*45, PMNAM2*45  ! Part. method desc.
 !/FLD1      INTEGER                 :: TAILTYPE
-!/FLD1      REAL                    :: TAILLEV, TAILT1, TAILT2
+!/FLD1      REAL                    :: TAILLEV, TAILT1, TAILT2, WINDFAC
 !/FLD2      INTEGER                 :: TAILTYPE
-!/FLD2      REAL                    :: TAILLEV, TAILT1, TAILT2
+!/FLD2      REAL                    :: TAILLEV, TAILT1, TAILT2, WINDFAC
 !/FLX3      INTEGER                 :: CTYPE
 !/FLX3      REAL                    :: CDMAX
 !/FLX4      REAL                    :: CDFAC
@@ -814,8 +814,8 @@
 !/RTD ! Poles of the output nested grids. May be a mix of rotated and standard
 !/RTD      REAL, DIMENSION(9)      :: BPLAT, BPLON
 !
-!/FLD1      NAMELIST /FLD1/ TAILTYPE, TAILLEV, TAILT1, TAILT2
-!/FLD2      NAMELIST /FLD2/ TAILTYPE, TAILLEV, TAILT1, TAILT2
+!/FLD1      NAMELIST /FLD1/ TAILTYPE, TAILLEV, TAILT1, TAILT2, WINDFAC
+!/FLD2      NAMELIST /FLD2/ TAILTYPE, TAILLEV, TAILT1, TAILT2, WINDFAC
 !/FLX3      NAMELIST /FLX3/ CDMAX, CTYPE
 !/FLX4      NAMELIST /FLX4/ CDFAC
 !/IC2      NAMELIST /SIC2/  IC2DISPER, IC2TURB, IC2ROUGH, IC2REYNOLDS,      &
@@ -2621,10 +2621,12 @@
 !/FLD1      TAILLEV  = 0.006
 !/FLD1      TAILT1 = 1.25
 !/FLD1      TAILT2 = 3.00
+!/FLD1      WINDFAC = 1.0
 !/FLD2      TAILTYPE = 0
 !/FLD2      TAILLEV  = 0.006
 !/FLD2      TAILT1 = 1.25
 !/FLD2      TAILT2 = 3.00
+!/FLD2      WINDFAC = 1.0
 !
 !/FLD1      CALL READNL ( NDSS, 'FLD1', STATUS )
 !/FLD1      TAILLEV  = MIN( MAX ( 0.0005 , TAILLEV ), 0.04)
@@ -2632,12 +2634,14 @@
 !/FLD1      TAIL_ID = TAILTYPE
 !/FLD1      TAIL_TRAN1 = TAILT1
 !/FLD1      TAIL_TRAN2 = TAILT2
+!/FLD1      WIND_FAC = WINDFAC
 !/FLD2      CALL READNL ( NDSS, 'FLD2', STATUS )
 !/FLD2      TAILLEV  = MIN( MAX ( 0.0005 , TAILLEV ), 0.04)
 !/FLD2      TAIL_LEV = TAILLEV
 !/FLD2      TAIL_ID = TAILTYPE
 !/FLD2      TAIL_TRAN1 = TAILT1
 !/FLD2      TAIL_TRAN2 = TAILT2
+!/FLD2      WIND_FAC = WINDFAC
 !
 ! 6.o End of namelist processing
 !
@@ -2806,8 +2810,10 @@
                                 BTBETA
           END IF
 !
-!/FLD1         WRITE(NDSO,2987) TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
-!/FLD2         WRITE(NDSO,2987) TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1         WRITE(NDSO,2987) TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2, &
+!/FLD1                          WIND_FAC
+!/FLD2         WRITE(NDSO,2987) TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2, &
+!/FLD2                          WIND_FAC
 !/RTD         WRITE(NDSO,4991) PLAT, PLON, UNROT
 !/RTD         WRITE(NDSO,4992) BPLAT, BPLON
 !

@@ -83,7 +83,8 @@
       CONTAINS
 !/ ------------------------------------------------------------------- /
       SUBROUTINE W3FLD1( ASPC, FPI, WNDX,WNDY, ZWND,               & 
-                    DEPTH, RIB, UST, USTD, Z0, TAUNUX,TAUNUY, CHARN)
+                    DEPTH, RIB, UST, USTD, Z0, TAUNUX,TAUNUY, CHARN, &
+                    FLAG)
 !/
 !/                  +-----------------------------------+
 !/                  | WAVEWATCH III      NOAA/NCEP/NOPP |
@@ -126,6 +127,8 @@
 !       USTD    Real   O   Direction of friction velocity.
 !       Z0      Real   O   Surface roughness length
 !       CHARN   Real   O,optional    Charnock parameter 
+!       FLAG    Inte   O  quality control flag (0=non-converged FLD
+!                           iteration)
 !     ----------------------------------------------------------------
 !
 !  4. Subroutines used :
@@ -177,6 +180,7 @@
       REAL, INTENT(OUT)       :: UST, USTD, Z0 
       REAL, INTENT(OUT), OPTIONAL :: CHARN
       REAL, INTENT(INOUT)     :: TAUNUX, TAUNUY
+      INTEGER, INTENT(OUT)    :: FLAG
 !/
 !/ ------------------------------------------------------------------- /
 !/ Local parameters
@@ -228,6 +232,13 @@
       LOGICAL                 :: FSFL1,FSFL2, CRIT1, CRIT2
       LOGICAL                 :: IT_FLAG1, IT_FLAG2
       LOGICAL, SAVE           :: FIRST = .TRUE.
+!XYC added:
+      real::   TARGETLEV, TAILEVMAX
+      real::   BK(NK), EK(NK)
+      real::   MSSX, MSSY, MSS, MSSX_elm, MSSY_elm
+      real::  SIGfine(65), addlocflag(3), transID(3),sig_tmp(63)
+      real:: freq_a, freq_b, freq_c, tmp1, tmp2,spcintp
+      integer:: extpnt, NKT0, KMAX0,I2 ,cnt
 !/
 !/ ------------------------------------------------------------------- /
 !/
@@ -255,12 +266,127 @@
        ! - Get tail level
        if (Tail_Choice.eq.0) then
           SAT=Tail_Level
-       elseif (Tail_Choice.eq.1) then
-          CALL WND2SAT(U10,SAT)
+!       elseif (Tail_Choice.eq.1) then
+!          CALL WND2SAT(U10,SAT)
+! XC modified, so we can switch between old GFDL drag and HWRF drag
+       else
+          CALL WND2SAT(U10,SAT,Tail_Choice)
        endif
 !
 ! 1.  Attach Tail ---------------------------------------------------- *
 !
+!
+      extpnt=0
+      addlocflag(1:3)=0
+      SIGfine(1:65)=0.0
+      transID(1:3)=0
+ 
+      freq_a=FPI*TPI*tail_transition_ratio1
+      freq_b=FPI*TPI*tail_transition_ratio2
+      freq_c=sqrt(2.0)*freq_b
+
+!      write(*,*) freq_a, freq_b, freq_c, SIG(NK)
+
+!    build extended sig_temp
+      
+      sig_tmp(1:nk)=sig(1:nk)
+      call sig2wn(sig(nk),depth,kmax)
+      NKT0=NK
+      DO WHILE (Kmax .LT. 366.0)
+         NKT0=NKT0+1
+         sig_tmp(NKT0)=sig(nk)* XFR**(NKT0-NK)
+         kmax=kmax* XFR**2
+      ENDDO
+      
+!      write(*,*) NKT0
+
+! i. determine the extact wavenumber of the KtailA, KtailB, and KtailC:
+     !** i. Find freq for beginning spc level transition to tail
+      call sig2wn (FPI*TPI*tail_transition_ratio1,depth,ktaila )
+     ! then find the neighboring wavenumbers for KtailA:
+      KA1 = 2     ! Do not modify 1st wavenumber bin
+      DO WHILE ( (  freq_a .GE. SIG_tmp(KA1) ) .AND. (KA1 .LT. NKT0-6) )
+        KA1 = KA1 + 1
+      ENDDO
+
+      do K=1,KA1-1
+         SIGfine(K)=SIG_tmp(K)
+      enddo
+     
+      IF ( (freq_a-SIG_tmp(KA1-1) .GT. 0.01*(SIG_tmp(KA1)-SIG_tmp(KA1-1)) )  &
+         .AND. (SIG_tmp(KA1)-freq_a .GT.0.01*(SIG_tmp(KA1)-SIG_tmp(KA1-1)) )) &
+         THEN
+         extpnt=extpnt+1
+         SIGfine(KA1-1+extpnt)=freq_a
+         addlocflag(1)=1
+        ! record the indx of freq_a
+         transID(1)=KA1
+      else if ( freq_a-SIG_tmp(KA1-1) .LE.0.01*(SIG_tmp(KA1)-SIG_tmp(KA1-1)))&
+            then    
+         transID(1)=KA1-1
+      else
+         transID(1)=KA1
+      end if
+
+
+
+     !** ii. Find wavenumber for ending spc level transition to tail
+      call sig2wn (FPI*TPI*tail_transition_ratio2,depth,ktailb )
+     ! then find the neighboring wavenumbers for KtailB:
+        KA2 = KA1+2
+        DO WHILE ( ( freq_b .GE. SIG_tmp(KA2) ) .AND. (KA2 .LT. NKT0-4) )
+          KA2 = KA2 + 1
+        ENDDO
+
+      DO K=KA1,KA2-1
+         SIGfine(K+extpnt)=SIG_tmp(K)
+      ENDDO
+     
+      IF ( ((SIG_tmp(KA2)-freq_b) .GT. 0.01*(SIG_tmp(KA2)-SIG_tmp(KA2-1)))  &  
+         .AND. ((freq_b-SIG_tmp(KA2-1)).GT.0.01*(SIG_tmp(KA2)-SIG_tmp(KA2-1)))) &
+         THEN
+         extpnt=extpnt+1
+         SIGfine(KA2-1+extpnt)=freq_b
+         addlocflag(2)=1
+         transID(2)=KA2-1+extpnt
+      ELSE IF ((freq_b-SIG_tmp(KA2-1)).LE.0.01*(SIG_tmp(KA2)-SIG_tmp(KA2-1))) &
+              THEN
+         transID(2)=KA2-1+extpnt
+      ELSE
+         transID(2)=KA2+extpnt
+      ENDIF
+
+ 
+     !iii. Find wavenumber for ending spc direction transition to tail
+         KA3=KA2+2
+         DO WHILE ( ( freq_c .GE. SIG_tmp(KA3) ) .AND. (KA3 .LT. NKT0-2) )
+            KA3 = KA3 + 1
+         ENDDO
+           
+         DO K=KA2, KA3-1
+            SIGfine(K+extpnt)=SIG_tmp(K)
+         ENDDO
+     
+         IF ( ((SIG_tmp(KA3)-freq_c) .GT. 0.01*(SIG_tmp(KA3)-SIG_tmp(KA3-1)))  &  
+           .AND. ((freq_c-SIG_tmp(KA3-1)).GT.0.01*(SIG_tmp(KA3)-SIG_tmp(KA3-1)))) &
+         THEN
+           extpnt=extpnt+1
+           SIGfine(KA3-1+extpnt)=freq_c
+           addlocflag(3)=1
+           transID(3)=KA3-1+extpnt
+         ELSE IF ((freq_c-SIG_tmp(KA3-1)).LE.0.01*(SIG_tmp(KA3)-SIG_tmp(KA3-1))) &
+              THEN
+           transID(3)=KA3-1+extpnt
+!          addlocflag(3)=0
+         ELSE
+           transID(3)=KA3+extpnt
+!          addlocflag(3)=0
+         ENDIF
+
+        DO K=KA3,NKT0
+           SIGfine(K+extpnt)=SIG_tmp(K)
+        ENDDO
+      NKT=NKT0+extpnt
 ! If the depth remains constant, the allocation could be limited to the
 !   first time step.  Since this code is designed for coupled 
 !   implementation where the water level can change, I keep it the 
@@ -268,13 +394,13 @@
 !   important, this process may be rethought.
 !
       ! i. Find maximum wavenumber of input spectrum
-      call sig2wn(sig(nk),depth,kmax)
-      NKT = NK
-      ! ii. Find additional wavenumber bins to extended to cm scale waves
-      DO WHILE ( KMAX .LT. 366.0 ) 
-        NKT = NKT + 1
-        KMAX = ( KMAX * XFR**2 )
-      ENDDO!K<366
+!      call sig2wn(sig(nk),depth,kmax)
+!      NKT = NK
+!      ! ii. Find additional wavenumber bins to extended to cm scale waves
+!      DO WHILE ( KMAX .LT. 366.0 ) 
+!        NKT = NKT + 1
+!        KMAX = ( KMAX * XFR**2 )
+!      ENDDO!K<366
       ! iii. Allocate new "extended" spectrum
       ALLOCATE( WN(NKT), DWN(NKT), CP(NKT), SIG2(NKT),SPC2(NKT,NTH), &
                 TLTN(NKT), TLTE(NKT), TAUD(NKT), &
@@ -285,17 +411,17 @@
 ! 1a. Build Discrete Wavenumbers for defining extended spectrum on---- *
 !
       !i. Copy existing sig to extended sig2, calculate phase speed.
-      DO K = 1, NK !existing spectrum
-         call sig2wn(sig(k),depth,wn(k))
-         CP(K) = ( SIG(K) / WN(K) )
-         sig2(k) = sig(k)
+      DO K = 1, NKT !existing spectrum
+         call sig2wn(sigfine(k),depth,wn(k))
+         CP(K) = ( SIGfine(K) / WN(K) )
+         sig2(k) = sigfine(k)
       ENDDO!K
       !ii. Calculate extended sig2 and phase speed.
-      DO K = ( NK + 1 ), ( NKT) !extension
-         sig2(k) = sig2(k-1) *XFR
-         call sig2wn(sig2(k),depth,wn(k))
-         CP(K) = SIG2(K) / WN(K)
-      ENDDO!K
+!      DO K = ( NK + 1 ), ( NKT) !extension
+!         sig2(k) = sig2(k-1) *XFR
+!         call sig2wn(sig2(k),depth,wn(k))
+!         CP(K) = SIG2(K) / WN(K)
+!      ENDDO!K
       !iii. Calculate dk's for integrations.
       DO K = 1, NKT-1
         DWN(K) = WN(K+1) - WN(K)
@@ -308,16 +434,56 @@
       !   SPC(k,theta) = A(k,theta) * sig(k)
       ! This could be redone for computational efficiency
       I=0
+      cnt=0
       DO K=1, NK
-        DO T=1, NTH
-          I = I + 1
-          SPC2(K,T) = ASPC(I)  * SIG(K)
-        ENDDO!T
+!        DO T=1, NTH
+!          I = I + 1
+!          SPC2(K,T) = ASPC(I)  * SIG(K)
+!        ENDDO!T
+          ! I is the index to get the corresponding discrete action
+          ! density spectra:
+        if (((cnt+1==transID(1)-1).and. (addlocflag(1)==1))    &
+           .or. ((cnt+1==transID(2)-1).and.(addlocflag(2)==1)) & 
+           .or. ((cnt+1==transID(3)-1).and.(addlocflag(3)==1))) then
+
+ 
+
+
+
+           cnt=cnt+1
+           DO T=1, NTH
+              I = T+(K-1)*NTH
+              ! compute the energy spectrum at this wavenumber 
+              tmp1=ASPC(I) * SIG(K)
+              I2=T+K*NTH
+              tmp2=ASPC(I2) * SIG(K+1)
+              call linear_interp(WN(cnt), WN(cnt+2), tmp1,tmp2,WN(cnt+1),spcintp)
+              SPC2(cnt,T)=tmp1
+              SPC2(cnt+1,T)=spcintp
+           ENDDO
+           ! this one is adding the inserted k:
+!                write(*,'(A12,1x, I2, 1x, A3, f6.2)') 'debug:SPC2(', cnt, ')=',sum(SPC2(cnt,1:NTH))
+!                write(*,'(A12,1x, I2, 1x, A3, f6.2)') 'debug:SPC2(', cnt+1, ')=',sum(SPC2(cnt+1,1:NTH))
+           cnt=cnt+1 
+           
+
+
+        else ! when WN(K) is the discrete wavenumber based on sig
+
+           cnt=cnt+1
+           DO T=1, NTH
+              I = T+(K-1)*NTH
+              SPC2(cnt,T) = ASPC(I)  * SIG(K)
+           ENDDO!T
+
+!              write(*,'(A12,1x, I2, 1x, A3, f6.2)') 'debug:SPC2(', cnt, ')=',sum(SPC2(cnt,1:NTH))
+        endif
       ENDDO!K
       !ii. Extend k^-3 tail to extended spectrum
-      DO K=NK+1, NKT
+      DO K=cnt+1, NKT
         DO T=1, NTH
-          SPC2(K,T)=SPC2(NK,T)*WN(NK)**3.0/WN(K)**(3.0)
+!          SPC2(K,T)=SPC2(NK,T)*WN(NK)**3.0/WN(K)**(3.0)
+           SPC2(K,T)=SPC2(cnt,T)*( WN(cnt)**3.0/WN(K)**3.0)
         ENDDO!T
       ENDDO!K
 !
@@ -325,24 +491,27 @@
 !
 !
       !i. Find wavenumber for beginning spc level transition to tail
-      call sig2wn (FPI*TPI*tail_transition_ratio1,depth,ktaila )
-      !ii. Find wavenumber for ending spc level transition to tail
-      call sig2wn (FPI*TPI*tail_transition_ratio2,depth,ktailb )
-      !iii. Find wavenumber for ending spc direction transition to tail
-      KTAILC= KTAILB * 2.0
-      !iv. Find corresponding indices of wavenumber transitions
-      KA1 = 2     ! Do not modify 1st wavenumber bin
-      DO WHILE ( ( KTAILA .GE. WN(KA1) ) .AND. (KA1 .LT. NKT-6) )
-        KA1 = KA1 + 1
-      ENDDO
-      KA2 = KA1+2
-      DO WHILE ( ( KTAILB .GE. WN(KA2) ) .AND. (KA2 .LT. NKT-4) )
-        KA2 = KA2 + 1
-      ENDDO
-      KA3 = KA2+2
-      DO WHILE ( ( KTAILC .GE. WN(KA3)) .AND. (KA3 .LT. NKT-2) )
-        KA3 = KA3 + 1
-      ENDDO
+!      call sig2wn (FPI*TPI*tail_transition_ratio1,depth,ktaila )
+!      !ii. Find wavenumber for ending spc level transition to tail
+!      call sig2wn (FPI*TPI*tail_transition_ratio2,depth,ktailb )
+!      !iii. Find wavenumber for ending spc direction transition to tail
+!      KTAILC= KTAILB * 2.0
+!      !iv. Find corresponding indices of wavenumber transitions
+!      KA1 = 2     ! Do not modify 1st wavenumber bin
+!      DO WHILE ( ( KTAILA .GE. WN(KA1) ) .AND. (KA1 .LT. NKT-6) )
+!        KA1 = KA1 + 1
+!      ENDDO
+!      KA2 = KA1+2
+!      DO WHILE ( ( KTAILB .GE. WN(KA2) ) .AND. (KA2 .LT. NKT-4) )
+!        KA2 = KA2 + 1
+!      ENDDO
+!      KA3 = KA2+2
+!      DO WHILE ( ( KTAILC .GE. WN(KA3)) .AND. (KA3 .LT. NKT-2) )
+!        KA3 = KA3 + 1
+!      ENDDO
+      KA1=transID(1)
+      KA2=transID(2)
+      KA3=transID(3)
       !v. Call subroutine to perform actually tail truncation
       ! only if there is some energy in spectrum
       CALL APPENDTAIL(SPC2, WN, NKT, KA1, KA2, KA3,&
@@ -436,11 +605,11 @@
               TLTND(ZI) =TLTND(ZI)+( SIN( TH(T) ) * COS( ANGDIF )**2)&
                           * CBETA * SPC2(Z2,T) * &
                           SQRT( TLTE(ZI-1)**2 + TLTN(ZI-1)**2.0 ) &
-                          * ( WN(Z2)**2.0 )*DTH
+                          * ( WN(Z2)**2.0 )*DTH /tanh(WN(Z2)*DEPTH)
               TLTED(ZI) = TLTED(ZI)+(COS( TH(T) ) * COS( ANGDIF )**2)&
                           * CBETA * SPC2(Z2,T) * &
                           SQRT( TLTE(ZI-1)**2 + TLTN(ZI-1)**2.0 ) &
-                          * ( WN(Z2)**2.0 )*DTH
+                          * ( WN(Z2)**2.0 )*DTH /tanh(WN(Z2)*DEPTH)
            ENDDO
 !|---------------------------------------------------------------------|
 !|-----Complete the integrations---------------------------------------|
@@ -502,11 +671,11 @@
                 TLTND(zi) =tltnd(zi)+ (SIN( TH(T) ) * COS( ANGDIF )**2.0)&
                             * CBETA * SPC2(Z2,T) * SQRT( &
                             TLTE(ZI)**2.0 + TLTN(ZI)**2.0 ) * &
-                            ( WN(Z2)**2.0 )*dth
+                            ( WN(Z2)**2.0 )*dth /tanh(WN(Z2)*DEPTH)
                 TLTED(zi) = tlted(zi)+(COS( TH(T) ) * COS( ANGDIF )**2.0)&
                             * CBETA * SPC2(Z2,T) * SQRT( &
                             TLTE(ZI)**2.0 + TLTN(ZI)**2.0 ) * &
-                            ( WN(Z2)**2.0 )*dth
+                            ( WN(Z2)**2.0 )*dth /tanh(WN(Z2)*DEPTH)
               ENDDO
               IF (ZI .EQ. 1) THEN
                 TLTNA(ZI)=TLTND(ZI)*DWN(Z2)*0.5
@@ -717,10 +886,12 @@
            UST=-999
            TAUNUX=0.
            TAUNUY=0.
+           FLAG=0
         ELSEIF (((VITV/MAX(ABS(WNDY),CK) .LT. iter_thresh) .AND.&
              (UITV/MAX(ABS(WNDX),CK) .LT. iter_thresh)) .AND. &
              (ITERATION .GE. 2)) THEN
            IT_FLAG1 = .FALSE.
+           FLAG=1
         ENDIF
         ! if taunu iteration is unstable try to reset with new guess...
         if (.not.(cos(wnd_in_dir-atan2(taunuy,taunux)).ge.0.0)) then
@@ -749,6 +920,7 @@
          UST = wnd_in_mag*kappa/log(zwnd/z0)
          USTD = wnd_in_dir
          CD = UST**2 / wnd_in_mag**2
+         FLAG=-1
       ENDIF
       DEALLOCATE(WN, DWN, CP,SIG2, SPC2, TLTN, TLTE, TAUD, &
                  TLTND, TLTED, ZOFK, UPROF, &
@@ -930,6 +1102,7 @@
                              MAXAN, MINAN
       INTEGER             :: MAI, I, K, T
       REAL, ALLOCATABLE, DIMENSION(:)  :: ANGLE1
+      LOGICAL             :: CRIT1, CRIT2
 !/
 !/ ------------------------------------------------------------------- /
 !/
@@ -1331,7 +1504,7 @@
 
       END SUBROUTINE WND2Z0M
 !/ ------------------------------------------------------------------- /
-      SUBROUTINE WND2SAT(WND10,SAT)
+      SUBROUTINE WND2SAT(WND10,SAT,Tail_Choice)
 !/                  +-----------------------------------+
 !/                  | WAVEWATCH III           NOAA/NCEP |
 !/                  |           B. G. Reichl            |
@@ -1355,6 +1528,7 @@
 !     Parameter list
 !     ----------------------------------------------------------------
       !Input: WND10 - 10 m neutral wind [m/s]
+      !Input: Tail_Choice - control which tail functions to use.
       !Output: SAT  - Level 1-d saturation spectrum in tail [non-dim]
 !     ----------------------------------------------------------------
 !  4. Subroutines used :
@@ -1393,10 +1567,12 @@
         IMPLICIT NONE
 !/
         REAL, INTENT(IN) :: WND10
+        INTEGER, INTENT(IN) :: Tail_Choice
         REAL, INTENT(OUT) :: SAT
 !/S      INTEGER, SAVE           :: IENT = 0
 !
 !/S      CALL STRACE (IENT, 'WND2SAT')
+       IF (Tail_Choice==1) THEN
 !/ Old HWRF 2015 and ST2 
 !        SAT =0.000000000001237 * WND10**6 +&
 !             -0.000000000364155 * WND10**5 +&
@@ -1406,26 +1582,79 @@
 !             0.000778467452178 * WND10**1 +&
 !             0.002962335390055
 !
+      IF (WND10<54.0) THEN
+         SAT = -0.0000000000933045564 * WND10**4  &
+               +0.000000368296046  * WND10**3  &
+               -0.0000418658707 * WND10**2  &
+               +0.00130595281  * WND10     &
+               -0.000527661260
+      ELSE
+        SAT = 0.0000000742701634 * WND10**3  &
+              -0.0000100486405 * WND10**2  &
+              +0.000393347926 * WND10     &
+              +0.00143171024
+      ENDIF
+!
+      ELSEIF (Tail_Choice==2) THEN
 !     SAT values based on 
 !     HWRF 2016 CD curve, created with  fetch limited cases ST4 physics
+!        IF (WND10<20.0) THEN
+!          SAT = -0.000018541921682*WND10**2  &
+!                +0.000751515452434*WND10     &
+!                +0.002466529381004
+!        ELSEIF (WND10<45) THEN
+!          SAT = -0.000000009060349*WND10**4  &
+!                +0.000001276678367*WND10**3  &
+!                -0.000068274393789*WND10**2  &
+!                +0.001418180888868*WND10     &
+!                +0.000262277682984
+!        ELSE
+!          SAT = -0.000155976275073*WND10     &
+!                +0.012027763023184
+!        ENDIF
         IF (WND10<20.0) THEN
-          SAT = -0.000018541921682*WND10**2  &
-                +0.000751515452434*WND10     &
-                +0.002466529381004
-        ELSEIF (WND10<45) THEN
-          SAT = -0.000000009060349*WND10**4  &
-                +0.000001276678367*WND10**3  &
-                -0.000068274393789*WND10**2  &
-                +0.001418180888868*WND10     &
-                +0.000262277682984
+           SAT = 0.0000000131913461 * WND10**2 + &
+                 0.000229956367 * WND10     + &
+                 0.00550800211 
+        ELSEIF (WND10<50.0) THEN
+           SAT = 0.00000000559101083 * WND10**4   &
+                 -0.000000549949516 * WND10**3  &
+                 +0.0000130093399 * WND10**2  &
+                 -0.0000953766876 * WND10     &
+                 +0.0102647903
         ELSE
-          SAT = -0.000155976275073*WND10     &
-                +0.012027763023184
+           SAT = -0.0000000354155805 * WND10**3  &
+                 +0.0000136036043 * WND10**2  &
+                 -0.00129398317 * WND10     &
+                 +0.0393321920
         ENDIF
 
         SAT = min(max(SAT,0.002),0.014)
+
+      ELSEIF (Tail_Choice .eq. 3) Then
+      ! ADCIRC Garratt 1977 capped at 0.0028
+         IF (WND10<=19.0 ) THEN
+             SAT= -0.00000521781563 * WND10**2 &
+                  +0.000317144478 * WND10  &
+                  +0.00566955045
+         ELSE
+             SAT= 0.00000000218597644 * WND10**4 &
+                  -0.000000412577288 * WND10**3 &
+                  +0.0000305055798 * WND10**2 &
+                  -0.00110615766 * WND10 &
+                  +0.0222230368
+         ENDIF
+      ENDIF
       END SUBROUTINE WND2SAT
 !
+      SUBROUTINE linear_interp(x1,x2,y1,y2, xq,yq)
+      IMPLICIT NONE
+       real, intent(in):: x1,x2, y1,y2, xq
+       real, intent(out):: yq
+
+        yq= (x2-xq)/(x2-x1)*y1 + (xq-x1)/(x2-x1)*y2
+
+      end subroutine linear_interp
 !/ End of module W3FLD1MD -------------------------------------------- /
 !/
       END MODULE W3FLD1MD

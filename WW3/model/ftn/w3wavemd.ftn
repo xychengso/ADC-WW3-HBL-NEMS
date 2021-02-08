@@ -1428,7 +1428,9 @@
 !/PDLIB                   TAUWIY(JSEA), TAUWNX(JSEA),                    &
 !/PDLIB                   TAUWNY(JSEA),  PHIAW(JSEA), CHARN(JSEA),       &
 !/PDLIB                   TWS(JSEA), PHIOC(JSEA), TMP1, D50, PSIC, TMP2, &
-!/PDLIB                   PHIBBL(JSEA), TMP3, TMP4, PHICE(JSEA),         &
+!/PDLIB                   PHIBBL(JSEA), TMP3, TMP4, &
+!/PDLIB                   QCFLG(JSEA),USTFLD(JSEA), USTDIRFLD(JSEA),       &
+!/PDLIB                   PHICE(JSEA),         &
 !/PDLIB                   ASF(ISEA))
 !/PDLIB                IF (.not. LSLOC) THEN
 !/PDLIB                  VSTOT(:,JSEA) = VSioDummy
@@ -1444,6 +1446,8 @@
 !/PDLIB              USTDIR(ISEA) = UNDEF
 !/PDLIB              DTDYN (JSEA) = UNDEF
 !/PDLIB              FCUT  (JSEA) = UNDEF
+!/PDLIB              USTFLD(JSEA) = UNDEF
+!/PDLIB              USTDIRFLD(JSEA)=UNDEF
 !/PDLIB            END IF
 !/PDLIB          END DO ! JSEA 
 !/PDLIB        END IF ! PDLIB 
@@ -2057,7 +2061,9 @@
 !/PDLIB                      TAUWIY(JSEA), TAUWNX(JSEA),                 &
 !/PDLIB                      TAUWNY(JSEA),  PHIAW(JSEA), CHARN(JSEA),    &
 !/PDLIB                      TWS(JSEA),PHIOC(JSEA), TMP1, D50, PSIC, TMP2,&
-!/PDLIB                      PHIBBL(JSEA), TMP3, TMP4, PHICE(JSEA),      &
+!/PDLIB                      PHIBBL(JSEA), TMP3, TMP4, &
+!/PDLIB                      QCFLG(JSEA),USTFLD(JSEA), USTDIRFLD(JSEA), &
+!/PDLIB                      PHICE(JSEA),      &
 !/PDLIB                      ASF(ISEA))
 !/PDLIB              ELSE
                        CALL W3SRCE(srce_direct, IT, ISEA, JSEA, IX, IY, IMOD, &
@@ -2077,8 +2083,9 @@
                             TAUWIY(JSEA), TAUWNX(JSEA),                 &
                             TAUWNY(JSEA),  PHIAW(JSEA), CHARN(JSEA),    &
                             TWS(JSEA), PHIOC(JSEA), TMP1, D50, PSIC,TMP2,&
-                            PHIBBL(JSEA), TMP3, TMP4 , PHICE(JSEA),     &
-                            ASF(ISEA))
+                            PHIBBL(JSEA), TMP3, TMP4 ,      &
+                            QCFLG(JSEA), USTFLD(JSEA),USTDIRFLD(JSEA),    &
+                            PHICE(JSEA), ASF(ISEA))
 !/PDLIB              END IF
                      WHITECAP(JSEA,1:4) = TMP1
                      BEDFORMS(JSEA,1:3) = TMP2
@@ -2089,6 +2096,8 @@
                     USTDIR(ISEA) = UNDEF
                     DTDYN (JSEA) = UNDEF
                     FCUT  (JSEA) = UNDEF
+                    USTFLD(JSEA) = UNDEF
+                    USTDIRFLD(JSEA) = UNDEF
 !                    VA(:,JSEA)  = 0.
                 END IF
 !/DEBUGRUN        WRITE(740+IAPROC,*) 'RET: min/max/sum(VA)=',minval(VA(:,JSEA)),maxval(VA(:,JSEA)),sum(VA(:,JSEA))

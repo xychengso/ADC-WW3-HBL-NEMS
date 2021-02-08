@@ -355,6 +355,13 @@ module MDL
       i = i+1
       is%wrap%sname(i) = 'northward_wave_radiation_stress_gradient'
       is%wrap%fname(i) = 'wavsgv'
+      ! XYC added ssd wind stress
+      i = i+1
+      is%wrap%sname(i) = 'eastward_sea_state_dependent_fric_vel'
+      is%wrap%fname(i) = 'uustss'
+      i = i+1
+      is%wrap%sname(i) = 'northward_sea_state_dependent_fric_vel'
+      is%wrap%fname(i) = 'vustss'
     case ('ICE')
       i = i+1
       is%wrap%sname(i) = 'sea_ice_concentration'

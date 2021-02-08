@@ -1151,6 +1151,7 @@
       USE CONSTANTS
       USE W3GDATMD
       USE W3WDATMD, ONLY: UST, FPIS
+      USE W3ADATMD, ONLY: QCFLG
       USE W3ADATMD, ONLY: CG, WN, DW
       USE W3ADATMD, ONLY: HS, WLM, T02, T0M1, T01, FP0,               &
                           THM, THS, THP0
@@ -1908,6 +1909,10 @@
               ENDIF
 !
 !  Add here USERO(JSEA,1) ...
+!/FLD1            USERO(JSEA,1) = QCFLG(JSEA)
+!/FLD2            USERO(JSEA,1) = QCFLG(JSEA)
+!/FLD1            USERO(JSEA,2) = FPIS(ISEA)
+!/FLD2            USERO(JSEA,2) = FPIS(ISEA)
 !
           END IF
         END DO
@@ -2445,6 +2450,7 @@
                           PHIAW, PHIOC, TUSX, TUSY, PRMS, TPMS,        &
                           USSX, USSY, MSSX, MSSY, MSSD, MSCX, MSCY,    &
                           MSCD, QP, TAUWNX, TAUWNY, CHARN, TWS, BHD,   &
+                          USTFLD, USTDIRFLD,                           &
                           PHIBBL, TAUBBL, WHITECAP, BEDFORMS, CGE, EF, &
                           CFLXYMAX, CFLTHMAX, CFLKMAX, P2SMS, US3D,    &
                           TH1M, STH1M, TH2M, STH2M, HSIG, PHICE, TAUICE,&
@@ -2727,6 +2733,10 @@
                 IF ( FLOGRD( 4,16) ) PWST(ISEA  ) = UNDEF
                 IF ( FLOGRD( 4,17) ) PNR (ISEA  ) = UNDEF
 !
+                IF ( FLOGRD( 5, 1) ) THEN
+                                     USTFLD(ISEA)    = UNDEF
+                                     USTDIRFLD(ISEA) = UNDEF
+                  END IF
                 IF ( FLOGRD( 5, 2) ) CHARN (ISEA) = UNDEF
                 IF ( FLOGRD( 5, 3) ) CGE   (ISEA) = UNDEF
                 IF ( FLOGRD( 5, 4) ) PHIAW (ISEA) = UNDEF
@@ -2987,10 +2997,14 @@
                       IX     = MAPSF(ISEA,1)
                       IY     = MAPSF(ISEA,2)
                       IF ( MAPSTA(IY,IX) .EQ. 1 ) THEN
-                          AUX1(ISEA) = UST(ISEA) * ASF(ISEA) *        &
-                                                      COS(USTDIR(ISEA))
-                          AUX2(ISEA) = UST(ISEA) * ASF(ISEA) *        &
-                                                      SIN(USTDIR(ISEA))
+!                          AUX1(ISEA) = UST(ISEA) * ASF(ISEA) *        &
+!                                                      COS(USTDIR(ISEA))
+!                          AUX2(ISEA) = UST(ISEA) * ASF(ISEA) *        &
+!                                                      SIN(USTDIR(ISEA))
+                          AUX1(ISEA) = USTFLD(ISEA) * ASF(ISEA) *        &
+                                                     COS(USTDIRFLD(ISEA))
+                          AUX2(ISEA) = USTFLD(ISEA) * ASF(ISEA) *        &
+                                                      SIN(USTDIRFLD(ISEA))
                         ELSE
                           AUX1(ISEA) = UNDEF
                           AUX2(ISEA) = UNDEF
@@ -3286,9 +3300,11 @@
 !
                   ELSE IF ( IFI .EQ. 5 .AND. IFJ .EQ. 1 ) THEN
                     READ (NDSOG,END=801,ERR=802,IOSTAT=IERR)          &
-                                                         UST(1:NSEA)
+                                                         !UST(1:NSEA)
+                                                         USTFLD(1:NSEA)
                     READ (NDSOG,END=801,ERR=802,IOSTAT=IERR)          &
-                                                         USTDIR(1:NSEA)
+                                                         !USTDIR(1:NSEA)
+                                                      USTDIRFLD(1:NSEA)
                   ELSE IF ( IFI .EQ. 5 .AND. IFJ .EQ. 2 ) THEN
                     READ (NDSOG,END=801,ERR=802,IOSTAT=IERR)         &
                                                          CHARN(1:NSEA)

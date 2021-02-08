@@ -156,6 +156,7 @@
                           TAUWIY, PHIAW, PHIOC, TUSX, TUSY, PRMS, TPMS,&
                           USSX, USSY, MSSX, MSSY, MSSD, MSCX, MSCY,    &
                           MSCD, CHARN, TWS,                            &
+                          USTFLD, USTDIRFLD,                           &
                           TAUWNX, TAUWNY, BHD, T02, HSIG, CGE,         &
                           T01, BEDFORMS, WHITECAP, TAUBBL, PHIBBL,     &
                           CFLTHMAX, CFLXYMAX, CFLKMAX, TAUICE, PHICE,  &
@@ -1502,6 +1503,8 @@
               !! Note - UST and USTDIR read in from .ww3 file are X-Y vectors
               DO ISEA=1, NSEA
                 UABS   = SQRT(UST(ISEA)**2+USTDIR(ISEA)**2)
+!/FLD1                UABS   = SQRT(USTFLD(ISEA)**2+USTDIRFLD(ISEA)**2)
+!/FLD2                UABS   = SQRT(USTFLD(ISEA)**2+USTDIRFLD(ISEA)**2)
                  IF (UABS.GE.10.) THEN
                   UST(ISEA)=UNDEF
                   USTDIR(ISEA)=UNDEF
@@ -1515,6 +1518,10 @@
               ELSE
                 CALL W3S2XY (NSEA,NSEA,NX+1,NY, UST   (1:NSEA), MAPSF, XX )
                 CALL W3S2XY (NSEA,NSEA,NX+1,NY, USTDIR(1:NSEA), MAPSF, XY )
+!/FLD1                CALL W3S2XY (NSEA,NSEA,NX+1,NY, USTFLD   (1:NSEA), MAPSF, XX )
+!/FLD1                CALL W3S2XY (NSEA,NSEA,NX+1,NY, USTDIRFLD(1:NSEA), MAPSF, XY )
+!/FLD2                CALL W3S2XY (NSEA,NSEA,NX+1,NY, USTFLD   (1:NSEA), MAPSF, XX )
+!/FLD2                CALL W3S2XY (NSEA,NSEA,NX+1,NY, USTDIRFLD(1:NSEA), MAPSF, XY )
               ENDIF ! SMCGRD
               !! Commented out unnecessary statements below for time being
               !! UST,USTDIR are in north-east convention and X1,X2

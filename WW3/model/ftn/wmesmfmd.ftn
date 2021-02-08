@@ -36,6 +36,7 @@
 #define TEST_WMESMFMD_ROUGHL___disabled
 #define TEST_WMESMFMD_BOTCUR___disabled
 #define TEST_WMESMFMD_RADSTR2D___disabled
+#define TEST_WMESMFMD_FricVel___disabled
 #define TEST_WMESMFMD_STOKES3D___disabled
 #define TEST_WMESMFMD_PSTOKES___disabled
 !/
@@ -1064,6 +1065,21 @@
         expFieldDim(i)     = 2
       endif
 
+! XYC added sea-state dependent wind stress:
+      i = i + 1 
+      if ( istep.eq.2 ) then
+        expFieldName(i)    = 'uustss'
+        expFieldStdName(i) = 'eastward_sea_state_dependent_fric_vel'
+        expFieldDim(i)     = 2
+      endif
+
+      i = i + 1 
+      if ( istep.eq.2 ) then
+        expFieldName(i)    = 'vustss'
+        expFieldStdName(i) = 'northward_sea_state_dependent_fric_vel'
+        expFieldDim(i)     = 2
+      endif
+
       numExpFields = i
       enddo istep_export
 
@@ -1451,6 +1467,31 @@
            expFieldActive(i3) ) then
         flogr2(6,1) = .true.  !Radiation stresses
       endif
+
+! XYC added sea-state dependent wind stress:
+      i1 = FieldIndex( expFieldName, 'uustss', rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      i2 = FieldIndex( expFieldName, 'vustss', rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      if ( expFieldActive(i1) .and. &
+           expFieldActive(i2) ) then
+        write(msg,'(a,a10,a10)') trim(cname)//': ', &
+          trim(expFieldName(i1)),trim(expFieldName(i2))
+        call ESMF_LogWrite(trim(msg), ESMF_LOGMSG_INFO)
+        flogr2(5,1) = .true.  !frictional velocity UST
+      endif
+
+! XYC added ssd roughness length (to ATM):
+      i1 = FieldIndex( expFieldName, 'z0rlen', rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      if ( expFieldActive(i1) ) then
+        write(msg,'(a,a10)') trim(cname)//': ', &
+          trim(expFieldName(i1))
+        call ESMF_LogWrite(trim(msg), ESMF_LOGMSG_INFO)
+        ! note that this may not be the right charnock that I wanted to
+        ! output
+        flogr2(5,2) = .true.  !Charnock parm. (used to compute z0)
+    
 #endif
 !
 ! -------------------------------------------------------------------- /
@@ -2265,8 +2306,11 @@
           twn = tcur
         else
           tw0 = twn
-          wx0 = wxn
-          wy0 = wyn
+          ! XYC note: this introduce 1 dt lag 
+          ! wx0 holds wind from the previous coupling time here.
+          ! but WW3 sees wx0 as the wind at current time.
+          !wx0 = wxn
+          !wy0 = wyn
           twn = tend
         endif
         tfn(:,j) = twn
@@ -2282,8 +2326,9 @@
         if (ESMF_LogFoundError(rc, PASSTHRU)) return
         if (firstCall) then
           tw0 = twn
-          wx0 = wxn
-          wy0 = wyn
+
+          !wx0 = wxn
+          !wy0 = wyn
 !/WRST          wxn = WXNwrst !replace with values from restart
 !/WRST          wyn = WYNwrst 
 !/WRST          wx0 = WXNwrst 
@@ -2302,6 +2347,11 @@
 !/WRST            wy0 = WYNwrst  
 !/WRST            if (ESMF_LogFoundError(rc, PASSTHRU)) return
 !/WRST          enddo
+          else   ! not first call:
+          ! xyc changed, so that the wind speed between current time and
+          ! the next coupling time is set constant.(at current time)
+            wx0 = wxn
+            wy0 = wyn
         endif
     
 !/WRST       if ( ((twn(1)-tw0(1))*1000000+((twn(2)-tw0(2)))) .le. 0  ) then 
@@ -2564,6 +2614,20 @@
            expFieldActive(i2) .and. &
            expFieldActive(i3) ) then
         call CalcRadstr2D( va, expField(i1), expField(i2), expField(i3), rc )
+        if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      endif
+!
+! -------------------------------------------------------------------- /
+! Surface frictional velocity (sea-state dependent wind stress)
+! XYC added
+      i1 = FieldIndex( expFieldName, 'uustss', rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      i2 = FieldIndex( expFieldName, 'vustss', rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      if ( expFieldActive(i1) .and. &
+           expFieldActive(i2) ) then
+!         write(*,*) "debug: Call into FricVel"
+        call CalcFricVel( expField(i1),expField(i2), rc )
         if (ESMF_LogFoundError(rc, PASSTHRU)) return
       endif
 !
@@ -5584,7 +5648,8 @@
       logical, save :: firstCall = .true.
       integer :: isea, jsea, ix, iy
       real    :: emean, fmean, fmean1, wnmean, amax, ustar, ustdr, &
-                 tauwx, tauwy, cd, z0, fmeanws, dlwmean
+                 tauwx, tauwy, cd, z0, fmeanws, dlwmean, &
+                 wnd_pa   ! xyc added for SSD roughness
       logical :: llws(nspec)
       type(ESMF_Field) :: wrlnField
       real(ESMF_KIND_RX), pointer :: wrln(:)
@@ -5594,18 +5659,37 @@
 !
       rc = ESMF_SUCCESS
 
+      if ( (GTYPE.eq.RLGTYPE).or.(GTYPE.eq.CLGTYPE) ) then
       wrlnField = ESMF_FieldCreate( natGrid, natArraySpec2D, &
         staggerLoc=natStaggerLoc, rc=rc )
       if (ESMF_LogFoundError(rc, PASSTHRU)) return
 
+      elseif (GTYPE.eq.UNGTYPE) then
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+        wrlnField = ESMF_FieldCreate( natGrid, natArraySpec1D, &
+        staggerLoc=natStaggerLoc, rc=rc )
+        if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
+      endif
+
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+!/PDLIB!        Use auxiliary native grid/mesh to populate and redistribute data
       call FieldFill( wrlnField, zeroValue, rc=rc )
       if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
 
       if ( natGridIsLocal ) then
 
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
         call ESMF_FieldGet( wrlnField, farrayPtr=wrln, rc=rc )
         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      else
+!/PDLIB!        Use single domain-decomposed native mesh to populate and communicate data
+!/PDLIB         call ESMF_FieldGet( wrlField, farrayPtr=wrln, rc=rc )
+!/PDLIB         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
 
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
         jsea_loop: do jsea = 1,nseal
 !/DIST          isea = iaproc + (jsea-1)*naproc
 !/SHRD          isea = jsea
@@ -5633,14 +5717,31 @@
             wrln(jsea) = charn(jsea)*ust(isea)**2/grav
           endif 
         enddo jsea_loop
+!/PDLIB      else
+!/PDLIB        jsea_loop2: do jsea = 1,np 
+!/PDLIB          isea = iplg(jsea)
+!/PDLIB          wrln(jsea) = charn(jsea)*USTFLD(jsea)**2/grav
+!/PDLIB          ! if sea-state dependnet wind stress iteration
+!/PDLIB          ! failed:(use bulk z0)
+!/PDLIB          if ( QCFLG(jsea) .ne. 1 ) then
+!/PDLIB             ! TO-DO: add the bulk Z0 function here.(ADCIRC/GFDL/other?)
+!/PDLIB             call wnd2Z0Mbulk(U10(isea)/WIND_FAC, wrln(jsea))
+!/PDLIB!          else 
+!/PDLIB!            wnd_pa = U10(isea)/WIND_FAC * cos(U10D(isea) - USTDIRFLD(jsea))
+!/PDLIB!            wrln(jsea) = 10.0/exp( wnd_pa * kappa / USTFLD(jsea) )
+!/PDLIB          endif
+!/PDLIB       enddo jsea_loop2
+!/PDLIB      endif
 
       endif !natGridIsLocal
 
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
       call ESMF_FieldRedist( wrlnField, wrlField, n2eRH, rc=rc )
       if (ESMF_LogFoundError(rc, PASSTHRU)) return
 
       call ESMF_FieldDestroy( wrlnField, rc=rc )
       if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB     endif
 
       firstCall = .false.
 
@@ -6556,6 +6657,321 @@
 !/
       end subroutine CalcPStokes
 !/ ------------------------------------------------------------------- /
+#undef METHOD
+#define METHOD "CalcFricVel"
+      subroutine CalcFricVel (ustxField, ustyField, rc )
+!/
+!/                  +-----------------------------------+
+!/                  | WAVEWATCH III           NOAA/NCEP |
+!/                  |        T. J. Campbell, NRL        |
+!/                  |     A. J. van der Westhuysen      |
+!/                  |                        FORTRAN 90 |
+!/                  | Last update :         09-Aug-2017 |
+!/                  +-----------------------------------+
+!/
+!/    09-Aug-2017 : Origination.                        ( version 6.03 )
+!/    27-Feb-2018 : Modification for use with UNGTYPE   ( version 6.06 )
+!/
+!  1. Purpose :
+!
+!     Calculate sea-state dependent wind stress for export
+!
+!  2. Method :
+!
+!     Refer to Reichl et al.(2014), Donelan et al.(2012),
+!     Chen et al.(2020)
+!
+!                   //
+!   Sxx = rho grav || (N*cos^2(theta) + N - 1/2) * sig*Ac(theta,k)/Cg dsig dtheta
+!                 //
+!                   //
+!   Sxy = rho grav ||  N*sin(theta)*cos(theta)   * sig*Ac(theta,k)/Cg dsig dtheta
+!                 //
+!                   //
+!   Syy = rho grav || (N*sin^2(theta) + N - 1/2) * sig*Ac(theta,k)/Cg dsig dtheta
+!                 //
+!
+! Where:
+!   rho = density of sea water
+!   grav = acceleration due to gravity
+!   Ac(theta,k) = wave action density
+!   N = Cg/C = ratio of group velocity and phase velocity
+!
+!  3. Parameters :
+!
+!     Parameter list
+!     ----------------------------------------------------------------
+!       a         Real   I   Input spectra (in par list to change shape)
+!       ustxField  Type   I/O fricitional velocity (air)  eastward-component export field
+!       ustyField  Type   I/O fric. vel. (air) northward-component export field
+!       rc        Int    O   Return code
+!     ----------------------------------------------------------------
+!
+!  4. Subroutines used :
+!
+!      Name      Type  Module   Description
+!     ----------------------------------------------------------------
+!      NONE
+!     ----------------------------------------------------------------
+!
+!  5. Called by :
+!
+!  6. Error messages :
+!
+!  7. Remarks :
+!
+!  8. Structure :
+!
+!  9. Switches :
+!
+! 10. Source code :
+!
+!/ ------------------------------------------------------------------- /
+!/
+!/PDLIB      use yowNodepool, only: np, iplg
+!/
+!/ ------------------------------------------------------------------- /
+!/ Parameter list
+!/
+      real             :: a(nth,nk,0:nseal)
+      type(ESMF_Field) :: ustxField
+      type(ESMF_Field) :: ustyField
+      integer          :: rc
+!/
+!/ ------------------------------------------------------------------- /
+!/ Local parameters
+!/
+      character(ESMF_MAXSTR) :: cname
+      character(128) :: msg
+      ! ---------------------------------------------- !
+      ! the following variables may need to be changed.
+      real(8), parameter :: zero  = 0.0
+!      real(8), parameter :: half  = 0.5
+!      real(8), parameter ::  one  = 1.0
+!      real(8), parameter ::  two  = 2.0
+      integer :: isea, jsea, ik, ith
+!      real(8) :: sxxs, sxys, syys
+!      real(8) :: akxx, akxy, akyy, cgoc, facd, fack, facs
+      ! ---------------------------------------------- !
+      type(ESMF_Field) :: ustxnField, ustynField
+      real(ESMF_KIND_RX), pointer :: ustxn(:), ustyn(:)
+      integer, save :: timeSlice = 1
+!
+! -------------------------------------------------------------------- /
+!
+      rc = ESMF_SUCCESS
+
+!     For regular and curvilinear grids the native grid has a 2D
+!     layout, whereas for unstructured meshes it is a 1D array
+      if ( (GTYPE.eq.RLGTYPE).or.(GTYPE.eq.CLGTYPE) ) then
+         ustxnField = ESMF_FieldCreate( natGrid, natArraySpec2D, &
+           staggerLoc=natStaggerLoc, rc=rc )
+         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+         ustynField = ESMF_FieldCreate( natGrid, natArraySpec2D, &
+           staggerLoc=natStaggerLoc, rc=rc )
+         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      elseif (GTYPE.eq.UNGTYPE) then
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+         ustxnField = ESMF_FieldCreate( natGrid, natArraySpec1D, &
+           staggerLoc=natStaggerLoc, rc=rc )
+         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+         ustynField = ESMF_FieldCreate( natGrid, natArraySpec1D, &
+           staggerLoc=natStaggerLoc, rc=rc )
+         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
+      endif
+
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+      call FieldFill( ustxnField, zeroValue, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      call FieldFill( ustynField, zeroValue, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
+
+      if ( natGridIsLocal ) then
+
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+!/PDLIB!        Use auxiliary native grid/mesh to populate and redistribute data
+        call ESMF_FieldGet( ustxnField, farrayPtr=ustxn, rc=rc )
+        if (ESMF_LogFoundError(rc, PASSTHRU)) return
+        call ESMF_FieldGet( ustynField, farrayPtr=ustyn, rc=rc )
+        if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      else
+!/PDLIB!        Use single domain-decomposed native mesh to populate and communicate data
+!/PDLIB         call ESMF_FieldGet( ustxField, farrayPtr=ustxn, rc=rc )
+!/PDLIB         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB         call ESMF_FieldGet( ustyField, farrayPtr=ustyn, rc=rc )
+!/PDLIB         if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
+
+! -------- Code block to compute the ustx and usty:
+! need also to add in PDLIB option. 
+
+!           test:
+        write(*,*) "max(ust)=", maxval(UST)
+        write(*,*) "max(ustdir)=", maxval(USTDIR)*180/pi
+
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+        jsea_loop: do jsea = 1,nseal
+!/DIST          isea = iaproc + (jsea-1)*naproc
+!/SHRD          isea = jsea
+          if ( dw(isea).le.zero ) cycle jsea_loop
+!#ifdef USE_W3OUTG_FOR_EXPORT
+!         for ssd wind stress:
+          ustxn(jsea)= USTFLD(isea)*cos(USTDIRFLD(isea))
+          ustyn(jsea)= USTFLD(isea)*sin(USTDIRFLD(isea))
+!           ustxn(jsea)=1.0
+!           ustyn(jsea)=1.0
+          !use qcflag to further perform quality control of the
+          !frictional velocity; 
+          if (QCFLG(isea).ne.INT(1)) then
+           ! use bulk frictional velocity for ADCIRC
+           ! TO-DO: remove WIND_FAC when I complete a test with
+           ! betamax=1.33
+             call wnd2ustadcbulk(U10(isea)/WIND_FAC, U10D(isea)/WIND_FAC,ustxn(jsea), ustyn(jsea))
+          endif
+!#else
+          ! can I call the fld subroutine to do the calculation?
+          ! I am not sure.
+
+!#endif
+        enddo jsea_loop
+!/PDLIB      else
+!/PDLIB        jsea_loop2: do jsea = 1,np 
+!/PDLIB          isea = iplg(jsea)
+!/PDLIB!          if ( dw(isea).le.zero ) cycle jsea_loop
+!/PDLIB!        write(msg,*) trim(cname)//' ustxn', ustxn(isea)
+!/PDLIB!        call ESMF_LogWrite(trim(msg), ESMF_LOGMSG_INFO)
+!/PDLIB!         for ssd wind stress:
+!/PDLIB          ustxn(jsea)= USTFLD(jsea)*cos(USTDIRFLD(jsea))
+!/PDLIB          ustyn(jsea)= USTFLD(jsea)*sin(USTDIRFLD(jsea))
+!/PDLIB 
+!/PDLIB          !use qcflag to further perform quality control of the
+!/PDLIB          !frictional velocity; 
+!/PDLIB!        write(msg,'(A15,1x, F6.3)') trim(cname)//' WIND_FAC', WIND_FAC
+!/PDLIB!        call ESMF_LogWrite(trim(msg), ESMF_LOGMSG_INFO)
+!/PDLIB!          if ( (QCFLG(jsea) .ne. INT(1)) .or. (USTFLD(jsea).ge.999)) then
+!/PDLIB          if ( (QCFLG(jsea) .ne. INT(1)) ) then
+!/PDLIB          ! use bulk frictional velocity for ADCIRC
+!/PDLIB             call wnd2ustadcbulk(U10(isea)/WIND_FAC, U10D(isea)/WIND_FAC,ustxn(jsea), ustyn(jsea))
+!/PDLIB          endif
+!/PDLIB        enddo jsea_loop2
+!/PDLIB      endif
+
+      endif !natGridIsLocal
+
+
+
+!/PDLIB      if ( LPDLIB == .FALSE. ) then
+      call ESMF_FieldRedist( ustxnField, ustxField, n2eRH, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      call ESMF_FieldRedist( ustynField, ustyField, n2eRH, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+
+      call ESMF_FieldDestroy( ustxnField, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      call ESMF_FieldDestroy( ustynField, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+!/PDLIB      endif
+
+#ifdef TEST_WMESMFMD_FricVel
+      call ESMF_FieldWrite( ustxField, "wmesmfmd_fricvel_ustx.nc", &
+        overwrite=.true., timeSlice=timeSlice, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      call ESMF_FieldWrite( ustyField, "wmesmfmd_fricvel_usty.nc", &
+        overwrite=.true., timeSlice=timeSlice, rc=rc )
+      if (ESMF_LogFoundError(rc, PASSTHRU)) return
+      timeSlice = timeSlice + 1
+#endif
+!/      
+        END SUBROUTINE CalcFricVel
+!
+! --------- Extra subroutine added by XYC to compute bulk Z0 and ust
+       subroutine wnd2ustadcbulk(u10, u10dir, ustx, usty)
+         implicit none
+         real,intent(in):: u10, u10dir
+         real,intent(out):: ustx, usty
+         real:: ustmag
+         real:: Cdadc, capval
+
+         ! hard coded here:
+         ! will need to consider to change this parameter dynamically
+         ! according to its value in ADCIRC.
+         capval=0.0028
+
+         ! compute the ustmag from U10 according to adcirc bulk Cd
+         ! formula (Garratt 1977)
+         ! ust^2 = Cd*U10^2
+         Cdadc=(0.75+0.067*u10)*0.001
+         if (Cdadc .gt. capval) then
+            Cdadc=capval
+         endif 
+         ustmag = sqrt(Cdadc)*u10
+
+         ! then compute the wind stress direction the same as the wind
+         ! speed direction.
+          ustx=ustmag*cos(u10dir)
+          usty=ustmag*sin(u10dir)
+
+       end subroutine wnd2ustadcbulk 
+!
+       subroutine wnd2Z0Mbulk(U10, Z0BLK)
+          implicit none
+          real, intent(in)::  U10
+          real, intent(out)::  Z0BLK
+          real:: Cdadc, capval
+          real, parameter:: kappa=0.40
+          real(kind=8):: a(9),b(9)
+          
+      a(1)=1.044183210405817* 10**(-12)
+      a(2)=-5.707116220939218* 10**(-11)
+      a(3)=8.005722172810571* 10**(-10)
+      a(4)=6.322045801589353* 10**(-9)
+      a(5)=-2.422002988137712* 10**(-7)
+      a(6)=2.269200594753249* 10**(-6)
+      a(7)=-6.029592778169796* 10**(-6)
+      a(8)=8.882284703541603* 10**(-6)
+      a(9)=-2.371341185499601* 10**(-6)
+
+      b(1)=1.814407011197660* 10**(-15)
+      b(2)=-1.602907562918788* 10**(-13)
+      b(3)=-3.351205313520358* 10**(-11)
+      b(4)= 6.036179295940524* 10**(-9)
+      b(5)=-3.725481686822030* 10**(-7)
+      b(6)= 1.059761705898929* 10**(-5)
+      b(7)=-1.375241830530252* 10**(-4)
+      b(8)= 8.538858261732818* 10**(-4)
+      b(9)=-1.936638976963742* 10**(-3)
+
+         capval=0.0028
+
+         ! compute the ustmag from U10 according to adcirc bulk Cd
+         ! formula (Garratt 1977)
+         ! ust^2 = Cd*U10^2
+         Cdadc=(0.75+0.067*u10)*0.001
+         ! compute Z0 (at 10m height) from Cd:
+       !  Z0BLK = 10 / exp(kappa/sqrt(Cdadc))
+         ! If the GFDL Cd needs to be used, the following Z0 can be
+         ! used:
+         if ( 1 .eq. 1 ) then
+            if (U10 .le. 0.4) then
+               Z0BLK=4*10**(-7)
+            elseif ( U10 .le. 9.3 ) then
+               Z0BLK = a(9) + a(8)*U10 + a(7)*U10**2 + a(6)*U10**3 + &
+                       a(5)*U10**4 + a(4)*U10**5 + a(3)*U10**6 + & 
+                       a(2)*U10**7 + a(1)*U10**8
+            elseif ( U10 .lt. 60 ) then
+               Z0BLK = b(9) + b(8)*U10 + b(7)*U10**2 + b(6)*U10**3 + &
+                       b(5)*U10**4 + b(4)*U10**5 + b(3)*U10**6 + & 
+                       b(2)*U10**7 + b(1)*U10**8
+            else 
+              Z0BLK = 1.3025*10**(-3)
+            endif
+         endif 
+
+       end subroutine wnd2Z0Mbulk
+
+!/
 !/
 !/ End of module WMESMFMD -------------------------------------------- /
 !/

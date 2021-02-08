@@ -2041,6 +2041,7 @@
 !/MPI                          TUSX, TUSY, TAUWIX, TAUWIY, TAUOX,     &
 !/MPI                          TAUOY, USSX, USSY, MSSX, MSSY, MSSD,   &
 !/MPI                          MSCX, MSCY, MSCD, PRMS, TPMS, CHARN,   &
+!/MPI                          USTFLD, USTDIRFLD,  &
 !/MPI                          TWS, TAUWNX, TAUWNY, BHD, CGE,         &
 !/MPI                          CFLXYMAX, CFLTHMAX, CFLKMAX, WHITECAP, &
 !/MPI                          BEDFORMS, PHIBBL, TAUBBL, T01,         &
@@ -2504,13 +2505,17 @@
 !/MPI              IF ( FLGRDALL( 5, 1) ) THEN
 !/MPI                  IH     = IH + 1
 !/MPI                  IT     = IT + 1
-!/MPI      CALL MPI_SEND_INIT (UST   (IAPROC), 1, WW3_FIELD_VEC,      &
-!/MPI                       IROOT, IT, MPI_COMM_WAVE, IRQGO(IH), IERR )
+!/MPI!      CALL MPI_SEND_INIT (UST   (IAPROC), 1, WW3_FIELD_VEC,      &
+!/MPI!                       IROOT, IT, MPI_COMM_WAVE, IRQGO(IH), IERR )
+!/MPI      CALL MPI_SEND_INIT (USTFLD(1),NSEALM , MPI_REAL, IROOT,    &
+!/MPI                                IT, MPI_COMM_WAVE, IRQGO(IH), IERR)
 !/MPIT      WRITE (NDST,9011) IH, ' 5/01', IROOT, IT, IRQGO(IH), IERR
 !/MPI                  IH     = IH + 1
 !/MPI                  IT     = IT + 1
-!/MPI      CALL MPI_SEND_INIT (USTDIR(IAPROC), 1, WW3_FIELD_VEC,       &
-!/MPI                       IROOT, IT, MPI_COMM_WAVE, IRQGO(IH), IERR )
+!/MPI!      CALL MPI_SEND_INIT (USTDIR(IAPROC), 1, WW3_FIELD_VEC,       &
+!/MPI!                       IROOT, IT, MPI_COMM_WAVE, IRQGO(IH), IERR )
+!/MPI      CALL MPI_SEND_INIT (USTDIRFLD(1),NSEALM , MPI_REAL, IROOT,    &
+!/MPI                                IT, MPI_COMM_WAVE, IRQGO(IH), IERR)
 !/MPIT      WRITE (NDST,9011) IH, ' 5/01', IROOT, IT, IRQGO(IH), IERR
 !/MPI                  IH     = IH + 1
 !/MPI                  IT     = IT + 1
@@ -3307,12 +3312,16 @@
 !/MPI                IF ( FLGRDALL( 5, 1) ) THEN
 !/MPI                    IH     = IH + 1
 !/MPI                    IT     = IT + 1
-!/MPI      CALL MPI_RECV_INIT (UST   (I0), 1, WW3_FIELD_VEC, IFROM,   &
-!/MPI                             IT, MPI_COMM_WAVE, IRQGO2(IH), IERR )
+!/MPI!      CALL MPI_RECV_INIT (UST   (I0), 1, WW3_FIELD_VEC, IFROM,   &
+!/MPI!                             IT, MPI_COMM_WAVE, IRQGO2(IH), IERR )
+!/MPI      CALL MPI_RECV_INIT (USTFLD   (I0),1,WW3_FIELD_VEC, IFROM, IT,  &
+!/MPI                               MPI_COMM_WAVE, IRQGO2(IH), IERR )
 !/MPIT      WRITE (NDST,9011) IH, ' 5/01', IFROM, IT, IRQGO2(IH), IERR
 !/MPI                    IH     = IH + 1
 !/MPI                    IT     = IT + 1
-!/MPI      CALL MPI_RECV_INIT (USTDIR(I0), 1, WW3_FIELD_VEC, IFROM,   &
+!/MPI!      CALL MPI_RECV_INIT (USTDIR(I0), 1, WW3_FIELD_VEC, IFROM,   &
+!/MPI!                             IT, MPI_COMM_WAVE, IRQGO2(IH), IERR )
+!/MPI      CALL MPI_RECV_INIT (USTDIRFLD(I0), 1, WW3_FIELD_VEC, IFROM,   &
 !/MPI                             IT, MPI_COMM_WAVE, IRQGO2(IH), IERR )
 !/MPIT      WRITE (NDST,9011) IH, ' 5/01', IFROM, IT, IRQGO2(IH), IERR
 !/MPI                    IH     = IH + 1

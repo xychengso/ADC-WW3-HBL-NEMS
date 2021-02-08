@@ -112,6 +112,11 @@ module UTL
              canonicalUnits(i)='K'
     i = i+1; standardName(i) = 'bottom_friction_coefficient'
              canonicalUnits(i)='1'
+    ! XYC added ssd wind stress
+    i = i+1; standardName(i) = 'eastward_sea_state_dependent_fric_vel'
+             canonicalUnits(i)='m s-1'
+    i = i+1; standardName(i) = 'northward_sea_state_dependent_fric_vel'
+             canonicalUnits(i)='m s-1'
     ! ICE export fields
     i = i+1; standardName(i) = 'sea_ice_concentration'
              canonicalUnits(i)='m'

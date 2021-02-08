@@ -867,6 +867,7 @@ MODULE PDLIB_FIELD_VEC
                           TUSX, TUSY, TAUWIX, TAUWIY, TAUOX,     &
                           TAUOY, USSX, USSY, MSSX, MSSY,         &
                           MSCX, MSCY, PRMS, TPMS, CHARN,         &
+                          USTFLD, USTDIRFLD,                     &
                           TAUWNX, TAUWNY, BHD, CGE,              &
                           CFLXYMAX, CFLTHMAX, CFLKMAX, WHITECAP, &
                           BEDFORMS, PHIBBL, TAUBBL, T01,         &
@@ -1143,9 +1144,11 @@ MODULE PDLIB_FIELD_VEC
             END IF
             IF ( FLGRDALL( 5, 1) ) THEN
               IH = IH + 1
-              Arrexch(IH,JSEA)=UST(JSEA)
+!              Arrexch(IH,JSEA)=UST(JSEA)
+              Arrexch(IH,JSEA)=USTFLD(JSEA)
               IH = IH + 1
-              Arrexch(IH,JSEA)=USTDIR(JSEA)
+!              Arrexch(IH,JSEA)=USTDIR(JSEA)
+              Arrexch(IH,JSEA)=USTDIRFLD(JSEA)
               IH = IH + 1
               Arrexch(IH,JSEA)=ASF(JSEA)
             END IF 
@@ -1604,9 +1607,11 @@ MODULE PDLIB_FIELD_VEC
               END IF
               IF ( FLGRDALL( 5, 1) ) THEN
                 IH = IH + 1
-                UST(1:NSEA) = ARRtotal(IH,:)
+!                UST(1:NSEA) = ARRtotal(IH,:)
+                USTFLD(1:NSEA) = ARRtotal(IH,:)
                 IH = IH + 1
-                USTDIR(1:NSEA) = ARRtotal(IH,:)
+!                USTDIR(1:NSEA) = ARRtotal(IH,:)
+                USTDIRFLD(1:NSEA) = ARRtotal(IH,:)
                 IH = IH + 1
                 ASF(1:NSEA) = ARRtotal(IH,:)
               END IF

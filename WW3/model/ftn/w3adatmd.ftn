@@ -399,11 +399,15 @@
 ! Output fields group 5)
 !
         REAL, POINTER         ::  CHARN(:),  CGE(:),  PHIAW(:),       &
+                                  USTFLD(:), USTDIRFLD(:),   &
                                   TAUWIX(:),  TAUWIY(:),  TAUWNX(:),  &
                                   TAUWNY(:),  WHITECAP(:,:), TWS(:)
         REAL, POINTER         :: XCHARN(:), XCGE(:), XPHIAW(:),       &
+                                 XUSTFLD(:), XUSTDIRFLD(:),  &
                                  XTAUWIX(:), XTAUWIY(:), XTAUWNX(:),  &
                                  XTAUWNY(:), XWHITECAP(:,:), XTWS(:)
+       INTEGER, POINTER       :: QCFLG(:)
+       INTEGER, POINTER       :: XQCFLG(:)
 !
 ! Output fields group 6)
 !
@@ -543,8 +547,10 @@
                                  PTM1(:,:), PT1(:,:), PT2(:,:),PEP(:,:)
 !
       REAL, POINTER           :: CHARN(:), CGE(:), PHIAW(:),          &
+                                 USTFLD(:), USTDIRFLD(:),    &
                                  TAUWIX(:), TAUWIY(:), TAUWNX(:),     &
                                  TAUWNY(:), WHITECAP(:,:), TWS(:)
+      INTEGER, POINTER        :: QCFLG(:)
 !
       REAL, POINTER           :: SXX(:), SYY(:), SXY(:), TAUOX(:),    &
                                  TAUOY(:), BHD(:), PHIOC(:),          &
@@ -1067,6 +1073,9 @@
 !    Friction velocity UST and USTDIR in W3WDATMD
 !
       ALLOCATE ( WADATS(IMOD)%CHARN   (NSEALM),                       &
+                 WADATS(IMOD)%USTFLD  (NSEALM),                       &
+                 WADATS(IMOD)%USTDIRFLD (NSEALM),                     &
+                 WADATS(IMOD)%QCFLG   (NSEALM),                       &
                  WADATS(IMOD)%TWS     (NSEALM),                       &
                  WADATS(IMOD)%CGE     (NSEALM),                       &
                  WADATS(IMOD)%PHIAW   (NSEALM),                       &
@@ -1078,6 +1087,9 @@
                  STAT=ISTAT )
       CHECK_ALLOC_STATUS ( ISTAT )
 !
+      WADATS(IMOD)%USTFLD   = UNDEF
+      WADATS(IMOD)%USTDIRFLD  = UNDEF
+      WADATS(IMOD)%QCFLG    = 999
       WADATS(IMOD)%CHARN    = UNDEF
       WADATS(IMOD)%TWS      = UNDEF
       WADATS(IMOD)%CGE      = UNDEF
@@ -1843,6 +1855,22 @@
       WADATS(IMOD)%XPT2   = UNDEF
       WADATS(IMOD)%XPEP   = UNDEF
 !
+      IF ( OUTFLAGS( 5, 1) ) THEN
+          ALLOCATE ( WADATS(IMOD)%XUSTFLD(NXXX), STAT=ISTAT )
+          CHECK_ALLOC_STATUS( ISTAT )
+          ALLOCATE ( WADATS(IMOD)%XUSTDIRFLD(NXXX), STAT=ISTAT )
+          CHECK_ALLOC_STATUS( ISTAT )
+          ALLOCATE ( WADATS(IMOD)%XQCFLG(NXXX), STAT=ISTAT )
+          CHECK_ALLOC_STATUS( ISTAT )
+        ELSE 
+          ALLOCATE ( WADATS(IMOD)%XUSTFLD(1), STAT=ISTAT )
+          CHECK_ALLOC_STATUS( ISTAT )
+          ALLOCATE ( WADATS(IMOD)%XUSTDIRFLD(1), STAT=ISTAT )
+          CHECK_ALLOC_STATUS( ISTAT )
+          ALLOCATE ( WADATS(IMOD)%XQCFLG(1), STAT=ISTAT )
+          CHECK_ALLOC_STATUS( ISTAT )
+        END IF
+
       IF ( OUTFLAGS( 5, 2) ) THEN
           ALLOCATE ( WADATS(IMOD)%XCHARN(NXXX), STAT=ISTAT )
           CHECK_ALLOC_STATUS ( ISTAT )
@@ -1908,6 +1936,9 @@
           CHECK_ALLOC_STATUS ( ISTAT )
         END IF
 !
+      WADATS(IMOD)%XUSTFLD = UNDEF
+      WADATS(IMOD)%XUSTDIRFLD = UNDEF
+      WADATS(IMOD)%XQCFLG  = 999
       WADATS(IMOD)%XCHARN    = UNDEF
       WADATS(IMOD)%XTWS      = UNDEF
       WADATS(IMOD)%XCGE      = UNDEF
@@ -2682,6 +2713,9 @@
           PT2    => WADATS(IMOD)%PT2
           PEP    => WADATS(IMOD)%PEP
 !
+          USTFLD   => WADATS(IMOD)%USTFLD
+          USTDIRFLD   => WADATS(IMOD)%USTDIRFLD
+          QCFLG    => WADATS(IMOD)%QCFLG
           CHARN    => WADATS(IMOD)%CHARN
           TWS      => WADATS(IMOD)%TWS
           CGE      => WADATS(IMOD)%CGE
@@ -2988,6 +3022,9 @@
           PT2    => WADATS(IMOD)%XPT2
           PEP    => WADATS(IMOD)%XPEP
 !
+          USTFLD   => WADATS(IMOD)%XUSTFLD
+          USTDIRFLD=> WADATS(IMOD)%XUSTDIRFLD
+          QCFLG    => WADATS(IMOD)%XQCFLG
           CHARN    => WADATS(IMOD)%XCHARN
           TWS      => WADATS(IMOD)%XTWS
           CGE      => WADATS(IMOD)%XCGE

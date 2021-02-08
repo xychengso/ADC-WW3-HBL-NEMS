@@ -1381,16 +1381,20 @@
 !/SMC      IF ( FLTEST ) WRITE (NDST,9060) DTME, CLATMN, Refran
 !
 !/FLD1      IF ( WRITE ) THEN
-!/FLD1          WRITE (NDSM)  TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1          WRITE (NDSM)  TAIL_ID, TAIL_LEV, TAIL_TRAN1,  & 
+!/FLD1                        TAIL_TRAN2,WIND_FAC
 !/FLD1        ELSE
 !/FLD1          READ (NDSM,END=801 ,IOSTAT=IERR) &
-!/FLD1                         TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1                         TAIL_ID, TAIL_LEV, TAIL_TRAN1, & 
+!/FLD1                         TAIL_TRAN2, WIND_FAC
 !/FLD1        END IF
 !/FLD2      IF ( WRITE ) THEN
-!/FLD2          WRITE (NDSM) TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD2          WRITE (NDSM) TAIL_ID, TAIL_LEV, TAIL_TRAN1, & 
+!/FLD2                      TAIL_TRAN2, WIND_FAC
 !/FLD2        ELSE
 !/FLD2          READ (NDSM,END=801 ,IOSTAT=IERR) &
-!/FLD2                         TAIL_ID, TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD2                         TAIL_ID, TAIL_LEV, TAIL_TRAN1, & 
+!/FLD2                      TAIL_TRAN2, WIND_FAC
 !/FLD2        END IF
 !
 ! Interpolation tables ( fill locally ) ----------------------------- *
