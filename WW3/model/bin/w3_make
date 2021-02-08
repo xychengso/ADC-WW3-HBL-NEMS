@@ -60,6 +60,10 @@
   temp_dir=$WWATCH3_TMP
   source=$WWATCH3_SOURCE
   list=$WWATCH3_LIST
+export WWATCH3_NETCDF=NC4
+export NETCDF_LIBDIR=$NETCDF/lib
+export NETCDF_INCDIR=$NETCDF/include
+export NETCDF_CONFIG=$NETCDF/bin/nf-config
 
   echo "Main directory    : $main_dir"
   echo "Scratch directory : $temp_dir"

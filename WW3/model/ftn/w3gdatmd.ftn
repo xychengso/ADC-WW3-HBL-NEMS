@@ -754,10 +754,12 @@
 !
       TYPE FLDP
          REAL :: DUMMY
-!/FLD1        INTEGER               :: Tail_ID
-!/FLD1        REAL                  :: Tail_Lev, TAIL_TRAN1, TAIL_TRAN2
-!/FLD2        INTEGER               :: Tail_ID
+!/FLD1        INTEGER               :: TAIL_ID
+!/FLD1        REAL                  :: TAIL_Lev, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1        REAL                  :: WIND_FAC
+!/FLD2        INTEGER               :: TAIL_ID
 !/FLD2        REAL                  :: Tail_Lev, TAIL_TRAN1, TAIL_TRAN2
+!/FLD2        REAL                  :: WIND_FAC
       END TYPE FLDP
       TYPE SFLP
 !/FLX0        REAL                  :: DUMMY
@@ -1074,12 +1076,12 @@
 !/
 !/ Data aliasses for structure FLDP(S)
 !/
-!/FLD1     INTEGER, POINTER         :: TAIL_ID
-!/FLD1     REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
-!/FLD1     REAL, POINTER            :: WIND_FAC
-!/FLD2     INTEGER, POINTER         :: TAIL_ID
-!/FLD2     REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
-!/FLD2     REAL, POINTER            :: WIND_FAC
+!/FLD1      INTEGER, POINTER         :: TAIL_ID
+!/FLD1      REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1      REAL, POINTER            :: WIND_FAC
+!/FLD2      INTEGER, POINTER         :: TAIL_ID
+!/FLD2      REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD2      REAL, POINTER            :: WIND_FAC
 !/
 !/ Data aliasses for structure SFLP(S)
 !/
@@ -2198,9 +2200,9 @@
 !
 !/FLD1      TAIL_ID  => MPARS(IMOD)%FLDPS%TAIL_ID
 !/FLD1      TAIL_LEV => MPARS(IMOD)%FLDPS%TAIL_LEV
+!/FLD1      WIND_FAC => MPARS(IMOD)%FLDPS%WIND_FAC
 !/FLD1      TAIL_TRAN1 => MPARS(IMOD)%FLDPS%TAIL_TRAN1
 !/FLD1      TAIL_TRAN2 => MPARS(IMOD)%FLDPS%TAIL_TRAN2
-!/FLD1      WIND_FAC => MPARS(IMOD)%FLDPS%WIND_FAC
 !/FLD2      TAIL_ID  => MPARS(IMOD)%FLDPS%TAIL_ID
 !/FLD2      TAIL_LEV => MPARS(IMOD)%FLDPS%TAIL_LEV
 !/FLD2      TAIL_TRAN1 => MPARS(IMOD)%FLDPS%TAIL_TRAN1
