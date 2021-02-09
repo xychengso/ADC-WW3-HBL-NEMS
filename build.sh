@@ -20,7 +20,7 @@ else
 fi
 
 # Load modules
-source ${ROOTDIR}/modulefiles/hera/ESMF_NUOPC
+source ${ROOTDIR}/modulefiles/hatteras/ESMF_NUOPC
 module list
 
 echo "Building NEMS app in ${ROOTDIR}/NEMS"

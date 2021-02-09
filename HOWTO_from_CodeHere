@@ -1,10 +1,5 @@
 # Note: This how-to document is specifically for installing NEMS coupling App on the Hatteras cluster of the Renaissance Computing Institute at UNC (RENCI)
 
-hatteras is used for - <COMPUTER>
-renci is used for - <COMPUTING system>
-intel is used as - <COMPILER>
-ROOTDIR  - is the directory of your choice in hatteras where you clone the NEMS in. 
-
 After log in to ht3.renci.org:
 sinteractive 
 (! requests a node first to install prerequisites and build NEMS app; do not do this on the log-in node)
@@ -19,14 +14,15 @@ Prerequisites:
 cd ROOTDIR
 1) git clone --recursive https://github.com/xychengso/ADC-WW3-HBL-NEMS.git
 
-2) set the following environment parameters: (modify the set_envparm.sh)
+2) set the following environment parameters: (by modifying the set_envparm.sh)
 export ESMFMKFILE=/path/to/yourESMFinstallation/lib/subdir/esmf.mk
 export SZIPHOME=/path/to/yourlocal/szip/2.1/lib
 export LIBDIR=/rootdir/to/nemsio     -- see conf/configure.nems.hatteras.intel
 export METIS_PATH=/path/to/parmetis
 export ROOTDIR=/path/to/ADC-WW3-HBL-NEMS
 
-3) ./build.sh
+3) source set_envparm.sh  (if using the enclosed `set_envparm.sh`)
+4) ./build.sh
   
 # note:
 If you built ESMF with a different MPI vendor, you need to update the module accordingly in:
