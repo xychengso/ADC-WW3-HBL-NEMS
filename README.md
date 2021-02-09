@@ -89,9 +89,9 @@ Go to your local directoy and clone the the repository:
 4) Then do work on this branch (such as adding the HBL model into it/building the HBL cap.
 5) git add .
 6) git commit -m "your changes"
-7a) git remote -v (this will show you the remote url associated with origin.You can also add other remote repository url if necessary.)
-7b) git push -u origin `your_branch_name`
-8) enter your github username/password if asked
+7) git remote -v (this will show you the remote url associated with origin.You can also add other remote repository url if necessary.)
+8) git push -u origin `your_branch_name`
+9) enter your github username/password if asked
 
 
 While in your github repository GUI:
