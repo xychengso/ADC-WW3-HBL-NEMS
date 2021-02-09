@@ -10,6 +10,7 @@ module load intelfort/18.0.0
 module load hdf5/1.10.1_intel-18.0.0
 module load openmpi/intel_3.0.0
 module load netcdf-Fortran/4.4.0_intel-18.0.0
+module load netcdf-C/4.5.0_intel-18.0.0
 
 
 # Environment for ESMF v8.0.0 beta snapshot 48g
