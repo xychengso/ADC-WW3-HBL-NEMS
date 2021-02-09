@@ -5,8 +5,8 @@ coupling project to determine wind versus water percentage loss caused by a
 Named Storm Event. 
 
 In this repo, a hurricane boundary layer model (HBL) is going to replace the dummy ATMESH in the NOAA official release of ADC-WW3-NWM-NEMS system. 
-Also, an exchanged parameter _sea state dependent wind stress/roughness length_ is exported to ADCIRC and HBL from the [WW3](https://github.com/erdc/WW3.git) model (from the ERDC-scalability branch).
-Group members in the Hurricane Modeling Group/Air-Sea Interaction Lab are responsible for developing these features.
+Also, additional exchanged parameters associated with _sea state dependent wind stress/roughness length_ is exported to ADCIRC and HBL from the [WW3](https://github.com/erdc/WW3.git) model (in the ERDC-scalability branch).
+Group members in the [Hurricane Modeling Group](https://web.uri.edu/hurricane-research/people/)/[Air-Sea Interaction Lab](https://web.uri.edu/gso/research/air-sea-interaction-research-group/) at GSO/URI are responsible for developing these features.
 
 See `HOWTO_from_CodeHere` if you want to install this version of code and work on it from the RENCI/Hatteras machine. 
 
