@@ -362,6 +362,10 @@ module MDL
       i = i+1
       is%wrap%sname(i) = 'northward_sea_state_dependent_fric_vel'
       is%wrap%fname(i) = 'vustss'
+      ! XYC added misalignment angle
+      i = i+1
+      is%wrap%sname(i) = 'misalignment_btw_wind_and_wind_stress'
+      is%wrap%fname(i) = 'misalg'
     case ('ICE')
       i = i+1
       is%wrap%sname(i) = 'sea_ice_concentration'

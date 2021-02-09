@@ -117,6 +117,9 @@ module UTL
              canonicalUnits(i)='m s-1'
     i = i+1; standardName(i) = 'northward_sea_state_dependent_fric_vel'
              canonicalUnits(i)='m s-1'
+    ! XYC added misalignment angle
+    i = i+1; standardName(i) = 'misalignment_btw_wind_and_wind_stress'
+             canonicalUnits(i)='rad'
     ! ICE export fields
     i = i+1; standardName(i) = 'sea_ice_concentration'
              canonicalUnits(i)='m'
