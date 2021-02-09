@@ -89,7 +89,7 @@ Go to your local directoy and clone the the repository:
 4) Then do work on this branch (such as adding the HBL model into it/building the HBL cap.
 5) git add .
 6) git commit -m "your changes"
-7) git remote -v (this will show you the remote url associated with origin.You can also add other remote repository url if necessary.)
+7) git remote -v (this will show you the remote url associated with origin.You can also add other remote repository urls if necessary.)
 8) git push -u origin `your_branch_name`
 9) enter your github username/password if asked
 
@@ -118,6 +118,3 @@ https://arxiv.org/abs/2003.12652
 
 Development of a Flexible Coupling Interface for ADCIRC Model for Coastal Inundation Studies, 2019 Saeed Moghimi, Sergey Vinogradov, Edward P Myers, Yuji Funakoshi, Andre J Van der Westhuysen, Ali Abdolali, Zaizhong Ma, Fei Liu https://repository.library.noaa.gov/view/noaa/20609/
 =======
-# ADC-WW3-NEMS-dev
-development on RENCI for research
->>>>>>> 3f179db87c2bdb4c1039e652c7a3363122eda8b3
