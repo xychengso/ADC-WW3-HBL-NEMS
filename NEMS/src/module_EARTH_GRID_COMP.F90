@@ -2867,6 +2867,18 @@
       endif
 
       if (.not.NUOPC_FieldDictionaryHasEntry( &
+        "wind_and_windstress_misalign_angle")) then
+        call NUOPC_FieldDictionaryAddEntry( &
+          standardName="wind_and_windstress_misalign_angle", &
+          canonicalUnits="rad", &
+          rc=rc)
+        if (ESMF_LogFoundError(rcToCheck=rc, msg=ESMF_LOGERR_PASSTHRU, &
+          line=__LINE__, &
+          file=__FILE__)) &
+          return  ! bail out
+      endif
+
+      if (.not.NUOPC_FieldDictionaryHasEntry( &
         "wave_induced_charnock_parameter")) then
         call NUOPC_FieldDictionaryAddEntry( &
           standardName="wave_induced_charnock_parameter", &
