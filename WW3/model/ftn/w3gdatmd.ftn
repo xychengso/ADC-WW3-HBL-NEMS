@@ -21,7 +21,7 @@
 !/                  !           J. H. Alves             !
 !/                  |            F. Ardhuin             |
 !/                  |                        FORTRAN 90 |
-!/                  | Last update :         15-Apr-2020 |
+!/                  | Last update :         05-Jun-2018 |
 !/                  +-----------------------------------+
 !/
 !/    24-Jun-2005 : Origination.                        ( version 3.07 )
@@ -91,8 +91,6 @@
 !/                  (Q. Liu, UoM)
 !/    26-Aug-2018 : UOST (Mentaschi et al. 2015, 2018)  ( version 6.06 )
 !/    27-Aug-2018 : Add BTBETA parameter                ( version 6.06 )
-!/    22-Feb-2020 : Add AIRGB and AIRCMIN               ( version 7.06 )
-!/    15-Apr-2020 : Adds optional opt-out for CFL on BC ( version 7.08 )
 !/
 !/
 !/    Copyright 2009-2013 National Weather Service (NWS),
@@ -140,7 +138,6 @@
 !                               RLGTYPE: Rectilinear grid
 !                               CLGTYPE: Curvilinear grid
 !                               UNGTYPE: Unstructured triangular grid                       
-!      RSTYPE    Int.  Public   Integer identifyng restart type
 !      ICLOSE    Int.  Public   Parameter indicating type of index closure of grid.
 !                               ICLOSE_NONE: No grid closure
 !                               ICLOSE_SMPL: Simple grid closure
@@ -220,7 +217,7 @@
 !      FLDRY     Log.  Public   Flag for 'dry' run (IO and data
 !                               processing only).
 !      FLCx      Log.  Public   Flags for prop. is different spaces.
-!      FLSOU     Log.  Public   Flag for source term calculation.
+!      FLSOU     Log.  Public   Flag for source term calcualtion.
 !      FUNO3     Log.  Public   Flag for 3rd order UNO3 scheme on SMC grid. 
 !      FVERG     Log.  Public   Flag for 1-2-1 averaging smoothing on SMC grid.
 !      FSWND     Log.  Public   Flag for sea-point only wind input on SMC grid.
@@ -613,7 +610,6 @@
 !/ Grid type
       TYPE GRID          ! this is the geographical grid with all associated parameters 
         INTEGER          :: GTYPE
-        INTEGER          :: RSTYPE = -1
         INTEGER          :: ICLOSE
         INTEGER          :: NX, NY, NSEA, NSEAL, TRFLAG
 !/SEC1     INTEGER          :: NITERSEC1
@@ -632,7 +628,7 @@
                             DTMIN, DMIN, CTMAX, FICE0, FICEN, FICEL,   &
                             PFMOVE, STEXU, STEYU, STEDU, IICEHMIN,     &
                             IICEHINIT, ICESCALES(4), IICEHFAC, IICEHDISP, &
-                            IICEDDISP, IICEFDISP, BTBETA, AAIRCMIN, AAIRGB
+                            IICEDDISP, IICEFDISP, BTBETA
 
         REAL(8)          :: GRIDSHIFT ! see notes in WMGHGH
 
@@ -648,7 +644,7 @@
         REAL   , POINTER :: TRNX(:,:), TRNY(:,:) ! TRANSPARENCY INFORMATION ON IX,IY
 !/SMC        REAL, POINTER         :: CTRNX(:), CTRNY(:), CLATF(:)
         REAL, POINTER         :: SPCBAC(:,:), ANGARC(:)
-        REAL*8   , POINTER :: XGRD(:,:), YGRD(:,:) ! X AND Y DEFINED ON IX,IY
+        REAL   , POINTER :: XGRD(:,:), YGRD(:,:) ! X AND Y DEFINED ON IX,IY
         REAL   , POINTER :: DXDP(:,:), DXDQ(:,:) ! DX/DP & DX/DQ DEFINED ON IX,IY
         REAL   , POINTER :: DYDP(:,:), DYDQ(:,:) ! DY/DP & DY/DQ DEFINED ON IX,IY
         REAL   , POINTER :: DPDX(:,:), DPDY(:,:) ! DP/DX & DP/DY DEFINED ON IX,IY
@@ -687,27 +683,22 @@
 !
 ! unstructured data
 !
-        INTEGER              :: NTRI
-        INTEGER, POINTER     :: TRIGP(:,:)
-!/PDLIB        INTEGER :: NBND_MAP
-!/PDLIB        INTEGER, POINTER     :: INDEX_MAP(:)
-!/PDLIB        INTEGER, POINTER     :: MAPSTA_LOC(:)
-!/PDLIB        INTEGER*1, POINTER   :: IOBPD_LOC(:,:)
-!/PDLIB        INTEGER*2, POINTER   :: IOBP_LOC(:)
-!/PDLIB        INTEGER*1, POINTER   :: IOBDP_LOC(:)
-!/PDLIB        INTEGER*1, POINTER   :: IOBPA_LOC(:)
-
+        INTEGER               :: NTRI
+        DOUBLE PRECISION, POINTER         :: XYB(:,:)
+        INTEGER, POINTER      :: TRIGP(:,:)
+!/PDLIB        INTEGER               :: NBND_MAP
+!/PDLIB        INTEGER, POINTER      :: INDEX_MAP(:)
+!/PDLIB        INTEGER, POINTER      :: MAPSTA_LOC(:)
         REAL(8), POINTER      :: LEN(:,:),SI(:), IEN(:,:)
 
         REAL                  :: MAXX, MAXY, DXYMAX
         REAL, POINTER         :: ANGLE(:,:),ANGLE0(:,:)
         INTEGER               :: COUNTRI,COUNTOT,NNZ, NBEDGE
         INTEGER, POINTER      :: CCON(:), COUNTCON(:), IE_CELL(:), &
-                                 POS_CELL(:),   &
+                                 POS_CELL(:), IOBP(:), IOBPD(:,:), IOBDP(:), IOBPA(:),   &
+!/PDLIB                          IOBPD_loc(:,:), IOBP_loc(:),                    &
                                  IAA(:), JAA(:), POSI(:,:), INDEX_CELL(:),       &
                                  I_DIAG(:), JA_IE(:,:,:)
-        INTEGER*2, POINTER    :: IOBP(:)
-        INTEGER*1, POINTER    :: IOBPD(:,:), IOBDP(:), IOBPA(:)
         INTEGER, POINTER      :: EDGES(:,:), NEIGH(:,:)
         REAL(8), POINTER      :: TRIA(:)
         REAL, POINTER         :: CROSSDIFF(:,:)
@@ -726,14 +717,14 @@
       END TYPE GRID
 !
       TYPE SGRD   ! this is the spectral grid with all parameters that vary with freq. and direction
-        INTEGER               :: NK=0, NK2=0, NTH=0, NSPEC=0
+        INTEGER               :: NK, NK2, NTH, NSPEC
         INTEGER, POINTER      :: MAPWN(:), MAPTH(:)
-        REAL                  :: DTH=0., XFR=0., FR1=0., FTE=0., FTF=0., FTWN=0., FTTR=0., &
-                                 FTWL=0., FACTI1=0., FACTI2=0., FACHFA=0., FACHFE=0.
+        REAL                  :: DTH, XFR, FR1, FTE, FTF, FTWN, FTTR, &
+                                 FTWL, FACTI1, FACTI2, FACHFA, FACHFE
         REAL, POINTER         :: TH(:), ESIN(:), ECOS(:), ES2(:),     &
                                  ESC(:), EC2(:), SIG(:), SIG2(:),     &
                                  DSIP(:), DSII(:), DDEN(:), DDEN2(:)
-        LOGICAL               :: SINIT=.FALSE.
+        LOGICAL               :: SINIT
       END TYPE SGRD
 !
       TYPE NPAR
@@ -754,10 +745,10 @@
 !
       TYPE FLDP
          REAL :: DUMMY
-!/FLD1        INTEGER               :: TAIL_ID
-!/FLD1        REAL                  :: TAIL_Lev, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1        INTEGER               :: Tail_ID
+!/FLD1        REAL                  :: Tail_Lev, TAIL_TRAN1, TAIL_TRAN2
 !/FLD1        REAL                  :: WIND_FAC
-!/FLD2        INTEGER               :: TAIL_ID
+!/FLD2        INTEGER               :: Tail_ID
 !/FLD2        REAL                  :: Tail_Lev, TAIL_TRAN1, TAIL_TRAN2
 !/FLD2        REAL                  :: WIND_FAC
       END TYPE FLDP
@@ -801,13 +792,13 @@
 !/ST4        REAL,     POINTER     :: DCKI(:,:), SATWEIGHTS(:,:),CUMULW(:,:),QBI(:,:)
 !/ST4        REAL                  :: AALPHA, BBETA, ZZ0MAX, ZZ0RAT, ZZALP,&
 !/ST4                                 SSINTHP, TTAUWSHELTER, SSWELLF(1:7), &
-!/ST4                                 SSDSC(1:21), SSDSBR,                 &
+!/ST4                                 SSDSC(1:11), SSDSBR,                 &
 !/ST4                                 SSDSP, WWNMEANP, SSTXFTF, SSTXFTWN,  &
-!/ST4                                 FFXPM, FFXFM, FFXFA,   &
+!/ST4                                 FFXPM, FFXFM, FFXFA, FFXFI, FFXFD,   &
 !/ST4                                 SSDSBRF1, SSDSBRF2, SSDSBINT,SSDSBCK,&
 !/ST4                                 SSDSHCK, SSDSABK, SSDSPBK, SSINBR
 !/ST4        REAL                  :: ZZWND
-!/ST4        REAL                  :: SSDSCOS, SSDSDTH, SSDSBT, SSDSBM(0:4)
+!/ST4        REAL                  :: SSDSCOS, SSDSDTH, SSDSBR2, SSDSBM(0:4)
 !
 !/ST6        REAL                  :: SIN6A0, SDS6A1, SDS6A2, SWL6B1, &
 !/ST6                                 SIN6WS, SIN6FC
@@ -856,8 +847,6 @@
 !/DB0        REAL                  :: DUMMY
 !/DB1        REAL                  :: SDBC1, SDBC2
 !/DB1        LOGICAL               :: FDONLY
-!/DB1        REAL                  :: SDBSC
-!/DB2        REAL                  :: SDBC1, SDBC2
 !/DBX        REAL                  :: DUMMY
       END TYPE SDBP
 
@@ -901,7 +890,6 @@
          LOGICAL :: FSREFRACTION = .FALSE. 
          LOGICAL :: FSFREQSHIFT  = .FALSE. 
          LOGICAL :: FSSOURCE     = .FALSE. 
-         LOGICAL :: FSBCCFL      = .FALSE. 
          LOGICAL :: DO_CHANGE_WLV 
          REAL(8) :: SOLVERTHR_STP 
          REAL(8) :: CRIT_DEP_STP
@@ -948,7 +936,6 @@
 !/ Data aliases for structure GRID(S)
 !/
       INTEGER, POINTER :: GTYPE
-      INTEGER, POINTER :: RSTYPE
       INTEGER, POINTER :: ICLOSE
       INTEGER, POINTER        :: NX, NY, NSEA, NSEAL, TRFLAG
       INTEGER, POINTER        :: E3DF(:,:), P2MSF(:), US3DF(:), USSPF(:)
@@ -962,24 +949,21 @@
 !
       INTEGER, POINTER        :: NTRI,COUNTRI,COUNTOT,NNZ
       INTEGER                 :: optionCall = 3 ! take care all other options are basically wrong
+!  XYB may not be necessary now that we have XGRD and YGRD
+!  but these XGRD and YGRD should probably be double precision
+      DOUBLE PRECISION, POINTER  ::     XYB(:,:)   
       INTEGER, POINTER        :: TRIGP(:,:)
-!/PDLIB      INTEGER, POINTER     :: NBND_MAP
+!/PDLIB      INTEGER, POINTER        :: NBND_MAP
 !/PDLIB      INTEGER, POINTER        :: INDEX_MAP(:)
 !/PDLIB      INTEGER, POINTER        :: MAPSTA_LOC(:)
-!/PDLIB        INTEGER*1, POINTER   :: IOBPD_LOC(:,:)
-!/PDLIB        INTEGER*2, POINTER   :: IOBP_LOC(:)
-!/PDLIB        INTEGER*1, POINTER   :: IOBDP_LOC(:)
-!/PDLIB        INTEGER*1, POINTER   :: IOBPA_LOC(:)
-
       REAL(8), POINTER        :: IEN(:,:), LEN(:,:), SI(:)
       REAL, POINTER           :: ANGLE(:,:),ANGLE0(:,:)
       INTEGER,  POINTER       :: CCON(:),  COUNTCON(:), IE_CELL(:),           &
-                                 POS_CELL(:),  &
+                                 POS_CELL(:), IOBP(:), IOBPD(:,:), IOBDP(:), IOBPA(:),  &
+!/PDLIB                                 IOBPD_loc(:,:), IOBP_loc(:),          &
                                  IAA(:), JAA(:), POSI(:,:),                   &
                                  I_DIAG(:), JA_IE(:,:,:),                     &
                                  INDEX_CELL(:)
-      INTEGER*2, POINTER      :: IOBP(:)
-      INTEGER*1, POINTER      :: IOBPD(:,:), IOBDP(:), IOBPA(:)
       REAL(8), POINTER        :: TRIA(:)
       REAL, POINTER           :: CROSSDIFF(:,:)
       REAL,POINTER            :: MAXX, MAXY, DXYMAX 
@@ -1012,7 +996,7 @@
                                  FICEL, PFMOVE, STEXU, STEYU, STEDU,   &
                                  IICEHMIN, IICEHINIT, ICESCALES(:),    &
                                  IICEHFAC, IICEHDISP, IICEDDISP, IICEFDISP, &
-                                 BTBETA, AAIRCMIN, AAIRGB
+                                 BTBETA
       REAL(8),POINTER         :: GRIDSHIFT ! see notes in WMGHGH
 !/RTD        REAL, POINTER         :: PoLat, PoLon
 !/RTD        REAL, POINTER         :: AnglD(:)
@@ -1024,7 +1008,7 @@
       REAL   , POINTER :: TRNX(:,:), TRNY(:,:) ! TRANSPARENCY INFORMATION ON IX,IY
 !/SMC        REAL, POINTER         :: CTRNX(:), CTRNY(:), CLATF(:)
       REAL, POINTER         :: SPCBAC(:,:), ANGARC(:)
-      REAL*8   , POINTER :: XGRD(:,:), YGRD(:,:) ! X AND Y DEFINED ON IX,IY
+      REAL   , POINTER :: XGRD(:,:), YGRD(:,:) ! X AND Y DEFINED ON IX,IY
       REAL   , POINTER :: DXDP(:,:), DXDQ(:,:) ! DX/DP & DX/DQ DEFINED ON IX,IY
       REAL   , POINTER :: DYDP(:,:), DYDQ(:,:) ! DY/DP & DY/DQ DEFINED ON IX,IY
       REAL   , POINTER :: DPDX(:,:), DPDY(:,:) ! DP/DX & DP/DY DEFINED ON IX,IY
@@ -1076,12 +1060,12 @@
 !/
 !/ Data aliasses for structure FLDP(S)
 !/
-!/FLD1      INTEGER, POINTER         :: TAIL_ID
-!/FLD1      REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
-!/FLD1      REAL, POINTER            :: WIND_FAC
-!/FLD2      INTEGER, POINTER         :: TAIL_ID
-!/FLD2      REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
-!/FLD2      REAL, POINTER            :: WIND_FAC
+!/FLD1     INTEGER, POINTER         :: TAIL_ID
+!/FLD1     REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD1     REAL, POINTER            :: WIND_FAC
+!/FLD2     INTEGER, POINTER         :: TAIL_ID
+!/FLD2     REAL, POINTER            :: TAIL_LEV, TAIL_TRAN1, TAIL_TRAN2
+!/FLD2     REAL, POINTER            :: WIND_FAC
 !/
 !/ Data aliasses for structure SFLP(S)
 !/
@@ -1108,20 +1092,20 @@
 !/ST3                                 SSINTHP, TTAUWSHELTER, SSWELLF(:),   &
 !/ST3                                 SSDSC1, SSDSC2, SSDSC3, SSDSBR,      &
 !/ST3                                 SSDSP, WWNMEANP, SSTXFTF, SSTXFTWN,  &
-!/ST3                                 SSDSC4, SSDSC5, SSDSC6, SSDSBT,      &
+!/ST3                                 SSDSC4, SSDSC5, SSDSC6, SSDSBR2,     &
 !/ST3                                 DDELTA1, DDELTA2,                    &
 !/ST3                                 SSDSCOS, SSDSDTH, SSDSBM(:)
 !/ST4      INTEGER, POINTER        :: SSWELLFPAR, SSDSISO,SSDSBRFDF,       &
 !/ST4                                 IKTAB(:,:), SATINDICES(:,:),SSDSDIK
 !/ST4      REAL, POINTER           :: DCKI(:,:), SATWEIGHTS(:,:),CUMULW(:,:),QBI(:,:)
 !/ST4      REAL, POINTER           :: ZZWND, AALPHA, BBETA, ZZ0MAX, ZZ0RAT,&
-!/ST4                                 ZZALP, FFXFA,          &
+!/ST4                                 ZZALP, FFXFA, FFXFI, FFXFD,          &
 !/ST4                                 FFXFM, FFXPM, SSDSBRF1, SSDSBRF2,    &
 !/ST4                                 SSDSBINT, SSDSBCK, SSDSHCK, SSDSABK, &
 !/ST4                                 SSDSPBK, SSINBR,SSINTHP,TTAUWSHELTER,&
 !/ST4                                 SSWELLF(:), SSDSC(:), SSDSBR,        &
 !/ST4                                 SSDSP, WWNMEANP, SSTXFTF, SSTXFTWN,  &
-!/ST4                                 SSDSBT, SSDSCOS, SSDSDTH, SSDSBM(:)
+!/ST4                                 SSDSBR2, SSDSCOS, SSDSDTH, SSDSBM(:)
 !/ST6      REAL, POINTER           :: SIN6A0, SDS6A1, SDS6A2, SWL6B1, &
 !/ST6                                 SIN6WS, SIN6FC
 !/ST6      INTEGER, POINTER        :: SDS6P1, SDS6P2
@@ -1159,8 +1143,6 @@
 !/
 !/DB1      REAL, POINTER           :: SDBC1, SDBC2
 !/DB1      LOGICAL, POINTER        :: FDONLY
-!/DB1      REAL, POINTER           :: SDBSC
-!/DB2      REAL, POINTER           :: SDBC1, SDBC2
 !/
 !/UOST!/ Data aliases for structure UOSTP(S)
 !/UOST      CHARACTER(LEN=:), POINTER   :: UOSTFILELOCAL, UOSTFILESHADOW
@@ -1168,7 +1150,7 @@
 !/
 !/ Data aliasing for structure SCHM(S)
       LOGICAL, POINTER  :: FSN,FSPSI,FSFCT,FSNIMP,FSTOTALIMP,FSTOTALEXP
-      LOGICAL, POINTER  :: FSREFRACTION, FSFREQSHIFT, FSSOURCE, FSBCCFL
+      LOGICAL, POINTER  :: FSREFRACTION, FSFREQSHIFT, FSSOURCE
       LOGICAL, POINTER  :: DO_CHANGE_WLV
       REAL(8), POINTER  :: SOLVERTHR_STP
       REAL(8), POINTER  :: CRIT_DEP_STP
@@ -1464,24 +1446,20 @@
 !
 ! NB: Some array start at 0 because MAPFS(IY,IX)=0 for missing points 
 !
-      IF (GTYPE .NE. UNGTYPE) THEN
-        ALLOCATE ( GRIDS(IMOD)%ZB(MSEA),  &
-                 GRIDS(IMOD)%XGRD(MY,MX),    &
-                 GRIDS(IMOD)%YGRD(MY,MX),    &
-                 STAT=ISTAT                  )
-        CHECK_ALLOC_STATUS ( ISTAT )
-      ENDIF
       ALLOCATE ( GRIDS(IMOD)%MAPSTA(MY,MX),  &
                  GRIDS(IMOD)%MAPST2(MY,MX),  &
                  GRIDS(IMOD)%MAPFS(MY,MX),   &
                  GRIDS(IMOD)%MAPSF(MSEA,3),  &
                  GRIDS(IMOD)%FLAGST(MSEA),   &
 !/RTD                 GRIDS(IMOD)%AnglD(MSEA),    &
+                 GRIDS(IMOD)%ZB(MSEA),       &
                  GRIDS(IMOD)%CLATS(0:MSEA),  &
                  GRIDS(IMOD)%CLATIS(0:MSEA), &
                  GRIDS(IMOD)%CTHG0S(0:MSEA), &
                  GRIDS(IMOD)%TRNX(MY,MX),    &
                  GRIDS(IMOD)%TRNY(MY,MX),    &
+                 GRIDS(IMOD)%XGRD(MY,MX),    &
+                 GRIDS(IMOD)%YGRD(MY,MX),    &
                  GRIDS(IMOD)%DXDP(MY,MX),    &
                  GRIDS(IMOD)%DXDQ(MY,MX),    &
                  GRIDS(IMOD)%DYDP(MY,MX),    &
@@ -1531,10 +1509,6 @@
 !/REF1                 GRIDS(IMOD)%REFPARS(10), &
 !/REF1                 STAT=ISTAT               )
 !/REF1      CHECK_ALLOC_STATUS ( ISTAT )
-!
-!/REF1      GRIDS(IMOD)%RREF(:)=.FALSE.
-!/REF1      GRIDS(IMOD)%REFPARS(:)=0.
-!
 !/REF1! Memory footprint can be reduced by defining REFLC and REFLD only over nodes 
 !/REF1! where reflection can occur. 
 !/REF1      ALLOCATE ( GRIDS(IMOD)%REFLC(4,0:NSEA), &
@@ -1748,20 +1722,6 @@
                  SGRDS(IMOD)%DDEN2(MSPEC),                            &
                  STAT=ISTAT                                           )
       CHECK_ALLOC_STATUS ( ISTAT )
-      SGRDS(IMOD)%MAPWN(:)=0.
-      SGRDS(IMOD)%MAPTH(:)=0.
-      SGRDS(IMOD)%TH(:)=0.
-      SGRDS(IMOD)%ESIN(:)=0.
-      SGRDS(IMOD)%ECOS(:)=0.
-      SGRDS(IMOD)%ES2(:)=0.
-      SGRDS(IMOD)%ESC(:)=0.
-      SGRDS(IMOD)%EC2(:)=0.
-      SGRDS(IMOD)%SIG(:)=0.
-      SGRDS(IMOD)%SIG2(:)=0.
-      SGRDS(IMOD)%DSIP(:)=0.
-      SGRDS(IMOD)%DSII(:)=0.
-      SGRDS(IMOD)%DDEN(:)=0.
-      SGRDS(IMOD)%DDEN2(:)=0.
 !/ST4      ALLOCATE ( MPARS(IMOD)%SRCPS%IKTAB(MK,NDTAB), &
 !/ST4                 MPARS(IMOD)%SRCPS%DCKI(NKHS,NKD),  &
 !/ST4                 MPARS(IMOD)%SRCPS%QBI(NKHS,NKD),   &
@@ -1949,7 +1909,6 @@
 ! 3.  Set pointers in structure GRID
 !
       GTYPE  => GRIDS(IMOD)%GTYPE
-      RSTYPE => GRIDS(IMOD)%RSTYPE
       ICLOSE => GRIDS(IMOD)%ICLOSE
 !
       NX     => GRIDS(IMOD)%NX
@@ -2020,8 +1979,6 @@
       STEYU  => GRIDS(IMOD)%STEYU
       STEDU  => GRIDS(IMOD)%STEDU
       BTBETA => GRIDS(IMOD)%BTBETA
-      AAIRGB => GRIDS(IMOD)%AAIRGB
-      AAIRCMIN => GRIDS(IMOD)%AAIRCMIN
 !
       GINIT  => GRIDS(IMOD)%GINIT
       GUGINIT  => GRIDS(IMOD)%GUGINIT      
@@ -2036,7 +1993,11 @@
 !
       GNAME  => GRIDS(IMOD)%GNAME
       FILEXT => GRIDS(IMOD)%FILEXT
+      XYB    => GRIDS(IMOD)%XYB
       TRIGP  => GRIDS(IMOD)%TRIGP
+!/PDLIB      NBND_MAP => GRIDS(IMOD)%NBND_MAP
+!/PDLIB      INDEX_MAP => GRIDS(IMOD)%INDEX_MAP
+!/PDLIB      MAPSTA_LOC => GRIDS(IMOD)%MAPSTA_LOC
       NTRI     => GRIDS(IMOD)%NTRI
       COUNTRI     => GRIDS(IMOD)%COUNTRI
       SI     => GRIDS(IMOD)%SI
@@ -2063,15 +2024,14 @@
       IOBPD     => GRIDS(IMOD)%IOBPD
       IOBDP     => GRIDS(IMOD)%IOBDP
       IOBPA     => GRIDS(IMOD)%IOBPA
+!/PDLIB      IOBP_loc     => GRIDS(IMOD)%IOBP_loc
+!/PDLIB      IOBPD_loc     => GRIDS(IMOD)%IOBPD_loc
       TRIA     => GRIDS(IMOD)%TRIA
       CROSSDIFF => GRIDS(IMOD)%CROSSDIFF
       MAXX     => GRIDS(IMOD)%MAXX
       MAXY     => GRIDS(IMOD)%MAXY
       DXYMAX   => GRIDS(IMOD)%DXYMAX      
-      XGRD   => GRIDS(IMOD)%XGRD
-      YGRD   => GRIDS(IMOD)%YGRD
-      ZB     => GRIDS(IMOD)%ZB
-!AR: Todo: What ist he purpose of GINIT???
+
 !
       IF ( GINIT ) THEN
 !
@@ -2082,12 +2042,15 @@
           FLAGST => GRIDS(IMOD)%FLAGST
 !
 !/RTD          AnglD  => GRIDS(IMOD)%AnglD
+          ZB     => GRIDS(IMOD)%ZB
           CLATS  => GRIDS(IMOD)%CLATS
           CLATIS => GRIDS(IMOD)%CLATIS
           CTHG0S => GRIDS(IMOD)%CTHG0S
           TRNX   => GRIDS(IMOD)%TRNX
           TRNY   => GRIDS(IMOD)%TRNY
 !
+          XGRD   => GRIDS(IMOD)%XGRD
+          YGRD   => GRIDS(IMOD)%YGRD
           DXDP   => GRIDS(IMOD)%DXDP
           DXDQ   => GRIDS(IMOD)%DXDQ
           DYDP   => GRIDS(IMOD)%DYDP
@@ -2200,9 +2163,9 @@
 !
 !/FLD1      TAIL_ID  => MPARS(IMOD)%FLDPS%TAIL_ID
 !/FLD1      TAIL_LEV => MPARS(IMOD)%FLDPS%TAIL_LEV
-!/FLD1      WIND_FAC => MPARS(IMOD)%FLDPS%WIND_FAC
 !/FLD1      TAIL_TRAN1 => MPARS(IMOD)%FLDPS%TAIL_TRAN1
 !/FLD1      TAIL_TRAN2 => MPARS(IMOD)%FLDPS%TAIL_TRAN2
+!/FLD1      WIND_FAC => MPARS(IMOD)%FLDPS%WIND_FAC
 !/FLD2      TAIL_ID  => MPARS(IMOD)%FLDPS%TAIL_ID
 !/FLD2      TAIL_LEV => MPARS(IMOD)%FLDPS%TAIL_LEV
 !/FLD2      TAIL_TRAN1 => MPARS(IMOD)%FLDPS%TAIL_TRAN1
@@ -2282,7 +2245,7 @@
 !/ST4      SSWELLF  => MPARS(IMOD)%SRCPS%SSWELLF
 !/ST4      SSDSC    => MPARS(IMOD)%SRCPS%SSDSC
 !/ST4      SSDSBR   => MPARS(IMOD)%SRCPS%SSDSBR
-!/ST4      SSDSBT   => MPARS(IMOD)%SRCPS%SSDSBT
+!/ST4      SSDSBR2  => MPARS(IMOD)%SRCPS%SSDSBR2
 !/ST4      SSDSBRF1 => MPARS(IMOD)%SRCPS%SSDSBRF1
 !/ST4      SSDSBRF2 => MPARS(IMOD)%SRCPS%SSDSBRF2
 !/ST4      SSDSBRFDF  => MPARS(IMOD)%SRCPS%SSDSBRFDF
@@ -2296,6 +2259,8 @@
 !/ST4      WWNMEANP => MPARS(IMOD)%SRCPS%WWNMEANP
 !/ST4      FFXFM    => MPARS(IMOD)%SRCPS%FFXFM
 !/ST4      FFXFA    => MPARS(IMOD)%SRCPS%FFXFA
+!/ST4      FFXFI    => MPARS(IMOD)%SRCPS%FFXFI
+!/ST4      FFXFD    => MPARS(IMOD)%SRCPS%FFXFD
 !/ST4      FFXPM    => MPARS(IMOD)%SRCPS%FFXPM
 !/ST4      SSDSDTH  => MPARS(IMOD)%SRCPS%SSDSDTH
 !/ST4      SSTXFTF  => MPARS(IMOD)%SRCPS%SSTXFTF
@@ -2386,9 +2351,6 @@
 !/DB1      SDBC1  => MPARS(IMOD)%SDBPS%SDBC1
 !/DB1      SDBC2  => MPARS(IMOD)%SDBPS%SDBC2
 !/DB1      FDONLY => MPARS(IMOD)%SDBPS%FDONLY
-!/DB1      SDBSC  => MPARS(IMOD)%SDBPS%SDBSC
-!/DB2      SDBC1  => MPARS(IMOD)%SDBPS%SDBC1
-!/DB2      SDBC2  => MPARS(IMOD)%SDBPS%SDBC2
 !
 !
 !/UOST      UOSTFILELOCAL => MPARS(IMOD)%UOSTPS%UOSTFILELOCAL
@@ -2402,7 +2364,6 @@
 !/IS1      IS1C2  => MPARS(IMOD)%SICPS%IS1C2
 !
 !    Structure SCHM
-       FSBCCFL => MPARS(IMOD)%SCHMS%FSBCCFL
        FSN => MPARS(IMOD)%SCHMS%FSN
        FSPSI => MPARS(IMOD)%SCHMS%FSPSI
        FSFCT => MPARS(IMOD)%SCHMS%FSFCT
@@ -2593,7 +2554,7 @@
       SELECT CASE ( GTYPE )
         CASE ( RLGTYPE )
           CALL W3CGDM( IJG, FLAGLL, ICLOSE, PTILED, QTILED,            &
-                       PRANGE, QRANGE, LBI, UBI, LBO, UBO, REAL(XGRD), REAL(YGRD), &
+                       PRANGE, QRANGE, LBI, UBI, LBO, UBO, XGRD, YGRD, &
                        NFD=NFD, SPHERE=SPHERE, DX=SX, DY=SY,           &
                        DXDP=DXDP, DYDP=DYDP, DXDQ=DXDQ, DYDQ=DYDQ,     &
                        DPDX=DPDX, DPDY=DPDY, DQDX=DQDX, DQDY=DQDY,     &
@@ -2608,7 +2569,7 @@
             END IF
         CASE ( CLGTYPE )
           CALL W3CGDM( IJG, FLAGLL, ICLOSE, PTILED, QTILED,            &
-                       PRANGE, QRANGE, LBI, UBI, LBO, UBO, REAL(XGRD), REAL(YGRD), &
+                       PRANGE, QRANGE, LBI, UBI, LBO, UBO, XGRD, YGRD, &
                        NFD=NFD, SPHERE=SPHERE,                         &
                        DXDP=DXDP, DYDP=DYDP, DXDQ=DXDQ, DYDQ=DYDQ,     &
                        DPDX=DPDX, DPDY=DPDY, DQDX=DQDX, DQDY=DQDY,     &
@@ -2773,15 +2734,17 @@
 #if defined(TEST_W3GDATMD) || defined(TEST_W3GDATMD_W3DIMUG)
       WRITE (NDST,9000) IMOD, MX, MTRI
 #endif
+
+!/MEMCHECK      WRITE(740+IAPROC,*) 'memcheck_____:', 'WW3_UG_ALLOCATE SECTION 1'
+!/MEMCHECK      call getMallocInfo(mallinfos)
+!/MEMCHECK      call printMallInfo(IAPROC,mallInfos)
 !
 ! -------------------------------------------------------------------- /
 ! 2.  Allocate arrays
 !
-      ALLOCATE ( GRIDS(IMOD)%TRIGP(3,MTRI),                         &
+      ALLOCATE ( GRIDS(IMOD)%TRIGP(MTRI,3),                         &
+                 GRIDS(IMOD)%XYB(MX,3),                             &
                  GRIDS(IMOD)%SI(MX),                                &
-                 GRIDS(IMOD)%XGRD(1,MX),                            &
-                 GRIDS(IMOD)%YGRD(1,MX),                            &
-                 GRIDS(IMOD)%ZB(MX),                                &
                  GRIDS(IMOD)%TRIA(MTRI),                            & 
                  GRIDS(IMOD)%CROSSDIFF(6,MTRI),                     &
                  GRIDS(IMOD)%IEN(MTRI,6),                           &
@@ -2831,6 +2794,10 @@
 #if defined(TEST_W3GDATMD) || defined(TEST_W3GDATMD_W3DIMUG)
       WRITE (NDST,9003)
 #endif
+!/MEMCHECK      WRITE(740+IAPROC,*) 'memcheck_____:', 'WW3_UG_ALLOCATE SECTION 2'
+!/MEMCHECK      call getMallocInfo(mallinfos)
+!/MEMCHECK      call printMallInfo(IAPROC,mallInfos)
+
       RETURN
 !
 ! Formats
@@ -2927,6 +2894,7 @@
 !
 ! 1.  Preparations --------------------------------------------------- *
 !
+!/REF1      RREF=.FALSE.  !JDM initializing to false helps with b4b mod_defs 
 !/REF1      IF (REFPARS(2).GT.0) RREF(2)=.TRUE.
 !/REF1      IF (REFPARS(3).GT.0) RREF(3)=.TRUE.
 !/REF1      IF (REFPARS(4).GT.0) RREF(4)=.TRUE.

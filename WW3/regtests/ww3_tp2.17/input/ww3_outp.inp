@@ -14,7 +14,7 @@ $ mandatory end of list
 $
 $ Output type ITYPE [0,1,2,3]
 $
-  2
+  1
 $ -------------------------------------------------------------------- $
 $ ITYPE = 0, inventory of file.
 $            No additional input, the above time range is ignored.
@@ -31,7 +31,7 @@ $          - Unit number for transfer file, also used in table file
 $            name.
 $          - Flag for unformatted transfer file.
 $
-$    3   1.  0.  33  F
+    3   1.  0.  33  F
 $
 $ The transfer file contains records with the following contents.
 $
@@ -42,7 +42,7 @@ $ - Bin directions in radians for all bins (Oceanographic conv.).
 $                                                         -+
 $ - Time in yyyymmdd hhmmss format                         | loop
 $                                             -+           |
-$ - Point name (C*40), lat, lon, d, U10 and    |  loop     | over
+$ - Point name (C*10), lat, lon, d, U10 and    |  loop     | over
 $   direction, current speed and direction     |   over    |
 $ - E(f,theta)                                 |  points   | times
 $                                             -+          -+
@@ -60,7 +60,7 @@ $                              4 : Nondimensional pars. (U10)
 $                              5 : 'Validation table'
 $          - Unit number for file, also used in file name.
 $
- 2 33  
+$ 2 33  
 $
 $ If output for one point is requested, a time series table is made,
 $ otherwise the file contains a separate tables for each output time.
@@ -97,7 +97,7 @@ $ - Bin directions in radians for all bins (Oceanographic conv.).
 $                                                         -+
 $ - Time in yyyymmdd hhmmss format                         | loop
 $                                             -+           |
-$ - Point name (C*40), depth, wind speed and   |  loop     | over
+$ - Point name (C*10), depth, wind speed and   |  loop     | over
 $   direction, current speed and direction     |   over    |
 $ - E(f,theta) if requested                    |  points   | times
 $ - Sin(f,theta) if requested                  |           |

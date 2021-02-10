@@ -17,7 +17,7 @@ $ - Starting time in yyyymmdd hhmmss format.
 $ - Ending time in yyyymmdd hhmmss format.
 $
    20151214 000000
-   20151214 040000
+   20151215 000000
 $
 $ Define output data ------------------------------------------------- $
 $
@@ -35,7 +35,7 @@ $             2 : Last process is reserved for all output, and does no
 $                 computing.
 $             3 : Multiple dedicated output processes.
 $
-   1
+   3
 $
 $ Five output types are available (see below). All output types share
 $ a similar format for the first input line:
@@ -52,14 +52,14 @@ $                               see w3iogo.ftn for additional doc.
 $          
 $          
 $
-   20151214 000000 3600 20151214 040000
+   20151214 000000 3600 20151215 000000
   N
-  WND HS
+  WND HS SXY
 $
 $
 $ Type 2 : Point output
 $          Standard line and a number of lines identifying the 
-$          longitude, latitude and name (C*40) of output points.
+$          longitude, latitude and name (C*10) of output points.
 $          The list is closed by defining a point with the name
 $          'STOPSTRING'. No point info read if no point output is
 $          requested (i.e., no 'STOPSTRING' needed).
@@ -72,7 +72,7 @@ $          advised, because it will break the GrADS utility to
 $          plots spectra and source terms, and will make it more
 $          difficult to use point names in data files.
 $
-   20151214 000000 3600  20151214 040000
+   20151214 000000 3600  20151215 000000
 $                                          
 $output points for Inlet 
 $

@@ -54,8 +54,6 @@
 !/                  and add ICEH initialization in W3UICE.
 !/    13-Jan-2016 : Changed initial value of ICEDMAX    ( version 5.08 )
 !/    26-Mar-2018 : Sea-point only Wnd/Cur input.  JGLi ( version 6.04 )
-!/    07-Oct-2019 : RTD option with standard lat-lon
-!/                  grid when nesting to rotated grid   ( version 7.11 )
 !/
 !/    Copyright 2009-2014 National Weather Service (NWS),
 !/       National Oceanic and Atmospheric Administration.  All rights
@@ -905,7 +903,6 @@
 !/    12-Jun-2012 : Add /RTD option or rotated grid option. 
 !/                  (Jian-Guo Li)                       ( version 4.06 )
 !/    06-Jun-2018 : Add DEBUGIOBC/SETUP/DEBUGW3ULEV     ( version 6.04 )
-!/    13-Jun-2019 : Rotation only if POLAT<90 (C.Hansen)( version 7.11 ) 
 !/
 !  1. Purpose :
 !
@@ -958,7 +955,7 @@
 !/ ------------------------------------------------------------------- /
       USE W3GDATMD, ONLY: NSPEC, MAPWN, SIG2, DDEN
 !/RTD !!   Use rotation angle and action conversion sub.  JGLi12Jun2012
-!/RTD      USE W3GDATMD, ONLY: NK, NTH, NSPEC, AnglD, PoLat
+!/RTD      USE W3GDATMD, ONLY: NK, NTH, NSPEC, AnglD 
 !/RTD      USE W3SERVMD, ONLY: W3ACTURN
       USE W3ADATMD, ONLY: CG
       USE W3ODATMD, ONLY: NBI, ABPI0, ABPIN, ISBPI, IPBPI, RDBPI,     &
@@ -1025,13 +1022,10 @@
           END DO
 !
 !/RTD !!  Rotate the spectra if model is on rotated grid.  JGLi12Jun2012
-!/RTD !!  PoLat == 90. if the grid is standard lat/lon (C. Hansen 20190613)
-!/RTD        IF ( PoLat < 90. ) THEN
-!/RTD          Spectr = BBPIN(:,IBI)
-!/RTD          AnglBP = AnglD(ISEA)
-!/RTD          CALL  W3ACTURN( NTH, NK, AnglBP, Spectr )
-!/RTD          BBPIN(:,IBI) = Spectr
-!/RTD        END IF
+!/RTD        Spectr = BBPIN(:,IBI)
+!/RTD        AnglBP = AnglD(ISEA)
+!/RTD        CALL  W3ACTURN( NTH, NK, AnglBP, Spectr )
+!/RTD        BBPIN(:,IBI) = Spectr
 !/RTD
 !
         END DO
@@ -1582,13 +1576,12 @@
       USE W3ADATMD, ONLY: CG, WN, DW
       USE W3IDATMD, ONLY: TLN, WLEV
       USE W3SERVMD, ONLY: EXTCDE
-      USE W3DISPMD, ONLY: WAVNU_LOCAL
-      USE W3TRIAMD, ONLY: SET_UG_IOBP
+      USE W3DISPMD, ONLY: WAVNU1
+      USE W3TRIAMD, ONLY: SETUGIOBP
       USE W3TIMEMD
       USE W3PARALL, only : INIT_GET_JSEA_ISPROC, INIT_GET_ISEA
       USE W3PARALL, only : GET_JSEA_IBELONG
       USE W3DISPMD, ONLY: WAVNU1
-!/PDLIB USE PDLIB_W3PROFSMD, ONLY : SET_IOBDP_PDLIB
 !/TIDE      USE W3GDATMD, ONLY: YGRD
 !/TIDE      USE W3IDATMD, ONLY: FLLEVTIDE, WLTIDE, NTIDE
 !/TIDE      USE W3TIDEMD
@@ -1616,8 +1609,7 @@
                                  RDK, RD1, RD2, TA(NTH,NK),           &
                                  OWN(NK), DWN(NK)
       REAL                    :: KDMAX = 4., RDKMIN = 0.05
-      REAL                    :: CG1(0:NK+1), WN1(0:NK+1)
-      REAL                    :: WLVeff, WNTMP, CGTMP
+      REAL                    :: WLVeff
 !/T3      REAL                    :: OUT(NK,NTH)
       LOGICAL                 :: LOCAL
       INTEGER                 :: IBELONG
@@ -1687,12 +1679,9 @@
 !/TIDE!
 !/DEBUGW3ULEV           WRITE(740+IAPROC,*) 'Beginning of W3ULEV, step 5'
 !/DEBUGW3ULEV           FLUSH(740+IAPROC)
-
-      DO ISEA = 1, NSEA
-
-        IX        = MAPSF(ISEA,1)
-        IY        = MAPSF(ISEA,2)
-
+      DO ISEA=1, NSEA
+        IX     = MAPSF(ISEA,1)
+        IY     = MAPSF(ISEA,2)
         DWO(ISEA) = DW(ISEA)
 !
 !/TIDE        IF (FLLEVTIDE) THEN 
@@ -1729,16 +1718,13 @@
 !/TIDE          ELSE 
 !
         WLV(ISEA) = WLEV(IX,IY)
-        WLVeff    = WLV(ISEA)
-
+        WLVeff=WLV(ISEA)
 !/SETUP     IF (DO_CHANGE_WLV) THEN
 !/SETUP       WLVeff=WLVeff + ZETA_SETUP(ISEA)
 !/SETUP     END IF
 !/TIDE          ENDIF 
         DW (ISEA) = MAX ( 0. , WLVeff-ZB(ISEA) )
-
-      END DO ! NSEA 
-
+        END DO
 !/DEBUGW3ULEV           WRITE(740+IAPROC,*) 'Beginning of W3ULEV, step 6'
 !/DEBUGW3ULEV           FLUSH(740+IAPROC)
 !
@@ -1753,40 +1739,26 @@
 !
 ! 2.a Check if deep water
 !
-#ifdef NOCGTABLE
-        CALL WAVNU_LOCAL(SIG(1),DWO(ISEA),WNTMP,CGTMP)
-        KDCHCK = WNTMP * MIN( DWO(ISEA) , DW(ISEA) )
-#else
         KDCHCK = WN(1,ISEA) * MIN( DWO(ISEA) , DW(ISEA) )
-#endif
-
         IF ( KDCHCK .LT. KDMAX ) THEN
+!
+! 2.b Update grid and save old grid
 !
             DEPTH  = MAX ( DMIN, DW(ISEA) )
 !
-!
             DO IK=0, NK+1
-!
-! 2.b Update grid and save old grid
-#ifdef NOCGTABLE 
-              CALL WAVNU_LOCAL(SIG(IK),DWO(ISEA),WNO(IK),CGO(IK))
-#else
               WNO(IK) = WN(IK,ISEA)
               CGO(IK) = CG(IK,ISEA)
-#endif
-
-! 2.c Calculate wavenumbers and group velocities.
-#ifdef NOCGTABLE 
-              CALL WAVNU_LOCAL(SIG(IK),DEPTH,WN1(IK),CG1(IK))
-#else
-              CALL WAVNU_LOCAL(SIG(IK),DEPTH,WN(IK,ISEA),CG(IK,ISEA))
-#endif
-            END DO
+!
+!             Calculate wavenumbers and group velocities.
+              CALL WAVNU1(SIG(IK),DEPTH,WN(IK,ISEA),CG(IK,ISEA))
+!
+              END DO
 !
             DO IK=1, NK
               OWN(IK) = DSIP(IK) / CGO(IK)
-              DWN(IK) = DSIP(IK) / CG1(IK)
-            END DO
+              DWN(IK) = DSIP(IK) / CG(IK,ISEA)
+              END DO
 !
 ! 2.c Process dry points
 !
@@ -1833,13 +1805,7 @@
 !
 ! 2.e Check if ice on grid point, or if grid changes negligible
 !
-#ifdef NOCGTABLE 
-           RDK  = ABS(WNO(1)-WNTMP) / DWN(1)
-#else
-           RDK  = ABS(WNO(1)-WN(1,ISEA)) / DWN(1)
-#endif
- 
-
+            RDK    = ABS(WNO(1)-WN(1,ISEA)) / DWN(1)
 !
 !/T2            IF ( MAPSTA(IY,IX) .LT. 0 ) THEN
 !/T2                WRITE (NDST,9021)                                 &
@@ -1874,14 +1840,14 @@
 !
 ! 2.e Redistribute discrete action density
 !
-            IF ( WNO(1) .LT. WN1(1) ) THEN
+            IF ( WNO(1) .LT. WN(1,ISEA) ) THEN
                 IK0    = 1
                 I1     = 0
                 I2     = 1
   220           CONTINUE
                 IK0    = IK0 + 1
                 IF ( IK0 .GT. NK+1 ) GOTO 251
-                IF ( WNO(IK0) .GE. WN1(1) ) THEN
+                IF ( WNO(IK0) .GE. WN(1,ISEA) ) THEN
                      IK0    = IK0 - 1
                    ELSE
                      GOTO 220
@@ -1930,17 +1896,17 @@
 !
             DO ISPEC=1, NSPEC
               VA(ISPEC,JSEA) = VA(ISPEC,JSEA) / DWN(MAPWN(ISPEC))
-            END DO
+              END DO
 !
 ! 2.f Add tail if necessary
 !
             IF ( I2.LE.NK .AND. RD2.LE.0.95 ) THEN
-              DO IK=MAX(I2,2), NK
-                DO ITH=1, NTH
-                  A(ITH,IK,JSEA) = FACHFA * A(ITH,IK-1,JSEA)
-                END DO
-              END DO
-            END IF
+                DO IK=MAX(I2,2), NK
+                  DO ITH=1, NTH
+                    A(ITH,IK,JSEA) = FACHFA * A(ITH,IK-1,JSEA)
+                    END DO
+                  END DO
+              END IF
 !
 !/T3            DO ISPEC=1, NSPEC
 !/T3              IK          = MAPWN(ISPEC)
@@ -1953,9 +1919,9 @@
 !
 !/T2          ELSE
 !/T2            WRITE (NDST,9021) ISEA, KDCHCK, '  (DEEP)'
-        END IF
+          END IF
 !
-      END DO ! NSEA 
+        END DO
 !/DEBUGW3ULEV           WRITE(740+IAPROC,*) 'Beginning of W3ULEV, step 7'
 !/DEBUGW3ULEV           FLUSH(740+IAPROC)
 !
@@ -1970,8 +1936,7 @@
       IF (GTYPE.EQ.UNGTYPE) THEN 
 !/DEBUGW3ULEV           WRITE(740+IAPROC,*) 'Beginning of W3ULEV, step 9'
 !/DEBUGW3ULEV           FLUSH(740+IAPROC)
-        !CALL SET_UG_IOBP
-!/PDLIB         CALL SET_IOBDP_PDLIB
+        CALL SETUGIOBP
 !/DEBUGW3ULEV           WRITE(740+IAPROC,*) 'Beginning of W3ULEV, step 10'
 !/DEBUGW3ULEV           FLUSH(740+IAPROC)
 !/REF1      ELSE 

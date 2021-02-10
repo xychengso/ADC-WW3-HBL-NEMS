@@ -1,9 +1,8 @@
-# GNU Makefile for WAVEWATCH III Implementation using NEMS at NCEP
+# GNU Makefile for test Wavewatch III coupled application
 
 ################################################################################
 
 WW3_DIR  := $(shell cd .. 1>/dev/null 2>&1 && pwd)
-WW3_BASEDIR  := $(shell cd ../.. 1>/dev/null 2>&1 && pwd)
 WW3_BINDIR := $(WW3_DIR)/bin
 WW3_TMPDIR := $(WW3_DIR)/tmp
 WW3_EXEDIR := $(WW3_DIR)/exe
@@ -16,9 +15,7 @@ WW3_F90 := ifort
 SWITCHES := $(shell cat switch)
 
 WWATCH3_ENV := $(WW3_BINDIR)/wwatch3.env
-#WWATCH3_NETCDF := NC4
-#NETCDF_CONFIG := $(shell which nc-config)
-export WWATCH3_ENV 
+export WWATCH3_ENV
 
 EXE := $(WW3_EXEDIR)/ww3_multi_esmf
 
@@ -38,9 +35,9 @@ ifeq ($(WW3_COMP),Portland)
 else ifeq ("$(WW3_COMP)",$(filter "$(WW3_COMP)","pgi" "datarmor_pgi" "datarmor_pgi_debug"))
  ESMF_F90COMPILEOPTS := $(ESMF_F90COMPILEOPTS) -byteswapio
 # intel
-else ifeq ("$(WW3_COMP)",$(filter "$(WW3_COMP)","Intel" "hera" "orion" "cheyenne" "stampede" "hatteras"))
+else ifeq ("$(WW3_COMP)",$(filter "$(WW3_COMP)","theia" "Intel" "hatteras"))
  ESMF_F90COMPILEOPTS := $(ESMF_F90COMPILEOPTS) -convert big_endian
-else ifeq ("$(WW3_COMP)",$(filter "$(WW3_COMP)","wcoss_cray" "wcoss_dell_p3"))
+else ifeq ("$(WW3_COMP)",$(filter "$(WW3_COMP)","wcoss_phase2" "wcoss_cray"))
  ESMF_F90COMPILEOPTS := $(ESMF_F90COMPILEOPTS) -convert big_endian
 else ifeq ("$(WW3_COMP)",$(filter "$(WW3_COMP)","intel" "datarmor_intel" "datarmor_intel_debug"))
  ESMF_F90COMPILEOPTS := $(ESMF_F90COMPILEOPTS) -convert big_endian
@@ -90,11 +87,6 @@ default: env setup gout switch
 	$(MAKE) ww3_multi_esmf
 
 ww3_nems: env setup gout switch
-	$(WW3_BINDIR)/w3_make ww3_multi_esmf
-	$(WW3_BINDIR)/w3_make ww3_multi
-	\cp -f $(WW3_EXEDIR)/ww3_multi $(WW3_BASEDIR)/exec
-
-ww3_nemslibonly: env setup switch
 	$(WW3_BINDIR)/w3_make ww3_multi_esmf
 
 ww3_multi_esmf: esmApp.o $(DEP_LINK_OBJS)
@@ -165,35 +157,26 @@ switch:
 gout: 
 	@echo "$(SWITCHES)" > $(WW3_BINDIR)/tempswitch
 	@sed -e "s/DIST/SHRD/g"\
-	     -e "s/OMPG/ /g"\
-	     -e "s/OMPH/ /g"\
 	     -e "s/MPIT/ /g"\
              -e "s/MPI/ /g"\
              -e "s/PDLIB/ /g"\
                   $(WW3_BINDIR)/tempswitch > $(WW3_BINDIR)/switch
 #	\rm -f $(WW3_BINDIR)/tempswitch
 	$(WW3_BINDIR)/w3_make ww3_grid
-	$(WW3_BINDIR)/w3_make ww3_outf
-	$(WW3_BINDIR)/w3_make ww3_outp
-	$(WW3_BINDIR)/w3_make ww3_prep
-	$(WW3_BINDIR)/w3_make ww3_gint
-	$(WW3_BINDIR)/w3_make ww3_prnc
 	$(WW3_BINDIR)/w3_make ww3_ounf
 	$(WW3_BINDIR)/w3_make ww3_ounp
 	$(WW3_BINDIR)/w3_make ww3_bounc
-	@echo "$(SWITCHES)" > $(WW3_BINDIR)/tempswitch
+#	@echo "$(SWITCHES)" > $(WW3_BINDIR)/tempswitch
 #	@sed -e "s/DIST/SHRD/g"\
-	     -e "s/OMPG/ /g"\
-	     -e "s/OMPH/ /g"\
              -e "s/MPIT/ /g"\
              -e "s/MPI/ /g"\
              -e "s/PDLIB/ /g"\
              -e "s/NOGRB/NCEP2 NCO/g"\
                   $(WW3_BINDIR)/tempswitch > $(WW3_BINDIR)/switch
 #	\rm -f $(WW3_BINDIR)/tempswitch
+#	$(WW3_BINDIR)/w3_make ww3_outp
 #	$(WW3_BINDIR)/w3_make ww3_grib
-	\rm -rf $(WW3_BASEDIR)/exec
-	\mkdir -p $(WW3_BASEDIR)/exec
-	\cp -f $(WW3_EXEDIR)/ww3_* $(WW3_BASEDIR)/exec
 
 # ------------------------------------------------------------------------------
+
+

@@ -136,6 +136,7 @@
             DO JSEA=1, NSEAL
                 ISEA=IAPROC+(JSEA-1)*NAPROC
                 IF(CY(ISEA) /= UNDEF) TMP(JSEA)=CY(ISEA)
+                TMP(JSEA)=CY(ISEA)
             END DO
             RLA_OASIS_SND(:,1) = DBLE(TMP(1:NSEAL))
             CALL CPL_OASIS_SND(IB_DO, ID_OASIS_TIME, RLA_OASIS_SND, LL_ACTION)
@@ -145,7 +146,7 @@
          ! ---------------------------------------------------------------------
          IF (SND_FLD(IB_DO)%CL_FIELD_NAME == 'WW3_ACHA') THEN
             TMP(1:NSEAL) = 0.0
-            WHERE(CHARN(1:NSEAL) /= UNDEF) TMP(1:NSEAL)=CHARN(1:NSEAL)
+            WHERE(CHARN /= UNDEF) TMP=CHARN
             RLA_OASIS_SND(:,1) = DBLE(TMP(1:NSEAL))
             CALL CPL_OASIS_SND(IB_DO, ID_OASIS_TIME, RLA_OASIS_SND, LL_ACTION)
          ENDIF
@@ -154,7 +155,7 @@
          ! ---------------------------------------------------------------------
          IF (SND_FLD(IB_DO)%CL_FIELD_NAME == 'WW3__AHS') THEN
             TMP(1:NSEAL) = 0.0
-            WHERE(HS(1:NSEAL) /= UNDEF) TMP(1:NSEAL)=HS(1:NSEAL)
+            WHERE(HS /= UNDEF) TMP=HS
             RLA_OASIS_SND(:,1) = DBLE(TMP(1:NSEAL))
             CALL CPL_OASIS_SND(IB_DO, ID_OASIS_TIME, RLA_OASIS_SND, LL_ACTION)
          ENDIF
@@ -163,7 +164,7 @@
          ! ---------------------------------------------------------------------
          IF (SND_FLD(IB_DO)%CL_FIELD_NAME == 'WW3___FP') THEN
             TMP(1:NSEAL) = 0.0
-            WHERE(FP0(1:NSEAL) /= UNDEF) TMP(1:NSEAL)=FP0(1:NSEAL)
+            WHERE(FP0 /= UNDEF) TMP=FP0
             RLA_OASIS_SND(:,1) = DBLE(TMP(1:NSEAL))
             CALL CPL_OASIS_SND(IB_DO, ID_OASIS_TIME, RLA_OASIS_SND, LL_ACTION)
          ENDIF
@@ -172,7 +173,7 @@
          ! ---------------------------------------------------------------------
          IF (SND_FLD(IB_DO)%CL_FIELD_NAME == 'WW3___TP') THEN
             TMP(1:NSEAL) = 0.0
-            WHERE(FP0(1:NSEAL) /= UNDEF) TMP(1:NSEAL)=1./FP0(1:NSEAL)
+            WHERE(FP0 /= UNDEF) TMP=1./FP0
             RLA_OASIS_SND(:,1) = DBLE(TMP(1:NSEAL))
             CALL CPL_OASIS_SND(IB_DO, ID_OASIS_TIME, RLA_OASIS_SND, LL_ACTION)
          ENDIF
@@ -181,7 +182,7 @@
          ! ---------------------------------------------------------------------
          IF (SND_FLD(IB_DO)%CL_FIELD_NAME == 'WW3__FWS') THEN
             TMP(1:NSEAL) = 0.0
-            WHERE(TWS(1:NSEAL) /= UNDEF) TMP(1:NSEAL)=TWS(1:NSEAL)
+            WHERE(TWS /= UNDEF) TMP=TWS
             RLA_OASIS_SND(:,1) = DBLE(TMP(1:NSEAL))
             CALL CPL_OASIS_SND(IB_DO, ID_OASIS_TIME, RLA_OASIS_SND, LL_ACTION)
          ENDIF

@@ -1,33 +1,20 @@
 #!/bin/bash -e
 
-prog="ww3_prnc"
 
 if [ $# -ne 1 ]
 then
-  echo "  [ERROR] need ${prog} input filename in argument [${prog}.inp]"
+  echo '  [ERROR] need ww3_prnc input filename in argument [ww3_prnc.inp]'
   exit 1
 fi
 
-inp="$( cd "$( dirname "$1" )" && pwd )/$(basename $1)"
-
-# check filename extension
-ext=$(echo $inp | awk -F '.' '{print $NF}')
-if [ "$(echo $ext)" != 'inp' ] ; then
-  echo "[ERROR] input file has no .inp extension. Please rename it before conversion"  
-  exit 1
-fi
-
-# commented because it is not working in all cases
 # link to temporary inp with regtest format
-#ext=$(echo $inp | awk -F"${prog}.inp." '{print $2}' || awk -F"${prog}.inp_" '{print $2}')
-#base=$(echo $inp | awk -F"${prog}\\..inp\\.." '{print $1}' | awk -F".inp.$ext" '{print $1}' || awk -F"${prog}\\..inp_" '{print $1}' | awk -F".inp_$ext" '{print $1}')
-#if [ ! -z $(echo $ext) ] ; then
-# new_inp=${base}_${ext}.inp
-# echo "link $inp to $new_inp"
-# ln -sfn $inp $new_inp
-# old_inp=$inp
-# inp=$new_inp
-#fi
+inp="$( cd "$( dirname "$1" )" && pwd )/$(basename $1)"
+if [ ! -z $(echo $inp | awk -F'ww3_prnc\\..inp\\..' '{print $2}') ] ; then
+ new_inp=$(echo $(echo $inp | awk -F'ww3_prnc\\..inp\\..' '{print $1}')ww3_prnc_$(echo $inp | awk -F'ww3_prnc\\..inp\\..' '{print $2}').inp)
+ ln -sfn $inp $new_inp
+ old_inp=$inp
+ inp=$new_inp
+fi
 
 cd $( dirname $inp)
 cur_dir="../$(basename $(dirname $inp))"
@@ -48,7 +35,7 @@ declare -A var
 #------------------------------
 # clean up inp file from all $ lines
 
-cleaninp="$cur_dir/${prog}_clean.inp"
+cleaninp="$cur_dir/ww3_prnc_clean.inp"
 rm -f $cleaninp
 
 cat $inp | while read line
@@ -202,7 +189,6 @@ if [ "$format" = "LL" ]; then echo "  FORCING%GRID%LATLON          = T" >> $nmlf
 
 if [ "$format" = "AT" ]
 then
-  if [ "$format" = "AT" ]; then echo "  FORCING%GRID%ASIS            = T" >> $nmlfile; fi
   if [ "$field" = "CUR" ] || [ "$field" = "LEV" ] ; then echo "  FORCING%TIDAL                = '$tide'" >> $nmlfile; fi
 fi
 
@@ -250,6 +236,7 @@ do
 done
 
 
+
 cat >> $nmlfile << EOF
 /
 
@@ -259,15 +246,11 @@ cat >> $nmlfile << EOF
 EOF
 echo "DONE : $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $nmlfile)"
 rm -f $cleaninp
-
-# commented because it is not working in all cases
-#if [ ! -z $(echo $ext) ] ; then
-#  unlink $new_inp
-#  addon="$(echo $(basename $nmlfile) | awk -F"${prog}_" '{print $2}' | awk -F'.nml' '{print $1}'  )"
-#  new_nmlfile="${prog}.nml.$addon"
-#  mv $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $nmlfile) $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $new_nmlfile)
-#  echo "RENAMED  : $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $new_nmlfile)"
-#fi
+if [ ! -z $(echo $old_inp | awk -F'ww3_prnc\\..inp\\..' '{print $2}') ] ; then
+  unlink $new_inp
+  addon="$(echo $(basename $nmlfile) | awk -F'ww3_prnc_' '{print $2}' | awk -F'\\..nml' '{print $1}'  )"
+  new_nmlfile="ww3_prnc.nml.$addon"
+  mv $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $nmlfile) $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $new_nmlfile)
+  echo "RENAMED  : $( cd "$( dirname "$nmlfile" )" && pwd )/$(basename $new_nmlfile)"
+fi
 #------------------------------
-
-

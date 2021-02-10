@@ -22,9 +22,9 @@
 !     DOMAIN%STOP   = '19680607 000000'  ! Stop date for the entire model
 ! -------------------------------------------------------------------- !
 &DOMAIN_NML
-  DOMAIN%IOSTYP  = 1 
+  DOMAIN%IOSTYP  = 3
   DOMAIN%START   = '20151214 000000'
-  DOMAIN%STOP    = '20151214 040000'
+  DOMAIN%STOP    = '20151215 000000'
 /
 
 ! -------------------------------------------------------------------- !
@@ -67,8 +67,7 @@
 ! -------------------------------------------------------------------- !
 ! Define the output types point parameters via OUTPUT_TYPE_NML namelist
 !
-! * the point file is a space separated values per line :
-!   longitude latitude 'name' (C*40)
+! * the point file is a space separated values per line : lon lat 'name'
 !
 ! * the full list of field names is :
 !  All parameters listed below are available in output file of the types
@@ -242,7 +241,7 @@
 !
 ! -------------------------------------------------------------------- !
 &OUTPUT_TYPE_NML
-  TYPE%FIELD%LIST          = 'WND HS'
+  TYPE%FIELD%LIST          = 'WND HS SXY'
   TYPE%POINT%FILE          = '../input/points.list'
 /
 
@@ -280,9 +279,9 @@
 !     DATE%RESTART             =  '19680606 000000' '0' '19680607 000000'
 ! -------------------------------------------------------------------- !
 &OUTPUT_DATE_NML
-  DATE%FIELD          = '20151214 000000' '600' '20151214 040000'
-  DATE%POINT          = '20151214 000000' '600' '20151214 040000'
-  DATE%RESTART        = '20151214 000000' '600' '20151215 000000'
+  DATE%FIELD          = '20151214 000000' '3600' '20151215 000000'
+  DATE%POINT          = '20151214 000000' '3600' '20151215 000000'
+  DATE%RESTART        = '20151214 000000' '3600' '20151215 000000'
 /
 
 ! -------------------------------------------------------------------- !
