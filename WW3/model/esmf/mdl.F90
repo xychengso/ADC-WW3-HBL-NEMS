@@ -364,7 +364,7 @@ module MDL
       is%wrap%fname(i) = 'vustss'
       ! XYC added misalignment angle
       i = i+1
-      is%wrap%sname(i) = 'misalignment_btw_wind_and_wind_stress'
+      is%wrap%sname(i) = 'wind_and_windstress_misalign_angle'
       is%wrap%fname(i) = 'misalg'
     case ('ICE')
       i = i+1

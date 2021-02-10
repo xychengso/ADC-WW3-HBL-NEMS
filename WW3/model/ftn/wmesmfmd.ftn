@@ -1086,7 +1086,7 @@
       i = i + 1 
       if ( istep.eq.2 ) then
         expFieldName(i)    = 'misalg'
-        expFieldStdName(i) = 'misalignment_btw_wind_and_wind_stress'
+        expFieldStdName(i) = 'wind_and_windstress_misalign_angle' 
         expFieldDim(i)     = 2
       endif
 
@@ -5524,6 +5524,7 @@
 !
 !/ ------------------------------------------------------------------- /
 !/
+!/PDLIB      use yowNodepool, only: np, iplg
 !/ ------------------------------------------------------------------- /
 !/ Parameter list
 !/
@@ -5622,7 +5623,7 @@
 !/PDLIB                                TAIL_ID, z0)
 !/PDLIB             call WND2BulkUST(U10(isea)/WIND_FAC, U10D(isea), &
 !/PDLIB                             TAIL_ID, ustx, usty)
-!/PDLIB             chkn(jsea)= grav.*z0/(ustx**2+usty**2)
+!/PDLIB             chkn(jsea)= grav*z0/(ustx**2+usty**2)
 !/PDLIB          else
 !/PDLIB             z0=10.0/exp(kappa*U10(isea)/WIND_FAC/USTFLD(jsea))
 !/PDLIB             chkn(jsea) = grav* z0/USTFLD(jsea)**2
@@ -5701,6 +5702,7 @@
 !
 !/ ------------------------------------------------------------------- /
 !/
+!/PDLIB      use yowNodepool, only: np, iplg
 !/ ------------------------------------------------------------------- /
 !/ Parameter list
 !/
@@ -6993,6 +6995,7 @@
 !
 !/ ------------------------------------------------------------------- /
 !/
+!/PDLIB      use yowNodepool, only: np, iplg
 !/ ------------------------------------------------------------------- /
 !/ Parameter list
 !/
