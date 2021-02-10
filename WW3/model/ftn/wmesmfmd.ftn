@@ -5540,6 +5540,7 @@
       real    :: emean, fmean, fmean1, wnmean, amax, ustar, ustdr, &
                  tauwx, tauwy, cd, z0, fmeanws, dlwmean, ustx, usty
       real, parameter:: kappa=0.4
+      integer    :: IX, IY
       logical :: llws(nspec)
       type(ESMF_Field) :: chknField
       real(ESMF_KIND_RX), pointer :: chkn(:)
@@ -7111,7 +7112,8 @@
            call WND2BulkZ0(u10, TAILID, z0)
            Cd = (kappa/log(10.0/z0))**2
 
-         ELSEIF (TAILID == 3)   ! ADCIRC bulk
+         ELSEIF (TAILID == 3)   THEN 
+         ! ADCIRC bulk
          ! hard coded here:
          ! will need to consider to change this parameter dynamically
          ! according to its value in ADCIRC.
@@ -7185,13 +7187,13 @@
               Z0BLK = 1.3025*10**(-3)
             endif
 
-         elseif (TAILID .eq. 2) 
+         elseif (TAILID .eq. 2)  then
          ! HWRF (latest) need to built Z0BLK with another sets of coeff
          ! a & b
          ! Not Available... (I don't have the function..Don't use this
          ! TAILID..
 
-         elseif (TAILID .eq. 3)
+         elseif (TAILID .eq. 3) then
          ! ADCIRC:(Garratt 1977)
             capval=0.0028
             Cd=(0.75+0.067*u10)*0.001
