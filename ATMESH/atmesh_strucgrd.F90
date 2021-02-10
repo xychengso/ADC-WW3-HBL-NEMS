@@ -297,6 +297,8 @@ module ATMESH
     !--------- import fields to ATMESH  -------------
     ! XYC added the sea surface roughness length:
     call fld_list_add(num=fldsToATM_num, fldlist=fldsToATM, stdname="wave_z0_roughness_length" , shortname= "wavz0" )
+    call fld_list_add(num=fldsToATM_num, fldlist=fldsToATM, stdname="wave_induced_charnock_parameter" , shortname= "charnk" )
+    call fld_list_add(num=fldsToATM_num, fldlist=fldsToATM, stdname="wind_and_windstress_misalign_angle", shortname= "misalg" )
     
     
     !--------- export fields from ATMESH -------------
@@ -750,6 +752,8 @@ module ATMESH
 
     !imports
     real(ESMF_KIND_R8), pointer   :: dataPtr_z0(:,:)
+    real(ESMF_KIND_R8), pointer   :: dataPtr_chnk(:,:)
+    real(ESMF_KIND_R8), pointer   :: dataPtr_malg(:,:)
 
     ! exports
     real(ESMF_KIND_R8), pointer   :: dataPtr_uwnd(:,:)
@@ -825,6 +829,22 @@ module ATMESH
     ! get and fill imported fields (refer to WW3DATA): 
     ! <<<<< RECEIVE and UN-PACK WAVZ0
     call State_getFldPtr_from_Grid(ST=importState, fldname='wavz0',fldptr=dataPtr_z0, &
+        rc=rc, dump=.true., timeStr=timeStr)
+      if (ESMF_LogFoundError(rcToCheck=rc, msg=ESMF_LOGERR_PASSTHRU, &
+        line=__LINE__, &
+        file=__FILE__)) &
+        return  ! bail out
+
+    ! <<<<< RECEIVE and UN-PACK CHARNK
+    call State_getFldPtr_from_Grid(ST=importState, fldname='charnk',fldptr=dataPtr_chnk, &
+        rc=rc, dump=.true., timeStr=timeStr)
+      if (ESMF_LogFoundError(rcToCheck=rc, msg=ESMF_LOGERR_PASSTHRU, &
+        line=__LINE__, &
+        file=__FILE__)) &
+        return  ! bail out
+
+    ! <<<<< RECEIVE and UN-PACK Misalignment Angle
+    call State_getFldPtr_from_Grid(ST=importState, fldname='misalg',fldptr=dataPtr_malg, &
         rc=rc, dump=.true., timeStr=timeStr)
       if (ESMF_LogFoundError(rcToCheck=rc, msg=ESMF_LOGERR_PASSTHRU, &
         line=__LINE__, &
