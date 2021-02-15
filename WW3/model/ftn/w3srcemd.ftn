@@ -456,9 +456,6 @@
 
      REAL, INTENT(OUT)                 :: FLD_USTAR, FLD_USTDIR
       INTEGER, INTENT(OUT)                 :: FLD_QC
-!/FLD2     REAL, INTENT(OUT)                 :: FLD_USTAR, FLD_USTDIR, &
-!/FLD2                                          FLD_Z0
-!/FLD2     INTEGER, INTENT(OUT)                 :: FLD_QC
 !/
 !/ ------------------------------------------------------------------- /
 !/ Local parameters
