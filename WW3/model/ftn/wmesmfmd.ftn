@@ -5447,12 +5447,16 @@
 !/PDLIB          ! if sea-state dependnet wind stress iteration
 !/PDLIB          ! failed:(use bulk z0)
 !/PDLIB          if ( (QCFLG(jsea) .ne. 1) .or. & 
-!/PDLIB               (USTFLD(jsea).le. 0.0) ) then
+!/PDLIB               (USTFLD(jsea).le. 0.0001) ) then
 !/PDLIB             call WND2BulkZ0(U10(isea)/WIND_FAC, & 
 !/PDLIB                                TAIL_ID, z0)
 !/PDLIB             call WND2BulkUST(U10(isea)/WIND_FAC, U10D(isea), &
 !/PDLIB                             TAIL_ID, ustx, usty)
 !/PDLIB             chkn(jsea)= grav*z0/(ustx**2+usty**2)
+!/PDLIB             if (chkn(jsea) .ne. chkn(jsea)) then
+!/PDLIB                ! NaN
+!/PDLIB                chkn(jsea)=0.0185
+!/PDLIB             endif
 !/PDLIB          else
 !/PDLIB             z0=10.0/exp(kappa*U10(isea)/WIND_FAC/USTFLD(jsea))
 !/PDLIB             chkn(jsea) = grav* z0/USTFLD(jsea)**2
