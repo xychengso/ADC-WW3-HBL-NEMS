@@ -2870,7 +2870,7 @@
         "wind_and_windstress_misalign_angle")) then
         call NUOPC_FieldDictionaryAddEntry( &
           standardName="wind_and_windstress_misalign_angle", &
-          canonicalUnits="rad", &
+          canonicalUnits="degree", &
           rc=rc)
         if (ESMF_LogFoundError(rcToCheck=rc, msg=ESMF_LOGERR_PASSTHRU, &
           line=__LINE__, &
