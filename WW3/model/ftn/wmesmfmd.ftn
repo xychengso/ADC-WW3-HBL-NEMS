@@ -2271,8 +2271,8 @@
         call FieldGather( impField(i2), nx, ny, wyn, rc=rc )
         if (ESMF_LogFoundError(rc, PASSTHRU)) return
         if (firstCall) then
-          print *, "WW3 first call initialize.."
-          print *, "WW3cap received:max(wxn)=", maxval(wxn)
+!          print *, "WW3 first call initialize.."
+!          print *, "WW3cap received:max(wxn)=", maxval(wxn)
           tw0 = twn
 !          wx0 = -5     ! xyc changed for test purpose (manual intialize)
 !          wy0 = -5
@@ -6695,14 +6695,25 @@
             if ( firstCall ) then
               maln(jsea) = zero
             endif !firstCall
-            maln(jsea) = U10D(isea)-USTDIRFLD(jsea)
-          endif 
+
+            maln(jsea) = (U10D(isea)-USTDIRFLD(jsea))*180/PI
+            if (maln(jsea).gt. 180) then
+               maln(jsea) = maln(jsea) - 360
+            elseif (maln(jsea).lt.-180) then
+               maln(jsea) = maln(jsea) + 360
+            endif
+
+          ENDIF
         enddo jsea_loop
 !/PDLIB      else
 !/PDLIB        jsea_loop2: do jsea = 1,np 
 !/PDLIB          isea = iplg(jsea)
-!/PDLIB            maln(jsea) = U10D(isea)-USTDIRFLD(jsea)
-!---------------------TO-DO:  ^ make sure the units are the same (rad)
+!/PDLIB            maln(jsea) = (U10D(isea)-USTDIRFLD(jsea))*180/PI
+!/PDLIB            if (maln(jsea).gt. 180) then
+!/PDLIB               maln(jsea) = maln(jsea) - 360
+!/PDLIB            elseif (maln(jsea).lt.-180) then
+!/PDLIB               maln(jsea) = maln(jsea) + 360
+!/PDLIB            endif
 !/PDLIB          if ( QCFLG(jsea) .ne. 1 ) then
 !/PDLIB                  maln(jsea)= 0.0
 !/PDLIB          endif
