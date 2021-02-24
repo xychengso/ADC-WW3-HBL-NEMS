@@ -1152,17 +1152,19 @@ module adc_cap
 !        WVNSY1 = WVNSY2
 
         ! XYC added for sea-state-dependent wind stress:
+        ! WVNSX2 should have units of m^2/s^2 for ADCIRC, but the received info
+        ! is frictional velocity (m/s), and hence needs to be squared.
         do i1 = 1, mdataOut%NumOwnedNd, 1
-            WVNSX2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsx(i1)
+            WVNSX2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsx(i1)**2
         end do
 
         do i1 = 1, mdataOut%NumOwnedNd, 1
-            WVNSY2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsy(i1)
+            WVNSY2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsy(i1)**2
         end do
-        !write(*,*) "[debug:nws18] max(WSX/Y2)=", maxval(WSX2), maxval(WVNSY2)
         
        ! Here, WVNSX1 (current time for ADCIRC) is set to the same as WVNSX2
-       ! (also at current time);
+       ! (future time for ADCIRC), but WVNSX2 stores information received at current time
+       ! step in the cap.
         WVNSX1 = WVNSX2
         WVNSY1 = WVNSY2
 
@@ -1299,14 +1301,7 @@ module adc_cap
 !           PRN1  = PRN2
 !        endif
 
-        ! new test Dec 21: WVNX1 is set the same as the wind at current time
-        ! step (WVNX/Y2)
-!         WVNX2 = WVNX1
-!         WVNY2 = WVNY1
-!         PRN2  = PRN1
 
-        call UPDATER( WVNX1(:), WVNY1(:), PRN1(:),3)
-        call UPDATER( WVNX2(:), WVNY2(:), PRN2(:),3)
         !call UPDATER( dataPtr_izwh10m(:), dataPtr_imwh10m(:), dataPtr_pmsl(:),3)
        
         ! Fill owned nodes from imported data to model variable
@@ -1330,21 +1325,17 @@ module adc_cap
           !end if
         end do
 
-           WVNX1 = WVNX2   
-           WVNY1 = WVNY2  
-           PRN1  = PRN2
-
         ! Ghost nodes update 
+        call UPDATER( WVNX1(:), WVNY1(:), PRN1(:),3)
+        call UPDATER( WVNX2(:), WVNY2(:), PRN2(:),3)
 
-        ! XYC notes: what if I comment this out?
+
         if (first_exchange .and. sum(PRN2) .le. 1.0) then
-         if (sum(abs(WVNX2))+sum(abs(WVNY2)) .le. 1.0) then
-          WVNX2 = -5.0
-          WVNY2 = -5.0
-          WVNX1 = -5.0
-          WVNY1 = -5.0
-         end if
-!
+          WVNX2 = 1e-10
+          WVNY2 = 1e-10
+          WVNX1 = 1e-10
+          WVNY1 = 1e-10
+
           PRN2 = 10.0  !hard coded to handel the 1st exchange zeros problem :TODO! Need to resolve this!
           PRN1 = PRN2
           first_exchange = .false.
@@ -1354,18 +1345,18 @@ module adc_cap
          ! ADCIRC mesh that is not covered by WW3 mesh has zeros values in the
          ! following three mete. parms. The following lines remove the
          ! articifial gradient due to a smaller WW3 mesh.
+         ! a more sophisticated fix can be introduced later.
         where(abs(WVNX2).le.10**(-5)) WVNX2=1e-10
         where(abs(WVNY2).le.10**(-5)) WVNY2=1e-10
         where(PRN2.le.1) PRN2=maxval(PRN2)
-        WVNX1=WVNX2
-        WVNY1=WVNY2
-        PRN1=PRN2
+        ! XYC changed the order here, so WVNX1 = WVNX2 (no interpolation is done
+        ! effectively) (in ADCIRC, WVNX1: current wind, WVNX2: future wind)
+        ! but when we read the information here, WVNX2 holds wind information at
+        ! current time step.)
+        WVNX1 = WVNX2
+        WVNY1 = WVNY2
+        PRN1 = PRN2
 
-        write(*,*) "[debug:nws18 updater:] max(WVNSX/Y1)=", maxval(WVNX1), maxval(WVNY1)
-        write(*,*) "[debug:nws18 updater:] max(WVNSX/Y2)=", maxval(WVNX2), maxval(WVNY2)
-        ! Ghost nodes update 
-!        call UPDATER( WVNX1(:), WVNY1(:), PRN1(:),3)
-!        call UPDATER( WVNX2(:), WVNY2(:), PRN2(:),3)
 
         !if (sum(PRN1) .eq. 0.0 ) then
         !  PRN1 = 10000.0
