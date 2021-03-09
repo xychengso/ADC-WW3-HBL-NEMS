@@ -1155,11 +1155,11 @@ module adc_cap
         ! WVNSX2 should have units of m^2/s^2 for ADCIRC, but the received info
         ! is frictional velocity (m/s), and hence needs to be squared.
         do i1 = 1, mdataOut%NumOwnedNd, 1
-            WVNSX2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsx(i1)**2
+            WVNSX2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsx(i1)
         end do
 
         do i1 = 1, mdataOut%NumOwnedNd, 1
-            WVNSY2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsy(i1)**2
+            WVNSY2(mdataOut%owned_to_present_nodes(i1)) = dataPtr_ssdwsy(i1)
         end do
         
        ! Here, WVNSX1 (current time for ADCIRC) is set to the same as WVNSX2

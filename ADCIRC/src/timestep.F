@@ -1527,13 +1527,14 @@ C  tcm v49.16 20100617
             ! WVNSX/Y has units of m^2/s^2
             WindX = WVNSX1(I) + WTRatio*(WVNSX2(I)-WVNSX1(I))
             WindY = WVNSY1(I) + WTRatio*(WVNSY2(I)-WVNSY1(I))
+            WindMag=sqrt(WindX**2 + WindY**2)
             ! 0.001293d0 is the same air2water den.ratio as in the bulk
             ! formula (NWS=6), the input wind stress is air fricitional
             ! velocity. This coefficient is needed to convert to water
             ! side frictional velocity. -xyc 
             ! WSX/Y should have units of m^2/s^2
-            WSX2(I) = RampMete*WindX*0.001293d0 !apply ramp, 
-            WSY2(I) = RampMete*WindY*0.001293d0
+            WSX2(I) = RampMete*WindMag*WindX*0.001293d0 !apply ramp, 
+            WSY2(I) = RampMete*WindMag*WindY*0.001293d0
 C  tcm v49.16 20100617
 !            PR2(I)=RampMete*(PRN1(I)+WTRatio*(PRN2(I)-PRN1(I)))
             PRDIFF = RampMete*((PRN1(I)+WTRatio*(PRN2(I)-PRN1(I)))
